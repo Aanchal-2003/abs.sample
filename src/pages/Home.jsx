@@ -106,6 +106,34 @@ const Counter = ({ from = 0, to, duration = 2, suffix = '', prefix = '' }) => {
 const Home = () => {
   // const [selectedService, setSelectedService] = useState(null);
   const [selectedStory, setSelectedStory] = useState(null);
+
+  const stories = [
+    {
+      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+      title: "FMCG Distributor",
+      result: "200% Increase in Sales",
+      desc: "Implemented Sales Force Automation and real-time tracking, helping the client double their sales within 6 months.",
+      tag: "SFA + Tally Integration",
+      details: "Full details about how SFA + Tally Integration helped the client achieve a 200% sales increase..."
+    },
+    {
+      img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
+      title: "Manufacturing Company",
+      result: "3x Team Productivity",
+      desc: "Integrated SAP with mobile apps for field teams, improving coordination and reducing manual work.",
+      tag: "SAP + Mobile App",
+      details: "Full details about SAP integration and mobile app that boosted team productivity threefold..."
+    },
+    {
+      img: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80",
+      title: "Retail Chain",
+      result: "60% Faster Operations",
+      desc: "Built a centralized system connecting distributors and inventory, reducing order processing time drastically.",
+      tag: "ERP + Cloud",
+      details: "Full details about the ERP + Cloud solution that made operations 60% faster..."
+    }
+  ];
+
   const whyUs = [
     { icon: Shield, title: 'Enterprise Security', desc: 'End-to-end encryption with cloud-first architecture. SOC2-aligned practices protect your business data at every level.', stat: '99.9%', statLabel: 'Uptime' },
     { icon: Smartphone, title: 'Mobile First Design', desc: 'Native Android & iOS apps built for field teams. Works offline, syncs when connected — no training needed.', stat: '10K+', statLabel: 'Daily Users' },
@@ -227,7 +255,7 @@ const Home = () => {
           >
 
             <img
-              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80"
+              src="https://ifda.in/blog/img/accounting.jpeg"
               className="w-full rounded-2xl shadow-2xl"
             />
 
@@ -352,8 +380,6 @@ const Home = () => {
       {/* SUCCESS STORIES */}
       <section className="py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
-
-          {/* HEADING */}
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
             Real Success Stories from Our Clients
           </h2>
@@ -363,33 +389,8 @@ const Home = () => {
             and streamline operations through smart digital solutions.
           </p>
 
-          {/* CARDS */}
           <div className="grid md:grid-cols-3 gap-8">
-
-            {[
-              {
-                img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-                title: "FMCG Distributor",
-                result: "200% Increase in Sales",
-                desc: "Implemented Sales Force Automation and real-time tracking, helping the client double their sales within 6 months.",
-                tag: "SFA + Tally Integration"
-              },
-              {
-                img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
-                title: "Manufacturing Company",
-                result: "3x Team Productivity",
-                desc: "Integrated SAP with mobile apps for field teams, improving coordination and reducing manual work.",
-                tag: "SAP + Mobile App"
-              },
-              {
-                img: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80",
-                title: "Retail Chain",
-                result: "60% Faster Operations",
-                desc: "Built a centralized system connecting distributors and inventory, reducing order processing time drastically.",
-                tag: "ERP + Cloud"
-              }
-            ].map((item, i) => (
-
+            {stories.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 50 }}
@@ -399,23 +400,17 @@ const Home = () => {
                 whileHover={{ y: -12 }}
                 className="group bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden transition duration-300 text-left"
               >
-
-                {/* IMAGE */}
                 <div className="relative overflow-hidden">
                   <img
                     src={item.img}
                     className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
                   />
-
-                  {/* OVERLAY TAG */}
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-medium">
                     {item.tag}
                   </div>
                 </div>
 
-                {/* CONTENT */}
                 <div className="p-6">
-
                   <div className="flex items-center gap-2 mb-2 text-brand-red">
                     <TrendingUp size={18} />
                     <span className="font-bold text-lg">{item.result}</span>
@@ -429,21 +424,20 @@ const Home = () => {
                     {item.desc}
                   </p>
 
-                  {/* BUTTON */}
-                  <button className="flex items-center gap-2 text-sm font-medium text-brand-red hover:text-black transition">
+                  <button
+                    onClick={() => setSelectedStory(item)}
+                    className="flex items-center gap-2 text-sm font-medium text-brand-red hover:text-black transition"
+                  >
                     Read Full Story <ArrowRight size={16} />
                   </button>
-
                 </div>
-
               </motion.div>
-
             ))}
-
           </div>
-
         </div>
       </section>
+
+      
 
       {/* TESTIMONIALS */}
       <section className="py-20 bg-gray-50">
