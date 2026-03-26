@@ -61,9 +61,9 @@ const Navbar = () => {
           {/* LOGO */}
           <Link to="/" className="flex items-center gap-2">
             <motion.img
-              src="https://abstechnologies.co.in/images/logos/Logo.jpg"
+              src="log.png"
               alt="ABS Infotech"
-              className={`transition-all duration-500 ${scrolled ? "h-8" : "h-10"}`}
+              className={`transition-all duration-500 ${scrolled ? "h-16" : "h-14"}`}
               whileHover={{ scale: 1.05 }}
             />
           </Link>

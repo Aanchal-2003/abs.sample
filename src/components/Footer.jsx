@@ -40,7 +40,7 @@ const Footer = () => {
           {/* BRAND */}
           <div className="lg:col-span-2">
             <img
-              src="/logoo.jpeg"
+              src="/log.png"
               className="h-12 w-auto mix-blend-multiply"
             />
 

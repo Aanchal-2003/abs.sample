@@ -275,6 +275,57 @@ const Home = () => {
         </div>
       </section>
 
+      {/* CERTIFICATIONS / TRUST BADGES */}
+      <section className="py-6 bg-white border-b">
+        <div className="max-w-[1100px] mx-auto px-6 text-center">
+
+          {/* HEADING */}
+          <p className="text-sm uppercase tracking-wide text-gray-400 mb-3">
+            Certifications & Partnerships
+          </p>
+
+          <h3 className="text-xl sm:text-2xl font-semibold text-brand-black mb-10">
+            Trusted & Certified by Industry Standards
+          </h3>
+
+          {/* LOGOS GRID */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+
+            {/* CARD */}
+            <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex items-center justify-center">
+              <img
+                src="https://www.circuitworld.in/images/brandimages/tally-certified-partner-5-star-sales-and-solution.png"
+                alt="Tally Certified Partner"
+                className="h-12 object-contain"
+              />
+            </div>
+
+            <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex items-center justify-center">
+              <img
+                src="https://www.circuitworld.in/images/brandimages/tally-prime-logo.png"
+                alt="Tally Prime"
+                className="h-10 object-contain"
+              />
+            </div>
+
+            <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex items-center justify-center">
+              <img
+                src="https://www.circuitworld.in/images/brandimages/tally-education-logo.png"
+                alt="Tally Education"
+                className="h-10 object-contain"
+              />
+            </div>
+
+          </div>
+
+          {/* FOOT NOTE */}
+          <p className="mt-8 text-sm text-gray-500">
+            Delivering trusted Tally solutions with certified expertise across India
+          </p>
+
+        </div>
+      </section>
+
       {/* TRUST */}
       <section className="py-10 bg-white border-b">
         <div className="max-w-[1200px] mx-auto px-6">
@@ -331,7 +382,11 @@ const Home = () => {
                   whileHover={{ y: -10, scale: 1.04 }}
                   className="p-6 bg-white rounded-2xl shadow-md hover:shadow-2xl transition"
                 >
-                  <Icon className="w-8 h-8 text-brand-red mb-4" />
+                  <img
+                    src={s.image}
+                    alt={s.title}
+                    className="h-10 rounded-full object-contain mb-4"
+                  />
 
                   <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
 
@@ -378,13 +433,13 @@ const Home = () => {
 
 
       {/* SUCCESS STORIES */}
-      <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
             Real Success Stories from Our Clients
           </h2>
 
-          <p className="text-gray-500 max-w-2xl mx-auto mb-12">
+          <p className="text-gray-500 max-w-2xl mx-auto mb-10">
             See how ABS Infotech helps businesses improve efficiency, increase revenue,
             and streamline operations through smart digital solutions.
           </p>
@@ -437,10 +492,10 @@ const Home = () => {
         </div>
       </section>
 
-      
+
 
       {/* TESTIMONIALS */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-[1000px] mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-10">
             What Our Clients Say
@@ -470,7 +525,7 @@ const Home = () => {
 
       {/* ABOUT */}
 
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
           {/* IMAGE */}
@@ -572,7 +627,7 @@ const Home = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-r from-white via-gray-50 to-gray-100 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-r from-white via-gray-50 to-gray-100 relative overflow-hidden">
 
         {/* SOFT BACKGROUND GLOW */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-brand-red/10 rounded-full blur-3xl"></div>

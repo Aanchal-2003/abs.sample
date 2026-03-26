@@ -1,15 +1,19 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Target, Eye, Zap, Users, Shield, Smartphone, Building2, TrendingUp, Clock } from 'lucide-react';
+import {
+  ArrowRight, Target, Eye, Zap, Users, Shield,
+  Smartphone, Building2, TrendingUp, Clock
+} from 'lucide-react';
 import { BrandSwoosh, IntegrationIllustration } from '../components/Illustrations';
 
 const About = () => {
+
   const milestones = [
-    { year: '2014', title: 'Founded', desc: 'ABS Infotech started with a vision to simplify B2B sales operations for Indian businesses.' },
+    { year: '2014', title: 'Founded', desc: 'ABS Technology started with a vision to simplify B2B sales operations for Indian businesses.' },
     { year: '2016', title: 'First SFA Launch', desc: 'Deployed our first Sales Force Automation module for a manufacturing company with 50+ field reps.' },
     { year: '2018', title: 'Tally Integration', desc: 'Built our real-time Tally integration engine — the first of its kind for field sales tools in India.' },
     { year: '2020', title: '100+ Clients', desc: 'Crossed 100 enterprise clients across manufacturing, FMCG, and pharma sectors.' },
-    { year: '2023', title: 'DMS & SAP', desc: 'Launched Distributor Management System and expanded integration support to SAP and Zoho.' },
+    { year: '2023', title: 'DMS & SAP', desc: 'Expanded integration support to SAP, Zoho & launched Distributor Management System.' },
     { year: '2025', title: '150+ Enterprises', desc: 'Serving 150+ businesses with 10,000+ daily active users across India.' },
   ];
 
@@ -21,243 +25,165 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-24 sm:pt-28 pb-16 sm:pb-20 font-geist">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-        {/* Header */}
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-24 pb-20 font-geist">
+
+      <div className="max-w-[1200px] mx-auto px-6">
+
+        {/* HERO */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="max-w-3xl mb-12 sm:mb-16"
+          className="text-center max-w-4xl mx-auto mb-20"
         >
-          {/* <motion.img
-            src="/logo.jpeg" alt="ABS Infotech" className="h-10 sm:h-14 w-auto mb-4 sm:mb-6"
-            initial={{ opacity: 0, y: -10 }} animate={{ opacity: 0.8, y: 0 }}
-            transition={{ delay: 0.15 }}
-          /> */}
-          <span className="inline-block px-3 py-1 rounded-full bg-brand-red/5 border border-brand-red/10 text-brand-red text-xs font-medium mb-4">ABOUT US</span>
-          <h1 className="font-geist font-semibold text-3xl sm:text-4xl md:text-5xl text-brand-black tracking-tight leading-[1.1] mb-4 sm:mb-6">
-            We create new software and integrate it with{' '}
-            <span className="text-gray-400">your legacy systems.</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-red/10 text-brand-red text-xs font-medium mb-4">
+            ABOUT ABS TECHNOLOGY
+          </span>
+
+          <h1 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
+            Building Modern Software that{' '}
+            <span className="text-brand-red">Works with Your Existing Systems</span>
           </h1>
-          <p className="text-[#373a46]/70 text-sm sm:text-lg leading-relaxed">
-            ABS Infotech builds modern SFA, CRM, and Distribution Management software
-            for Indian B2B companies — then connects it seamlessly with Tally, SAP, and Zoho.
-            Your business gets modern tools without losing what already works.
+
+          <p className="text-gray-600 text-lg leading-relaxed">
+            We design powerful SFA, CRM, and Distribution Management systems
+            and integrate them seamlessly with Tally, SAP, and Zoho —
+            enabling businesses to modernize without disruption.
           </p>
         </motion.div>
 
-        {/* Company Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-14 sm:mb-20">
+        {/* HERO IMAGE */}
+        <motion.img
+          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200"
+          className="rounded-3xl shadow-xl mb-20"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+        />
+
+        {/* STATS */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {companyStats.map(({ num, label, icon: Icon }, i) => (
             <motion.div
               key={label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="text-center p-5 sm:p-6 rounded-2xl bg-[#fafafa] border border-gray-100"
+              whileHover={{ y: -5 }}
+              className="p-6 rounded-2xl bg-white shadow-md border border-gray-100 text-center"
             >
-              <Icon className="w-5 h-5 text-brand-red mx-auto mb-2 sm:mb-3" />
-              <span className="font-geist font-bold text-2xl sm:text-3xl text-brand-black block">{num}</span>
-              <p className="font-geist text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider mt-1">{label}</p>
+              <Icon className="w-6 h-6 text-brand-red mx-auto mb-3" />
+              <p className="text-3xl font-bold">{num}</p>
+              <p className="text-xs text-gray-500 uppercase mt-1">{label}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Mission & Vision */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-14 sm:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-6 sm:p-8 rounded-2xl bg-[#fafafa] border border-gray-100"
-          >
-            <Target className="w-5 sm:w-6 h-5 sm:h-6 text-brand-red mb-3 sm:mb-4" />
-            <h3 className="font-geist font-semibold text-lg sm:text-xl text-brand-black mb-2 sm:mb-3">Our Mission</h3>
-            <p className="font-geist text-xs sm:text-sm text-gray-500 leading-relaxed">
-              To build modern, easy-to-use sales software that connects seamlessly with legacy ERP systems —
-              so B2B companies can modernize without disruption. We believe great software should be
-              as simple as WhatsApp but powerful enough to manage thousands of users.
-            </p>
-          </motion.div>
+        {/* MISSION / VISION */}
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.08 }}
-            className="p-6 sm:p-8 rounded-2xl bg-[#fafafa] border border-gray-100"
-          >
-            <Eye className="w-5 sm:w-6 h-5 sm:h-6 text-brand-orange mb-3 sm:mb-4" />
-            <h3 className="font-geist font-semibold text-lg sm:text-xl text-brand-black mb-2 sm:mb-3">Our Vision</h3>
-            <p className="font-geist text-xs sm:text-sm text-gray-500 leading-relaxed">
-              To become the default sales infrastructure for every B2B company in India —
-              where field teams, distributors, and management operate from one connected
-              platform with real-time data flowing from legacy ERP to mobile devices.
+          <div className="p-8 rounded-3xl bg-white shadow-md border">
+            <Target className="text-brand-red mb-4" />
+            <h3 className="text-xl font-semibold mb-3">Our Mission</h3>
+            <p className="text-gray-600">
+              To create powerful yet simple business software that integrates
+              seamlessly with legacy systems, helping companies scale faster
+              without operational friction.
             </p>
-          </motion.div>
+          </div>
+
+          <div className="p-8 rounded-3xl bg-white shadow-md border">
+            <Eye className="text-brand-orange mb-4" />
+            <h3 className="text-xl font-semibold mb-3">Our Vision</h3>
+            <p className="text-gray-600">
+              To become India’s most trusted sales and distribution technology partner,
+              enabling real-time connected ecosystems across businesses.
+            </p>
+          </div>
+
         </div>
 
-        {/* Our Journey Timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-14 sm:mb-20"
-        >
-          <div className="text-center mb-8 sm:mb-10">
-            <span className="inline-block px-3 py-1 rounded-full bg-brand-orange/5 border border-brand-orange/10 text-brand-orange text-xs font-medium mb-3">OUR JOURNEY</span>
-            <h2 className="font-geist font-semibold text-2xl sm:text-3xl text-brand-black">12+ years of building & integrating</h2>
-          </div>
+        {/* JOURNEY */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-semibold text-center mb-10">Our Journey</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {milestones.map(({ year, title, desc }, i) => (
+          <div className="grid md:grid-cols-3 gap-6">
+            {milestones.map((m) => (
               <motion.div
-                key={year}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                whileHover={{ y: -3 }}
-                className="p-5 sm:p-6 rounded-2xl border border-gray-100 hover:shadow-sm transition-all relative overflow-hidden"
+                key={m.year}
+                whileHover={{ y: -5 }}
+                className="p-6 bg-white rounded-2xl border shadow-sm"
               >
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-red to-brand-orange rounded-l-2xl" />
-                <span className="font-geist font-bold text-2xl sm:text-3xl text-brand-red/20">{year}</span>
-                <h4 className="font-geist font-semibold text-sm sm:text-base text-brand-black mt-1 mb-1.5">{title}</h4>
-                <p className="font-geist text-xs sm:text-sm text-gray-500 leading-relaxed">{desc}</p>
+                <span className="text-brand-red font-bold text-2xl">{m.year}</span>
+                <h4 className="font-semibold mt-2">{m.title}</h4>
+                <p className="text-sm text-gray-500 mt-1">{m.desc}</p>
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
-        {/* What We Believe */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-14 sm:mb-20"
-        >
-          <div className="text-center mb-8 sm:mb-10">
-            <span className="inline-block px-3 py-1 rounded-full bg-brand-black/5 border border-brand-black/10 text-brand-black text-xs font-medium mb-3">OUR VALUES</span>
-            <h2 className="font-geist font-semibold text-2xl sm:text-3xl text-brand-black">What we believe in</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
+        {/* VALUES */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-semibold text-center mb-10">Our Values</h2>
+
+          <div className="grid md:grid-cols-3 gap-6">
             {[
-              {
-                icon: Zap,
-                title: 'Simplicity over complexity',
-                desc: 'Great software gets adopted when it requires zero training. If your field team can use WhatsApp, they can use our tools.',
-              },
-              {
-                icon: Shield,
-                title: 'Data security is non-negotiable',
-                desc: 'End-to-end encryption, secured cloud infrastructure, and strict access controls. Your business data is our prime concern.',
-              },
-              {
-                icon: Smartphone,
-                title: 'Mobile-first, always',
-                desc: 'Your sales team is in the field, not at a desk. Every feature we build starts with the mobile experience.',
-              },
-              {
-                icon: Users,
-                title: 'Support that doesn\'t disappear',
-                desc: 'From deployment to daily operations, our team is with you. We measure success by your adoption rate, not just the sale.',
-              },
-              {
-                icon: Target,
-                title: 'Integration, not replacement',
-                desc: 'Your Tally or SAP works. We don\'t ask you to replace it — we build new software that connects to it and extends its capabilities.',
-              },
-              {
-                icon: Eye,
-                title: 'Transparency drives trust',
-                desc: 'Real-time tracking, automated reports, and complete visibility across every level of your sales and distribution network.',
-              },
-            ].map(({ icon: Icon, title, desc }, i) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                whileHover={{ y: -3 }}
-                className="p-5 sm:p-6 rounded-2xl border border-gray-100 hover:shadow-sm transition-all"
-              >
-                <Icon className="w-5 h-5 text-brand-orange mb-2 sm:mb-3" />
-                <h4 className="font-geist font-semibold text-sm text-brand-black mb-1.5">{title}</h4>
-                <p className="font-geist text-xs text-gray-500 leading-relaxed">{desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Integration Illustration */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-12 sm:mb-16"
-        >
-          <IntegrationIllustration className="w-full max-w-[280px] sm:max-w-[350px] h-auto" />
-        </motion.div>
-
-        {/* Industries */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-brand-black rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-14 mb-14 sm:mb-20 relative overflow-hidden"
-        >
-          <h2 className="font-geist font-semibold text-xl sm:text-2xl text-white mb-2 sm:mb-3">Industries we serve</h2>
-          <p className="text-white/50 text-xs sm:text-sm mb-6 sm:mb-8 max-w-lg">
-            Our solutions are deployed across 150+ businesses in diverse manufacturing and distribution verticals.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3">
-            {[
-              { name: 'Manufacturing', clients: '45+' },
-              { name: 'FMCG', clients: '30+' },
-              { name: 'Pharmaceuticals', clients: '25+' },
-              { name: 'Surgical Equipment', clients: '12+' },
-              { name: 'Stationery', clients: '15+' },
-              { name: 'Pipes & Fittings', clients: '10+' },
-              { name: 'Food & Snacks', clients: '18+' },
-              { name: 'Electronics', clients: '20+' },
-              { name: 'Auto Components', clients: '8+' },
-              { name: 'Textiles', clients: '6+' },
-              { name: 'Building Materials', clients: '7+' },
-              { name: 'Agri Products', clients: '5+' },
-            ].map(({ name, clients }) => (
-              <div key={name} className="px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
-                <span className="text-xs sm:text-sm text-white/60">{name}</span>
-                <span className="text-[9px] sm:text-[10px] text-brand-orange font-bold">{clients}</span>
+              { icon: Zap, title: 'Simplicity', desc: 'Software should be easy enough for anyone to use instantly.' },
+              { icon: Shield, title: 'Security', desc: 'We ensure enterprise-grade data protection.' },
+              { icon: Smartphone, title: 'Mobile-first', desc: 'Built for field teams and real-world usage.' },
+              { icon: Users, title: 'Support', desc: 'We stay with clients beyond deployment.' },
+              { icon: Target, title: 'Integration-first', desc: 'We enhance your systems, not replace them.' },
+              { icon: Eye, title: 'Transparency', desc: 'Clear data visibility across all levels.' },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="p-6 rounded-2xl bg-white border shadow-sm">
+                <Icon className="text-brand-orange mb-3" />
+                <h4 className="font-semibold">{title}</h4>
+                <p className="text-sm text-gray-500">{desc}</p>
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
+
+        {/* ILLUSTRATION */}
+        <div className="flex justify-center mb-20">
+          <IntegrationIllustration className="w-[320px]" />
+        </div>
+
+        {/* INDUSTRIES */}
+        <div className="bg-brand-black rounded-3xl p-10 mb-20 text-white">
+          <h2 className="text-2xl font-semibold mb-4">Industries We Serve</h2>
+          <p className="text-white/60 mb-6">
+            Serving diverse industries with scalable solutions.
+          </p>
+
+          <div className="grid md:grid-cols-4 gap-3">
+            {[
+              'Manufacturing', 'FMCG', 'Pharma', 'Electronics',
+              'Textiles', 'Auto Parts', 'Food', 'Agri'
+            ].map((i) => (
+              <div key={i} className="bg-white/10 px-4 py-3 rounded-xl text-sm">
+                {i}
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="max-w-[200px] mx-auto mb-4 sm:mb-6">
-            <BrandSwoosh />
-          </div>
-          <h2 className="font-geist font-semibold text-xl sm:text-2xl text-brand-black mb-2 sm:mb-3">
-            Want to work with us?
+        <div className="text-center">
+          <BrandSwoosh className="mx-auto mb-6" />
+
+          <h2 className="text-2xl font-semibold mb-3">
+            Ready to Transform Your Business?
           </h2>
-          <p className="text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6 max-w-md mx-auto">
-            Whether you're a manufacturer with 10 salespeople or a distributor with 500 —
-            we'll build and integrate the right solution for you.
+
+          <p className="text-gray-500 mb-6">
+            Let’s build something powerful together.
           </p>
-          <Link to="/contact"
-            className="inline-flex items-center gap-2 bg-brand-black text-white font-geist font-medium px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-[inset_-4px_-6px_25px_0px_rgba(201,201,201,0.08),inset_4px_4px_10px_0px_rgba(29,29,29,0.24)] hover:bg-black active:scale-95 transition-all group text-sm sm:text-base">
+
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-brand-black text-white px-8 py-4 rounded-full hover:bg-black transition"
+          >
             Contact Sales
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            <ArrowRight className="w-4 h-4" />
           </Link>
-        </motion.div>
+        </div>
+
       </div>
     </div>
   );

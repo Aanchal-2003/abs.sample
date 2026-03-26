@@ -21,7 +21,7 @@ const Contact = () => {
           className="text-center mb-10 sm:mb-16"
         >
           <span className="inline-block px-3 py-1 rounded-full bg-brand-orange/5 border border-brand-orange/10 text-brand-orange text-xs font-medium mb-4">CONTACT SALES</span>
-          
+
           <h1 className="font-geist font-semibold text-3xl sm:text-4xl md:text-5xl text-brand-black tracking-tight mb-3 sm:mb-4">
             Let's discuss your requirements
           </h1>
@@ -63,9 +63,9 @@ const Contact = () => {
               <h3 className="font-geist font-semibold text-base sm:text-lg text-brand-black mb-4 sm:mb-6">Get in touch</h3>
               <div className="space-y-4 sm:space-y-6">
                 {[
-                  { icon: Mail, label: 'Email', value: 'sales@absinfotech.com', color: 'bg-brand-red/10 text-brand-red' },
-                  { icon: Phone, label: 'Sales', value: '+91 98765 43210', color: 'bg-brand-orange/10 text-brand-orange' },
-                  { icon: MapPin, label: 'Office', value: 'Ahmedabad, Gujarat, India', color: 'bg-brand-yellow/10 text-brand-yellow' },
+                  { icon: Mail, label: 'Email', value: 'support@abstechnologies.co.in', color: 'bg-brand-red/10 text-brand-red' },
+                  { icon: Phone, label: 'Sales', value: '+91 7578000559', color: 'bg-brand-orange/10 text-brand-orange' },
+                  { icon: MapPin, label: 'Office', value: 'Guwahati, Assam 781008', color: 'bg-brand-yellow/10 text-brand-yellow' },
                   { icon: Clock, label: 'Hours', value: 'Mon–Sat, 9 AM – 7 PM IST', color: 'bg-gray-100 text-gray-500' },
                 ].map(({ icon: Icon, label, value, color }) => (
                   <div key={label} className="flex items-start gap-3 sm:gap-4">
