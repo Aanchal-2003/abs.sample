@@ -1,10 +1,13 @@
-import { Database, Server, Code, Wrench, Cloud, Layers } from "lucide-react";
+import { CheckCircle, Link2, Code, Wrench, Server, Smartphone } from "lucide-react";
 
 export const services = [
   {
     title: "Tally Solutions",
-    desc: "Customized Tally ERP for accounting, GST, and business operations.",
-    image: "https://fahosur.com/wp-content/uploads/2024/06/Tally.png",
+    desc: "Authorized TallyPrime licensing with expert setup, GST compliance, and full ERP customization.",
+    icon: CheckCircle,
+    iconColor: "text-tally-teal",
+    iconBg: "bg-tally-teal/10",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
     slug: "tally-solutions",
     details: [
       "Tally ERP Customization",
@@ -15,12 +18,15 @@ export const services = [
     ]
   },
   {
-    title: "SAP Integration",
-    desc: "Seamless SAP ERP integration to streamline enterprise operations.",
-    image: "https://images.computerwoche.de/bdb/3390403/original.jpg?quality=50&strip=all",
-    slug: "sap-integration",
+    title: "Tally Integration",
+    desc: "Seamless Tally API integration with eCommerce, ERP, and payment platforms.",
+    icon: Link2,
+    iconColor: "text-tally-blue",
+    iconBg: "bg-tally-blue/10",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80",
+    slug: "tally-integration",
     details: [
-      "SAP ERP Integration",
+      "Bi-directional Tally Sync",
       "Real-Time Data Sync",
       "API Development",
       "Custom Reporting Dashboard",
@@ -29,8 +35,11 @@ export const services = [
   },
   {
     title: "TDL Development",
-    desc: "Tailored TDL development to extend Tally functionality.",
-    image: "https://t3.ftcdn.net/jpg/03/27/16/44/360_F_327164449_X3ssTyImz7NEf22VDtqgwSq7kxe0CVba.jpg",
+    desc: "Tailored TDL scripts to extend and customize Tally functionality for your exact workflows.",
+    icon: Code,
+    iconColor: "text-tally-teal",
+    iconBg: "bg-tally-teal/10",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80",
     slug: "tdl-development",
     details: [
       "Custom Reports & Invoices",
@@ -42,8 +51,11 @@ export const services = [
   },
   {
     title: "Annual Maintenance",
-    desc: "Proactive maintenance to keep your software running smoothly.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEkIT52Fcx3ONAiWYonMq2RYg5kyoVIb5xiw&s",
+    desc: "Priority AMC support with TSS renewals, data repair, and 24/7 remote assistance.",
+    icon: Wrench,
+    iconColor: "text-tally-blue",
+    iconBg: "bg-tally-blue/10",
+    image: "https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=900&q=80",
     slug: "annual-maintenance",
     details: [
       "System Health Checks",
@@ -55,8 +67,11 @@ export const services = [
   },
   {
     title: "Cloud Services",
-    desc: "Secure cloud hosting, backup, and scalable infrastructure.",
-    image: "https://t3.ftcdn.net/jpg/03/27/16/44/360_F_327164449_X3ssTyImz7NEf22VDtqgwSq7kxe0CVba.jpg",
+    desc: "Secure AWS/Azure cloud hosting for Tally with automated backups and 99.9% uptime SLA.",
+    icon: Server,
+    iconColor: "text-tally-teal",
+    iconBg: "bg-tally-teal/10",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=900&q=80",
     slug: "cloud-services",
     details: [
       "Cloud Hosting & Deployment",
@@ -67,15 +82,18 @@ export const services = [
     ]
   },
   {
-    title: "Web / App Development",
-    desc: "Custom websites and mobile apps with modern UX/UI and functionality.",
-    image: "https://miro.medium.com/v2/resize:fit:1400/1*j0gjLpN1aaHuRowTKgr6yQ.jpeg",
-    slug: "web-app-development",
+    title: "Tally Mobile Solutions",
+    desc: "Custom mobile apps with real-time Tally data syncing for field sales and operations.",
+    icon: Smartphone,
+    iconColor: "text-tally-blue",
+    iconBg: "bg-tally-blue/10",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+    slug: "tally-mobile",
     details: [
-      "Website Development",
+      "Sales Force Automation (SFA)",
       "iOS & Android Mobile Apps",
-      "Admin Panel & CMS",
-      "E-Commerce Platform Development",
+      "Real-time Tally API Sync",
+      "Field Force Tracking",
       "UX/UI Design & Optimization"
     ]
   }

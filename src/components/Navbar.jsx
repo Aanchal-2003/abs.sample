@@ -61,8 +61,8 @@ const Navbar = () => {
           {/* LOGO */}
           <Link to="/" className="flex items-center gap-2">
             <motion.img
-              src="log.png"
-              alt="ABS Infotech"
+              src="/log.png"
+              alt="ABS Technologies"
               className={`transition-all duration-500 ${scrolled ? "h-16" : "h-14"}`}
               whileHover={{ scale: 1.05 }}
             />
@@ -83,14 +83,14 @@ const Navbar = () => {
                   >
                     <Link
                       to={link.path}
-                      className={`relative text-sm font-medium transition ${isActive ? "text-red-500" : "text-gray-700 hover:text-red-500"
+                      className={`relative text-sm font-medium transition ${isActive ? "text-tally-blue" : "text-gray-700 hover:text-tally-blue"
                         }`}
                     >
                       {link.name}
                       {isActive && (
                         <motion.div
                           layoutId="underline"
-                          className="absolute -bottom-1 left-0 right-0 h-[2px] bg-red-500 rounded-full"
+                          className="absolute -bottom-1 left-0 right-0 h-[2px] bg-tally-yellow rounded-full"
                         />
                       )}
                     </Link>
@@ -109,7 +109,7 @@ const Navbar = () => {
                             <Link
                               key={service.name}
                               to={service.path}
-                              className="block text-gray-800 font-medium text-sm rounded-lg p-2 hover:bg-red-50 hover:text-red-600 transition-all duration-200 text-center"
+                              className="block text-gray-800 font-medium text-sm rounded-lg p-2 hover:bg-tally-teal/5 hover:text-tally-teal transition-all duration-200 text-center"
                             >
                               {service.name}
                             </Link>
@@ -128,14 +128,14 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`relative text-sm font-medium transition ${isActive ? "text-red-500" : "text-gray-700 hover:text-red-500"
+                  className={`relative text-sm font-medium transition ${isActive ? "text-tally-blue" : "text-gray-700 hover:text-tally-blue"
                     }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.div
                       layoutId="underline"
-                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-red-500 rounded-full"
+                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-tally-yellow rounded-full"
                     />
                   )}
                 </Link>
@@ -147,7 +147,7 @@ const Navbar = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="hidden md:block">
             <Link
               to="/contact"
-              className="flex items-center gap-2 bg-red-500 text-white px-5 py-2.5 rounded-full shadow-md hover:shadow-red-300 transition"
+              className="flex items-center gap-2 bg-tally-yellow text-tally-blue px-5 py-2.5 rounded-full shadow-md hover:bg-[#e5a000] transition font-bold"
             >
               Get Demo <ArrowRight size={16} />
             </Link>
@@ -194,7 +194,7 @@ const Navbar = () => {
                           key={service.name}
                           to={service.path}
                           onClick={() => setMobileOpen(false)}
-                          className="block text-gray-700 pl-4 py-2 rounded-lg hover:bg-red-50 hover:text-red-600 transition-all"
+                          className="block text-gray-700 pl-4 py-2 rounded-lg hover:bg-tally-teal/5 hover:text-tally-teal transition-all"
                         >
                           {service.name}
                         </Link>
@@ -217,7 +217,7 @@ const Navbar = () => {
 
               <Link
                 to="/contact"
-                className="mt-6 bg-red-500 text-white py-3 rounded-full"
+                className="mt-6 bg-tally-yellow text-tally-blue py-3 rounded-full font-bold shadow-md"
               >
                 Request Demo
               </Link>

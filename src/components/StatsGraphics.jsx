@@ -143,7 +143,7 @@ const StatsGraphics = () => {
           className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-14 border border-gray-100 shadow-sm"
         >
           <h2 className="font-geist font-semibold text-xl sm:text-2xl text-brand-black mb-2 sm:mb-3 text-center">
-            How ABS Infotech Transforms Your Workflow
+            How ABS Technologies Transforms Your Workflow
           </h2>
           <p className="font-geist text-xs sm:text-sm text-gray-500 text-center mb-8 sm:mb-12 max-w-xl mx-auto">
             From legacy data extraction to modern mobile delivery — see how our integration engine

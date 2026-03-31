@@ -1,24 +1,23 @@
 export const serviceSections = {
     "tally-solutions": [
         {
-            section: "Integration",
-            icon: "🔗",
-            image: "https://www.spectracompunet.com/img/blog/blog_1716547865.png",
+            section: "Tally Integration",
+            icon: "🔌",
+            image: "https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/login-popup-prime.jpg",
             items: [
-                "NewTally API Integration",
+                "Tally API Integration",
                 "Quickbook Tally Integration",
                 "Excel to Tally Import Utility",
                 "eCommerce Integration",
                 "Integration with Magento",
-                "Integration with php, Java & asp.net",
                 "Payment Gateway Integration",
-                "CRM Integration"
+                "CRM Integration with Tally"
             ]
         },
         {
-            section: "Customization",
-            icon: "🎨",
-            image: "https://www.antraweb.com/img/tally-customisation.jpg",
+            section: "Tally Customization (TDL)",
+            icon: "⚙️",
+            image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
             items: [
                 "Invoice Customization",
                 "Voucher Formats Customizations",
@@ -28,199 +27,114 @@ export const serviceSections = {
             ]
         },
         {
-            section: "Business / Vertical Solutions",
-            icon: "🏢",
-            image: "https://www.itcatalystindia.com/images/infographics/vertical-solutions.png",
-            items: [
-                "GST Compliance & Filing",
-                "TallyPrime Solution Boosters",
-                "Barcode and Label Printing",
-                "Supply Chain Visibility",
-                "Item Name Creator",
-                "Serial Number Management",
-                "Rack Wise Bin Wise Stock Management",
-                "KIT Items Sales",
-                "Quality Control (QC)",
-                "Sales Activity Management (SAM)",
-                "Currency Forward Booking Contract",
-                "Multi-location Inventory Management",
-                "Branch-wise Accounting"
-            ]
-        },
-        {
             section: "Tally Add-Ons / Modules",
-            icon: "🧩",
-            image: "https://5.imimg.com/data5/SELLER/Default/2024/1/378198876/KD/VF/PB/3166681/accounting-management-software-services-500x500.jpg",
+            icon: "📦",
+            image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
             items: [
                 "Smart Backup++",
-                "Digitally Signed Invoice",
+                "Digitally Signed Invoice (DSC)",
                 "Multi File Attachment",
-                "SMS Module",
-                "GST Reminder",
-                "One Click Outstanding",
+                "GST Auto Reminder",
                 "Multiple Branch Management",
-                "Sheet Magic – Excel based report Writer",
                 "Audit Trail with Voucher History",
                 "Advance Transaction Level Security",
-                "Payroll Module",
-                "Cost Center Management",
                 "Bank Reconciliation Automation"
             ]
         }
     ],
 
-    "sap-integration": [
+    "tally-integration": [
         {
-            section: "SAP Modules",
+            section: "Bi-Directional Syncing",
             icon: "🖥️",
-            image: "https://www.hco.com/hs-fs/hubfs/SAP%20B1%20modules%20(1).webp?width=800&height=450&name=SAP%20B1%20modules%20(1).webp",
+            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
             items: [
-                "End-to-End SAP ERP Integration",
-                "Real-Time Data Sync",
-                "Custom API Development",
-                "Workflow Automation",
-                "Reporting Dashboard",
-                "Finance & Accounting Module Integration",
-                "HR & Payroll Module Integration",
-                "Inventory & Supply Chain Automation"
+                "End-to-End Tally API Sync",
+                "Real-Time Data Extraction",
+                "Custom Webhooks Development",
+                "Workflow Automation connected to Tally"
             ]
         },
         {
-            section: "Data Migration & Validation",
+            section: "Data Migration",
             icon: "📊",
-            image: "https://datalark.com/hs-fs/hubfs/1.png?width=2400&height=962&name=1.png",
+            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
             items: [
-                "Legacy Data Migration",
-                "Data Cleansing & Validation",
-                "Custom Data Mapping",
+                "Legacy ERP to Tally Migration",
+                "Master Data Cleansing",
+                "Custom Data Field Mapping",
                 "Error Handling & Reporting"
-            ]
-        },
-        {
-            section: "Analytics & Reporting",
-            icon: "📈",
-            image: "https://www.slideteam.net/media/catalog/product/cache/1280x720/s/a/sap_analytics_cloud_dashboard_for_financial_reporting_strategic_business_planning_slide01.jpg",
-            items: [
-                "Custom KPIs & Dashboards",
-                "Real-Time Reports",
-                "Executive Summary Reports",
-                "Automation of Monthly Reports"
             ]
         }
     ],
 
     "tdl-development": [
         {
-            section: "TDL Customization",
+            section: "Strategic TDL Scripts",
             icon: "⚙️",
-            image: "https://5.imimg.com/data5/SELLER/Default/2025/5/508452143/RQ/ZA/JP/139697728/tally-customization-tdl.jpg",
+            image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
             items: [
-                "Custom Report Generation",
-                "Invoice & Voucher Design",
-                "Automated Workflow Scripts",
+                "Custom Report Filter Generation",
+                "Transport & E-Way Bill Modules",
+                "Automated Discount Workflows",
                 "Advanced Business Logic Implementation",
-                "Plugin & Module Development",
-                "User-specific Dashboards",
-                "Custom Alerts & Notifications"
-            ]
-        },
-        {
-            section: "Integration & Automation",
-            icon: "🤖",
-            image: "https://fastinflow.com/wp-content/uploads/2022/08/81.png",
-            items: [
-                "ERP Data Integration",
-                "Workflow Automation",
-                "Excel & API Connectivity",
-                "Custom Event Triggers"
+                "User-level Godown Security Filters"
             ]
         }
     ],
 
     "annual-maintenance": [
         {
-            section: "Maintenance Services",
+            section: "Tally Support Services",
             icon: "🛠️",
-            image: "https://5.imimg.com/data5/SELLER/Default/2024/7/438300161/OU/CL/XI/4396510/annual-maintenance-contract-services.jpg",
+            image: "https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=800&q=80",
             items: [
-                "Routine System Health Checks",
-                "Bug Fixing & Issue Resolution",
+                "TSS (Tally Software Services) Renewal",
+                "Data Corruption Repair & Splitting",
                 "Performance Optimization",
-                "24/7 Technical Support",
-                "Software Updates & Upgrades",
-                "Server Monitoring & Backup",
-                "Security Audits",
-                "Patch Management"
+                "24/7 Remote Desktop Support",
+                "Tally Updates & Upgrades",
+                "Multi-user Access Audits"
             ]
         }
     ],
 
     "cloud-services": [
         {
-            section: "Cloud Management",
+            section: "Tally on Cloud",
             icon: "☁️",
-            image: "https://www.oneas1a.com/wp-content/uploads/2023/10/Cloud-management-services.jpg",
+            image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80",
             items: [
-                "Cloud Hosting & Deployment",
-                "Data Backup & Recovery",
-                "Security Monitoring",
-                "Scalable Infrastructure",
-                "Disaster Recovery Planning",
-                "High Availability Architecture",
-                "Load Balancing & Auto-Scaling",
-                "Private & Hybrid Cloud Setup"
-            ]
-        },
-        {
-            section: "Support & Compliance",
-            icon: "🔒",
-            image: "https://deemsoft.com/wp-content/uploads/2025/03/cloud-compliance.jpg",
-            items: [
-                "Cloud Security Compliance",
-                "24/7 Cloud Support",
-                "Monitoring & Alerting Setup",
-                "Performance Optimization"
+                "Tally Virtual User (TVU) Setup",
+                "AWS/Azure Private Cloud Hosting",
+                "Automated Remote Data Backup",
+                "Mac & Windows Cross-platform Access",
+                "Tally Server 9 Deployments"
             ]
         }
     ],
 
-    "web-app-development": [
+    "tally-mobile": [
         {
-            section: "Web & App Development",
-            icon: "🌐",
-            image: "https://www.metasyssoftware.com/wp-content/uploads/2023/07/Web-app-development-2.jpg",
+            section: "Mobile Field Sales (SFA)",
+            icon: "📱",
+            image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
             items: [
-                "Website Development",
-                "iOS & Android Mobile Apps",
-                "Admin Panel & CMS",
-                "E-Commerce Platform Development",
-                "UX/UI Design & Optimization",
-                "Progressive Web Apps (PWA)",
-                "Third-party API Integration",
-                "Payment Gateway Integration"
+                "Sales Order to Tally Sync Offline/Online",
+                "Live Receipt Collection & Entry",
+                "Stock Availability Checking from App",
+                "Outstanding Tracking on Mobile",
+                "Beat Routing & GPS Tracking"
             ]
         },
         {
-            section: "Testing & Deployment",
-            icon: "🧪",
-            image: "https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/2021/2021-08/continuous-testing-methodologies.png?sfvrsn=2133421f_2",
+            section: "Reports on the Go",
+            icon: "📈",
+            image: "https://images.unsplash.com/photo-1596526131083-e8c633564a6f?auto=format&fit=crop&w=800&q=80",
             items: [
-                "Unit & Integration Testing",
-                "User Acceptance Testing (UAT)",
-                "Performance & Load Testing",
-                "Continuous Deployment",
-                "Version Control & Backup"
-            ]
-        },
-        {
-            section: "Maintenance & Support",
-            icon: "⚡",
-            image: "https://zibtek-ghost-blog.sfo3.cdn.digitaloceanspaces.com/2021/05/Application-Maintenance-Services.jpg",
-            items: [
-                "Bug Fixes & Updates",
-                "Feature Enhancements",
-                "Security Patches",
-                "Monitoring & Analytics Setup"
+                "Business Dashboard for Directors",
+                "Item/Ledger View via Web Browser",
+                "Instant MIS Reports on Mobile"
             ]
         }
     ]

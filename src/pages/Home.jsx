@@ -1,684 +1,290 @@
 import Hero from '../Hero';
-
-import { motion, useMotionValue, useTransform, animate } from 'motion/react';
-import { ArrowRight, CheckCircle, Users, BarChart3, Zap, Shield, Smartphone, Globe, Building2, Factory, Package, PlayCircle, TrendingUp, ShieldCheck, PhoneCall } from 'lucide-react';
+import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { DashboardIllustration, MobileAppIllustration, BrandSwoosh } from '../components/Illustrations';
-import { useEffect, useRef, useState } from 'react';
-import {
-  Database,
-  Cloud,
-  Wrench,
-  Code,
-  Server,
-  Layers
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, BadgeCheck, Clock4, Cpu, Zap, Quote, Star } from 'lucide-react';
 import { services } from '../data/services';
 
-const Counter = ({ from = 0, to, duration = 2, suffix = '', prefix = '' }) => {
-  const ref = useRef(null);
-  const motionVal = useMotionValue(from);
-  const rounded = useTransform(motionVal, (v) => `${prefix}${Math.round(v)}${suffix}`);
-  useEffect(() => {
-    const controls = animate(motionVal, to, { duration, ease: 'easeOut' });
-    return controls.stop;
-  }, [motionVal, to, duration]);
-  useEffect(() => {
-    const unsub = rounded.on('change', (v) => { if (ref.current) ref.current.textContent = v; });
-    return unsub;
-  }, [rounded]);
-  return <span ref={ref}>{`${prefix}${from}${suffix}`}</span>;
-};
-
-// const services = [
-//   {
-//     title: "Tally Solutions",
-//     desc: "Complete Tally customization, integration, and support for accounting and business operations.",
-//     icon: Database,
-//     slug: "tally-solutions",
-//     details: [
-//       "Tally Customization",
-//       "GST Setup & Filing",
-//       "Data Migration",
-//       "Remote Access",
-//       "Tally Integration"
-//     ]
-//   },
-//   {
-//     title: "SAP Integration",
-//     desc: "Seamless SAP integration with your business processes.",
-//     icon: Server,
-//     details: [
-//       "SAP ERP Integration",
-//       "Real-time Sync",
-//       "API Integration",
-//       "Reporting Dashboard"
-//     ]
-//   },
-//   {
-//     title: "TDL Development",
-//     desc: "Custom TDL development to extend Tally functionality.",
-//     icon: Code,
-//     details: [
-//       "Custom Reports",
-//       "Invoice Design",
-//       "Automation",
-//       "Advanced Logic"
-//     ]
-//   },
-//   {
-//     title: "Annual Maintenance",
-//     desc: "Reliable AMC services for smooth operations.",
-//     icon: Wrench,
-//     details: [
-//       "System Maintenance",
-//       "Bug Fixing",
-//       "Performance Optimization",
-//       "24/7 Support"
-//     ]
-//   },
-//   {
-//     title: "Cloud Services",
-//     desc: "Secure cloud hosting and infrastructure management.",
-//     icon: Cloud,
-//     details: [
-//       "Cloud Hosting",
-//       "Data Backup",
-//       "Security Monitoring",
-//       "Scalable Servers"
-//     ]
-//   },
-//   {
-//     title: "Web / App Development",
-//     desc: "Custom web & mobile solutions.",
-//     icon: Layers,
-//     details: [
-//       "Website Development",
-//       "Mobile Apps",
-//       "Admin Panels",
-//       "E-commerce Solutions"
-//     ]
-//   }
-// ];
-
-
-
 const Home = () => {
-  // const [selectedService, setSelectedService] = useState(null);
-  const [selectedStory, setSelectedStory] = useState(null);
+  const previewServices = services.slice(0, 2);
 
-  const stories = [
+  const highlights = [
+    { icon: BadgeCheck, label: 'Certified 5-Star Tally Partner' },
+    { icon: Clock4,     label: '24/7 AMC & TSS Support' },
+    { icon: Cpu,        label: '500+ Custom TDLs Delivered' },
+    { icon: Zap,        label: 'Fast Cloud Deployment on AWS' },
+  ];
+
+  const testimonials = [
     {
-      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-      title: "FMCG Distributor",
-      result: "200% Increase in Sales",
-      desc: "Implemented Sales Force Automation and real-time tracking, helping the client double their sales within 6 months.",
-      tag: "SFA + Tally Integration",
-      details: "Full details about how SFA + Tally Integration helped the client achieve a 200% sales increase..."
+      name: "Rahul Sharma",
+      role: "Director of Operations",
+      company: "Sunrise Garments",
+      quote: "Implementing TallyPrime with ABS Technologies revolutionized our multi-location data sync. We saved 20+ hours weekly on auditing and data validation.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      impact: "70% Faster Audits"
     },
     {
-      img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80",
-      title: "Manufacturing Company",
-      result: "3x Team Productivity",
-      desc: "Integrated SAP with mobile apps for field teams, improving coordination and reducing manual work.",
-      tag: "SAP + Mobile App",
-      details: "Full details about SAP integration and mobile app that boosted team productivity threefold..."
+      name: "Anshul Gupta",
+      role: "CFO",
+      company: "LogiTech Solutions",
+      quote: "The custom TDL development for our complex inventory management was flawless. Highly recommended for any business with unique GST compliance needs.",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+      impact: "Zero Compliance Errors"
     },
     {
-      img: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80",
-      title: "Retail Chain",
-      result: "60% Faster Operations",
-      desc: "Built a centralized system connecting distributors and inventory, reducing order processing time drastically.",
-      tag: "ERP + Cloud",
-      details: "Full details about the ERP + Cloud solution that made operations 60% faster..."
+      name: "Meera Das",
+      role: "Founder",
+      company: "Organics India",
+      quote: "Migrating to Tally on Cloud gave us the accessibility we needed for our hybrid team. 100% uptime and zero data worries ever since.",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+      impact: "100% Remote Access"
     }
   ];
 
-  const whyUs = [
-    { icon: Shield, title: 'Enterprise Security', desc: 'End-to-end encryption with cloud-first architecture. SOC2-aligned practices protect your business data at every level.', stat: '99.9%', statLabel: 'Uptime' },
-    { icon: Smartphone, title: 'Mobile First Design', desc: 'Native Android & iOS apps built for field teams. Works offline, syncs when connected — no training needed.', stat: '10K+', statLabel: 'Daily Users' },
-    { icon: Zap, title: 'Quick Implementation', desc: 'Go live in days, not months. Pre-built connectors and zero-training UI means your team starts working from day one.', stat: '7', statLabel: 'Days Avg Setup' },
-    { icon: Users, title: 'Dedicated Support', desc: 'From deployment to daily operations — our team handles everything. Measured by your adoption rate, not just the sale.', stat: '24/7', statLabel: 'Support' },
-    { icon: BarChart3, title: 'Real-Time Analytics', desc: 'Live dashboards with automated reports. Track field teams, orders, inventory, and performance — all in real-time.', stat: '50+', statLabel: 'Report Types' },
-    { icon: Globe, title: 'Legacy Integration', desc: 'We connect your new software with Tally, SAP, Zoho — real-time bi-directional sync without replacing what already works.', stat: '<24ms', statLabel: 'Sync Speed' },
-  ];
-
-  const industries = [
-    { name: 'Manufacturing', icon: Factory, clients: '45+' },
-    { name: 'FMCG', icon: Package, clients: '30+' },
-    { name: 'Pharmaceuticals', icon: Shield, clients: '25+' },
-    { name: 'Stationery', icon: Building2, clients: '15+' },
-    { name: 'Surgical Equipment', icon: Zap, clients: '12+' },
-    { name: 'Pipes & Fittings', icon: Building2, clients: '10+' },
-    { name: 'Food & Snacks', icon: Package, clients: '18+' },
-    { name: 'Electronics', icon: Smartphone, clients: '20+' },
-  ];
-
-  const caseStudies = [
-    {
-      company: 'Khyati Stationery',
-      industry: 'Stationery Manufacturing',
-      result: 'Scaled from a single retail outlet to a nationwide distribution network using our SFA + DMS suite integrated with Tally.',
-      metric: '3x',
-      metricLabel: 'Distribution Growth',
-      modules: ['SFA', 'DMS', 'Tally'],
-    },
-    {
-      company: 'Nebula Surgical',
-      industry: 'Surgical Products',
-      result: 'Streamlined ordering across 200+ locations in India — reducing order processing time and eliminating manual entry errors.',
-      metric: '60%',
-      metricLabel: 'Faster Processing',
-      modules: ['CRM', 'SFA', 'SAP'],
-    },
-    {
-      company: 'Actionware India',
-      industry: 'Consumer Products',
-      result: 'Full distributor management system deployed across 500+ dealers with real-time Tally integration and automated reporting.',
-      metric: '40%',
-      metricLabel: 'Cost Reduction',
-      modules: ['DMS', 'Tally', 'Analytics'],
-    },
-  ];
-
-  const aboutHighlights = [
-    { title: 'Consultative Approach', value: 'Discovery-led planning aligned to your goals and sales processes.' },
-    { title: 'Implementation Excellence', value: 'Structured rollouts, role-based onboarding, and measurable adoption milestones.' },
-    { title: 'Long-Term Partnership', value: 'Dedicated support, continuous optimization, and roadmap-led enhancements.' },
-  ];
-
   return (
-    <div className="min-h-screen bg-white font-geist">
-
+    <div className="font-system bg-white">
       {/* HERO */}
-      <section className="py-24 bg-gradient-to-r from-white via-gray-50 to-gray-100 relative overflow-hidden">
+      <Hero />
 
-        {/* BACKGROUND BLUR EFFECT */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-brand-red/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl"></div>
+      {/* ── SERVICES SPLIT SECTION ── */}
+      <section className="py-24 bg-gray-50 border-t border-gray-100 overflow-hidden">
+        <div className="max-w-[1240px] mx-auto px-6">
 
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
-
-          {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-
-            {/* BADGE */}
-            <span className="inline-block px-4 py-1 mb-4 text-xs font-medium text-brand-red bg-brand-red/10 rounded-full">
-              Trusted by 150+ Businesses
+          {/* Heading */}
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <span className="inline-block py-1 px-3 rounded text-xs font-bold tracking-wider text-tally-teal bg-tally-teal/10 uppercase mb-4">
+              Our Services
             </span>
-
-            {/* HEADING */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-brand-black leading-tight">
-              Build{" "}
-              <span className="text-brand-red">Smart Digital Solutions</span>{" "}
-              for Your Business
-            </h1>
-
-            {/* SUBTEXT */}
-            <p className="mt-5 text-gray-500 text-lg max-w-xl">
-              ABS Technologies helps you streamline operations with scalable web, mobile,
-              and enterprise solutions integrated with Tally, SAP, and Zoho.
+            <h2 className="text-3xl md:text-4xl font-bold text-tally-blue tracking-tight mb-4">
+              Everything Your Business Needs <br className="hidden sm:block" /> Around Tally
+            </h2>
+            <p className="text-gray-500 text-lg">
+              As a certified 5-Star Tally Partner, we provide end-to-end services to fully digitize your accounting and operations.
             </p>
-
-            {/* BUTTONS */}
-            <div className="mt-8 flex flex-wrap gap-4">
-
-              <button className="bg-brand-red text-white px-6 py-3 rounded-full flex items-center gap-2 hover:shadow-lg transition">
-                Get Free Demo <ArrowRight size={18} />
-              </button>
-
-              <button className="flex items-center gap-2 border px-6 py-3 rounded-full hover:bg-gray-100 transition">
-                <PlayCircle size={18} /> Watch Demo
-              </button>
-
-            </div>
-
-            {/* MINI STATS */}
-            <div className="mt-8 flex gap-6 text-sm text-gray-500">
-              <span><b className="text-black">150+</b> Clients</span>
-              <span><b className="text-black">500+</b> Integrations</span>
-              <span><b className="text-black">12+</b> Years</span>
-            </div>
-
-          </motion.div>
-
-          {/* RIGHT IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-
-            <img
-              src="https://ifda.in/blog/img/accounting.jpeg"
-              className="w-full rounded-2xl shadow-2xl"
-            />
-
-            {/* FLOATING CARD */}
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border text-sm">
-              <p className="text-gray-400 text-xs">Live Orders</p>
-              <p className="font-bold text-lg text-brand-black">+247 Today</p>
-            </div>
-
-            {/* FLOATING CARD 2 */}
-            <div className="absolute -top-6 -right-6 bg-brand-red text-white p-3 rounded-xl shadow-lg text-xs">
-              98% Client Retention
-            </div>
-
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* CERTIFICATIONS / TRUST BADGES */}
-      <section className="py-6 bg-white border-b">
-        <div className="max-w-[1100px] mx-auto px-6 text-center">
-
-          {/* HEADING */}
-          <p className="text-sm uppercase tracking-wide text-gray-400 mb-3">
-            Certifications & Partnerships
-          </p>
-
-          <h3 className="text-xl sm:text-2xl font-semibold text-brand-black mb-10">
-            Trusted & Certified by Industry Standards
-          </h3>
-
-          {/* LOGOS GRID */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-
-            {/* CARD */}
-            <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex items-center justify-center">
-              <img
-                src="https://www.circuitworld.in/images/brandimages/tally-certified-partner-5-star-sales-and-solution.png"
-                alt="Tally Certified Partner"
-                className="h-12 object-contain"
-              />
-            </div>
-
-            <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex items-center justify-center">
-              <img
-                src="https://www.circuitworld.in/images/brandimages/tally-prime-logo.png"
-                alt="Tally Prime"
-                className="h-10 object-contain"
-              />
-            </div>
-
-            <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300 flex items-center justify-center">
-              <img
-                src="https://www.circuitworld.in/images/brandimages/tally-education-logo.png"
-                alt="Tally Education"
-                className="h-10 object-contain"
-              />
-            </div>
-
           </div>
 
-          {/* FOOT NOTE */}
-          <p className="mt-8 text-sm text-gray-500">
-            Delivering trusted Tally solutions with certified expertise across India
-          </p>
+          {/* Split */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
 
-        </div>
-      </section>
-
-      {/* TRUST */}
-      <section className="py-10 bg-white border-b">
-        <div className="max-w-[1200px] mx-auto px-6">
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-
-            {[
-              { value: "150+", label: "Clients Served" },
-              { value: "500+", label: "Integrations Delivered" },
-              { value: "12+", label: "Years Experience" },
-              { value: "98%", label: "Client Retention" }
-            ].map((item, i) => (
-              <div key={i} className="group">
-
-                <h3 className="text-2xl sm:text-3xl font-bold text-brand-black group-hover:text-brand-red transition">
-                  {item.value}
-                </h3>
-
-                <p className="text-gray-500 text-sm mt-1">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-[1200px] mx-auto px-6">
-
-          <h2 className="text-3xl font-semibold text-center mb-4">
-            Our Core Services
-          </h2>
-
-          <p className="text-center text-gray-500 mb-10 max-w-2xl mx-auto">
-            ABS Infotech provides end-to-end business solutions including ERP integration,
-            cloud services, and custom software development to help you scale efficiently.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((s, i) => {
-              const Icon = s.icon;
-
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10, scale: 1.04 }}
-                  className="p-6 bg-white rounded-2xl shadow-md hover:shadow-2xl transition"
-                >
-                  <img
-                    src={s.image}
-                    alt={s.title}
-                    className="h-10 rounded-full object-contain mb-4"
-                  />
-
-                  <h3 className="font-semibold text-lg mb-2">{s.title}</h3>
-
-                  <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
-
-                  <Link
-                    to={`/services/${s.slug}`}
-                    className="mt-4 text-sm text-white bg-brand-red px-4 py-2 rounded-lg hover:bg-red-700 transition inline-block text-center"
-                  >
-                    View Details
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* SERVICE DETAIL MODAL */}
-        {/* {selectedService && (
-          <section className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 px-4">
+            {/* ── LEFT: Tally Prime Style Card ── */}
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-xl"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative bg-white rounded-[2rem] shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row lg:flex-col"
             >
-              <button
-                onClick={() => setSelectedService(null)}
-                className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 font-bold text-lg"
-              >
-                ✕
-              </button>
-              <h2 className="text-2xl font-semibold mb-4">{selectedService.title}</h2>
-              <p className="text-gray-600 mb-4">{selectedService.desc}</p>
-              <ul className="list-disc list-inside text-gray-500 space-y-2">
-                {selectedService.details.map((d, i) => (
-                  <li key={i}>{d}</li>
-                ))}
-              </ul>
+              {/* Illustration Side */}
+              <div className="bg-[#f0f9ff] p-8 flex flex-col items-center justify-center relative md:w-1/2 lg:w-full min-h-[300px]">
+                <div className="absolute top-8 left-8 text-left z-10">
+                  <img src="https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/tally-logo-black.svg" className="h-6 mb-1 opacity-80" alt="Tally" />
+                  <p className="text-3xl font-bold text-tally-blue flex items-center gap-1">Prime <span className="text-sm font-medium opacity-60">7.0</span></p>
+                </div>
+                
+                <div className="relative z-10 text-center mt-12 mb-8">
+                   <h3 className="text-[40px] font-bold text-tally-blue leading-tight mb-4 font-system">Thoughtfully <br/> <span className="text-tally-teal">built</span></h3>
+                </div>
+                
+                {/* Decorative Elements */}
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-tally-teal/5 rounded-full blur-2xl" />
+                <div className="absolute top-1/2 right-0 w-24 h-24 bg-tally-yellow/5 rounded-full blur-2xl" />
+              </div>
+
+              {/* Content Side */}
+              <div className="p-8 md:w-1/2 lg:w-full bg-white">
+                <p className="text-gray-500 text-sm mb-6 leading-relaxed">
+                  ABS Technologies brings you the next generation of business management. 
+                  Experience a software that is as intuitive as it is powerful.
+                </p>
+
+                <ul className="grid grid-cols-1 gap-4 mb-8">
+                  {[
+                    { label: 'TallyDrive for Secure Cloud Backup', icon: Zap },
+                    { label: 'Connected Payments with PrimeBanking', icon: BadgeCheck },
+                    { label: 'Instant Discovery with SmartFind', icon: Cpu },
+                    { label: 'Automated Invoice-to-Payment Flow', icon: Clock4 }
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 group">
+                      <div className="w-6 h-6 rounded-md bg-tally-blue/5 flex items-center justify-center group-hover:bg-tally-blue transition-colors">
+                        <item.icon className="text-tally-blue group-hover:text-white transition-colors" size={12} />
+                      </div>
+                      <span className="text-gray-700 text-xs font-semibold">{item.label}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  to="/contact"
+                  className="flex items-center justify-center gap-2 w-full py-4 rounded-xl font-bold text-tally-blue bg-tally-yellow hover:bg-[#e5a000] transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-tally-yellow/20"
+                >
+                  Learn how to Upgrade <ArrowRight size={18} />
+                </Link>
+              </div>
             </motion.div>
-          </section>
-        )} */}
+
+            {/* ── RIGHT: 2 Cards + Explore More ── */}
+            <div className="flex flex-col gap-5">
+              {previewServices.map((service, i) => {
+                const Icon = service.icon;
+                return (
+                  <motion.div
+                    key={service.slug}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.12 }}
+                    className="group bg-white p-7 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-tally-teal/25 transition-all duration-300"
+                  >
+                    {/* Icon */}
+                    <div className={`w-12 h-12 ${service.iconBg} rounded-xl flex items-center justify-center mb-5 group-hover:bg-tally-teal transition-colors`}>
+                      <Icon className={`${service.iconColor} group-hover:text-white transition-colors`} size={22} />
+                    </div>
+
+                    <h3 className="text-xl font-bold text-tally-blue mb-2">{service.title}</h3>
+                    <p className="text-gray-500 mb-5 text-sm leading-relaxed">{service.desc}</p>
+
+                    {/* Feature pills */}
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {service.details.slice(0, 3).map((d, j) => (
+                        <span key={j} className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-600 font-medium border border-gray-200">
+                          {d}
+                        </span>
+                      ))}
+                    </div>
+
+                    <Link
+                      to={`/services/${service.slug}`}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-tally-teal group-hover:gap-3 transition-all"
+                    >
+                      Learn more <ArrowRight size={15} />
+                    </Link>
+                  </motion.div>
+                );
+              })}
+
+              {/* Explore More card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.25 }}
+                className="bg-tally-blue rounded-2xl p-7 text-white flex flex-col sm:flex-row items-center justify-between gap-5"
+              >
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-wider text-tally-yellow mb-1">And more…</p>
+                  <p className="text-lg font-bold">TDL Development, Cloud Services, Mobile Apps & more</p>
+                  <p className="text-white/60 text-sm mt-1">6 specialized Tally services, all under one roof.</p>
+                </div>
+                <Link
+                  to="/services"
+                  className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-tally-yellow text-tally-blue font-bold hover:bg-[#e5a000] transition-colors duration-300 shadow-md whitespace-nowrap"
+                >
+                  Explore All <ArrowUpRight size={18} />
+                </Link>
+              </motion.div>
+            </div>
+
+          </div>
+        </div>
       </section>
 
+      {/* ── TRUST STRIP ── */}
+      <section className="py-16 bg-tally-blue relative">
+        <div className="absolute inset-0 opacity-5 bg-[url('https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/tally-logo-white.svg')] bg-[length:400px_auto] bg-center bg-no-repeat" />
+        <div className="max-w-[1240px] mx-auto px-6 relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/10 text-center">
+          {[
+            { metric: '150+', label: 'Happy Clients' },
+            { metric: '12+',  label: 'Years Experience' },
+            { metric: '500+', label: 'TDLs Developed' },
+            { metric: '24/7', label: 'TSS & AMC Support' },
+          ].map((item, i) => (
+            <div key={i} className="text-white">
+              <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-tally-yellow">{item.metric}</h3>
+              <p className="text-sm uppercase tracking-wider font-semibold opacity-70">{item.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* SUCCESS STORIES */}
-      <section className="py-16 bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
-            Real Success Stories from Our Clients
-          </h2>
-
-          <p className="text-gray-500 max-w-2xl mx-auto mb-10">
-            See how ABS Infotech helps businesses improve efficiency, increase revenue,
-            and streamline operations through smart digital solutions.
-          </p>
+      {/* ── TESTIMONIALS SECTION ── */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="max-w-[1240px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block py-1 px-3 rounded text-xs font-bold tracking-wider text-tally-teal bg-tally-teal/10 uppercase mb-4">
+              Success Stories
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-tally-blue tracking-tight mb-4">
+              Trusted by 150+ Enterprises Across India
+            </h2>
+            <p className="text-gray-500 text-lg">
+              Hear from the leaders who transformed their business with ABS Technologies.
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {stories.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -12 }}
-                className="group bg-white rounded-2xl shadow-md hover:shadow-2xl overflow-hidden transition duration-300 text-left"
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={item.img}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-medium">
-                    {item.tag}
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-2 text-brand-red">
-                    <TrendingUp size={18} />
-                    <span className="font-bold text-lg">{item.result}</span>
-                  </div>
-
-                  <h3 className="font-semibold text-lg text-brand-black mb-2">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-gray-500 text-sm mb-4 leading-relaxed">
-                    {item.desc}
-                  </p>
-
-                  <button
-                    onClick={() => setSelectedStory(item)}
-                    className="flex items-center gap-2 text-sm font-medium text-brand-red hover:text-black transition"
-                  >
-                    Read Full Story <ArrowRight size={16} />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* TESTIMONIALS */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-[1000px] mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-10">
-            What Our Clients Say
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[1, 2].map((i) => (
+            {testimonials.map((t, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
                 viewport={{ once: true }}
-                className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl"
+                transition={{ delay: i * 0.1 }}
+                className="relative bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-tally-teal/20 transition-all duration-300"
               >
-                <img
-                  src={`https://randomuser.me/api/portraits/${i === 1 ? "men/32" : "women/44"}.jpg`}
-                  className="w-12 h-12 rounded-full mx-auto mb-3"
-                />
-                <p>"Amazing service and smooth integration process."</p>
-                <h4 className="mt-4 font-semibold">Client Name</h4>
+                <Quote className="absolute top-6 right-8 text-tally-teal/10" size={48} />
+                
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, j) => (
+                    <Star key={j} className="text-tally-yellow fill-tally-yellow" size={14} />
+                  ))}
+                </div>
+
+                <p className="text-gray-600 text-sm leading-relaxed mb-8 italic">
+                  "{t.quote}"
+                </p>
+
+                <div className="flex items-center gap-4 mt-auto">
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-tally-blue/10">
+                    <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                  </div>
+                  <div>
+                    <h4 className="text-tally-blue font-bold text-sm">{t.name}</h4>
+                    <p className="text-xs text-gray-400 font-medium">{t.role}, {t.company}</p>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-6 border-t border-gray-50 flex items-center justify-between">
+                   <span className="text-[10px] uppercase tracking-widest font-bold text-tally-teal bg-tally-teal/5 px-2 py-1 rounded">
+                     Verified Impact
+                   </span>
+                   <span className="text-xs font-bold text-tally-blue">{t.impact}</span>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
-
-      <section className="py-16 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
-          {/* IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="relative"
+      {/* ── AMC SECTION ── */}
+      <section className="py-24 bg-gray-50 text-center border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="inline-block py-1 px-3 rounded text-xs font-bold tracking-wider text-tally-teal bg-tally-teal/10 uppercase mb-6">
+            Tally AMC
+          </span>
+          <h2 className="text-3xl md:text-[40px] font-bold text-tally-blue tracking-tight mb-6">
+            Ensure Uninterrupted Operations with <br /> Priority Tally AMC
+          </h2>
+          <p className="text-gray-500 text-lg mb-10 max-w-2xl mx-auto">
+            Keep your business software updated, secure, and fully compliant. Our comprehensive Annual Maintenance ensures your data is never at risk and tax filings are completely effortless.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white bg-tally-blue hover:bg-[#1a4a75] transition-all duration-300 shadow-md"
           >
-            <img
-              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80"
-              className="rounded-2xl shadow-2xl"
-            />
-
-            {/* FLOATING CARD */}
-            <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg border">
-              <p className="text-xs text-gray-400">Experience</p>
-              <p className="font-bold text-lg text-brand-black">12+ Years</p>
-            </div>
-          </motion.div>
-
-          {/* CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-
-            {/* TAG */}
-            <span className="inline-block px-4 py-1 mb-4 text-xs font-medium text-brand-red bg-brand-red/10 rounded-full">
-              About ABS Infotech
-            </span>
-
-            {/* HEADING */}
-            <h2 className="text-3xl sm:text-4xl font-semibold mb-4 text-brand-black">
-              Your Trusted Technology Partner for Digital Transformation
-            </h2>
-
-            {/* DESCRIPTION */}
-            <p className="text-gray-500 mb-4 leading-relaxed">
-              ABS Infotech specializes in delivering scalable and reliable digital solutions
-              for manufacturing, distribution, and enterprise businesses. We help companies
-              modernize their operations by integrating advanced software with existing systems
-              like Tally, SAP, and Zoho.
-            </p>
-
-            <p className="text-gray-500 mb-6 leading-relaxed">
-              From custom software development to ERP integration and cloud services, our
-              solutions are designed to improve efficiency, visibility, and business growth.
-            </p>
-
-            {/* FEATURES */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-
-              <div className="flex items-start gap-3">
-                <Users className="text-brand-red mt-1" size={20} />
-                <div>
-                  <h4 className="font-semibold text-sm">150+ Clients</h4>
-                  <p className="text-gray-500 text-xs">Across India</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Zap className="text-brand-red mt-1" size={20} />
-                <div>
-                  <h4 className="font-semibold text-sm">Fast Implementation</h4>
-                  <p className="text-gray-500 text-xs">Quick deployment & onboarding</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <ShieldCheck className="text-brand-red mt-1" size={20} />
-                <div>
-                  <h4 className="font-semibold text-sm">Secure Systems</h4>
-                  <p className="text-gray-500 text-xs">Enterprise-grade security</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <CheckCircle className="text-brand-red mt-1" size={20} />
-                <div>
-                  <h4 className="font-semibold text-sm">Reliable Support</h4>
-                  <p className="text-gray-500 text-xs">Dedicated AMC & support team</p>
-                </div>
-              </div>
-
-            </div>
-
-            {/* CTA */}
-            <button className="bg-brand-red text-white px-6 py-3 rounded-full hover:shadow-lg transition">
-              Learn More About Us
-            </button>
-
-          </motion.div>
-
+            Renew TSS or Book AMC <ArrowRight size={18} />
+          </Link>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="py-16 bg-gradient-to-r from-white via-gray-50 to-gray-100 relative overflow-hidden">
-
-        {/* SOFT BACKGROUND GLOW */}
-        <div className="absolute top-0 left-0 w-72 h-72 bg-brand-red/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-200/20 rounded-full blur-3xl"></div>
-
-        <div className="max-w-[900px] mx-auto px-6 text-center relative z-10">
-
-          {/* CARD CONTAINER */}
-          <div className="bg-white border border-gray-100 rounded-3xl px-6 sm:px-10 py-12 shadow-xl">
-
-            {/* TAG */}
-            <span className="inline-block px-4 py-1 mb-4 text-xs font-medium text-brand-red bg-brand-red/10 rounded-full">
-              Let’s Work Together
-            </span>
-
-            {/* HEADING */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4 leading-tight text-brand-black">
-              Ready to Transform Your Business Digitally?
-            </h2>
-
-            {/* SUBTEXT */}
-            <p className="text-gray-500 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Partner with ABS Infotech to build scalable solutions integrated with
-              Tally, SAP, and cloud technologies — helping you streamline operations
-              and accelerate growth.
-            </p>
-
-            {/* BUTTONS */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
-              <button className="bg-brand-red text-white px-8 py-4 rounded-full flex items-center justify-center gap-2 shadow-md hover:shadow-xl hover:scale-105 transition">
-                Request Free Demo <ArrowRight size={18} />
-              </button>
-
-              <button className="border border-gray-300 px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-gray-100 transition">
-                <PhoneCall size={18} /> Talk to Expert
-              </button>
-
-            </div>
-
-            {/* TRUST LINE */}
-            <p className="text-xs text-gray-400 mt-6">
-              ✔ Free Consultation • ✔ No Commitment • ✔ Quick Response
-            </p>
-
-          </div>
-
-        </div>
-      </section>
-
-
     </div>
   );
 };
