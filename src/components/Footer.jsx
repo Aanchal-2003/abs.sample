@@ -1,101 +1,70 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import absLogo from '../assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
-    Solutions: [
-      { name: 'Sales Force Automation', path: '/services#sfa' },
-      { name: 'CRM & Lead Management', path: '/services#crm' },
-      { name: 'Distributor Management', path: '/services#dms' },
-      { name: 'ERP Integration', path: '/services#erp' },
+    Services: [
+      { name: 'TallyPrime Solutions', path: '/services/tally-solutions' },
+      { name: 'Tally Integration', path: '/services/tally-integration' },
+      { name: 'TDL Development', path: '/services/tdl-development' },
+      { name: 'AMC & TSS Support', path: '/services/annual-maintenance' },
+      { name: 'Tally on Cloud', path: '/services/cloud-services' },
+      { name: 'Mobile & Web Apps', path: '/services/tally-mobile' },
     ],
     Company: [
       { name: 'About Us', path: '/about' },
-      { name: 'Solutions', path: '/services' },
-      { name: 'Impact & Stats', path: '/stats' },
-      { name: 'Contact Sales', path: '/contact' }
-      
-    ],
-    Integrations: [
-      { name: 'TallyPrime', path: '/services#tally' },
-      { name: 'TallyServer', path: '/services#tally' },
-      { name: 'TDL Add-ons', path: '/services#tally' },
-      { name: 'Custom APIs', path: '/services#api' },
+      { name: 'All Services', path: '/services' },
+      { name: 'Contact', path: '/contact' },
     ],
   };
+
   return (
-    <footer className="bg-tally-blue text-white/80 font-system relative overflow-hidden">
+    <footer className="bg-brand-black text-white/80 font-system">
+      <div className="max-w-[1200px] mx-auto px-6 pt-10 pb-6">
 
-      {/* BACKGROUND GLOW */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-white/5 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-tally-teal/10 blur-3xl rounded-full"></div>
-
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 pt-8 pb-8 relative z-10">
-
-        {/* MAIN GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-6">
 
           {/* BRAND */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-2 rounded-xl inline-block mb-6 shadow-sm">
-              <img
-                src="/log.png"
-                className="h-10 w-auto"
-                alt="Logo"
-              />
+            <div className="bg-white p-1.5 rounded-lg inline-block mb-4">
+              <img src={absLogo} className="h-10 w-auto" alt="ABS Technologies" />
             </div>
 
-            <p className="text-sm text-white/40 leading-relaxed max-w-sm mb-6">
-              ABS Technologies delivers end-to-end Tally solutions, custom TDL add-ons,
-              and seamless business integrations to help companies scale smarter.
+            <p className="text-xs text-white/40 leading-relaxed max-w-sm mb-5">
+              ABS Technologies — your certified 5-Star Tally Partner for implementation, customization, AMC, and cloud solutions.
             </p>
 
-            {/* CONTACT */}
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-2 hover:text-white transition">
-                <Mail className="w-4 h-4 text-tally-yellow" />
-                <span>support@abstechnologies.co.in</span>
+            <div className="space-y-2 text-xs">
+              <div className="flex items-center gap-2 text-white/50">
+                <Mail className="w-3.5 h-3.5 text-brand-gold" />
+                support@abstechnologies.co.in
               </div>
-
-              <div className="flex items-center gap-2 hover:text-white transition">
-                <Phone className="w-4 h-4 text-tally-yellow" />
-                <span>+91 7578000559</span>
+              <div className="flex items-center gap-2 text-white/50">
+                <Phone className="w-3.5 h-3.5 text-brand-gold" />
+                +91 7578000559
               </div>
-
-              <div className="flex items-center gap-2 hover:text-white transition">
-                <MapPin className="w-4 h-4 text-tally-yellow" />
-                <span>Guwahati, Assam 781008</span>
+              <div className="flex items-center gap-2 text-white/50">
+                <MapPin className="w-3.5 h-3.5 text-brand-gold" />
+                Guwahati, Assam 781008
               </div>
-            </div>
-
-            {/* TECH TAGS */}
-            <div className="flex gap-2 mt-6 flex-wrap">
-              {['TallyPrime', 'TDL', 'Tally API'].map((t) => (
-                <span
-                  key={t}
-                  className="px-3 py-1 text-xs rounded-full bg-white/5 border border-white/10 hover:bg-tally-teal/20 transition"
-                >
-                  {t}
-                </span>
-              ))}
             </div>
           </div>
 
           {/* LINKS */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-white font-semibold text-sm mb-4 tracking-wide">
+              <h4 className="text-white font-semibold text-xs mb-3 uppercase tracking-wider">
                 {title}
               </h4>
-
-              <ul className="space-y-2">
+              <ul className="space-y-1.5">
                 {links.map((link) => (
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="text-sm text-white/40 hover:text-tally-yellow transition"
+                      className="text-xs text-white/40 hover:text-brand-gold transition"
                     >
                       {link.name}
                     </Link>
@@ -106,28 +75,17 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* DIVIDER */}
-        <div className="border-t border-white/10 my-4"></div>
-
-        {/* BOTTOM BAR */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-
-          <p className="text-white/30">
+        <div className="border-t border-white/10 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px]">
+          <p className="text-white/25">
             © {currentYear} ABS Technologies. All rights reserved.
           </p>
-
-          <div className="flex gap-6">
+          <div className="flex gap-4">
             {['Privacy Policy', 'Terms of Service'].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-white/30 hover:text-white transition"
-              >
+              <a key={item} href="#" className="text-white/25 hover:text-white/50 transition">
                 {item}
               </a>
             ))}
           </div>
-
         </div>
 
       </div>

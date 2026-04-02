@@ -1,123 +1,152 @@
-import { motion } from 'motion/react';
-import { ArrowRight, PlayCircle } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { ArrowRight, ShieldCheck, Zap, Star } from 'lucide-react';
+import { useRef, useEffect, useState, useMemo } from 'react';
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
+import HighlightText from './components/HighlightText';
 
 const Hero = () => {
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const particlesOptions = useMemo(() => ({
+    fullScreen: { enable: false, zIndex: 0 },
+    background: { color: { value: "transparent" } },
+    fpsLimit: 120,
+    interactivity: {
+      events: { onHover: { enable: true, mode: "repulse" } },
+      modes: { repulse: { distance: 80, duration: 0.4 } },
+    },
+    particles: {
+      color: { value: "#E31C25" },
+      links: { color: "#F7B516", distance: 150, enable: true, opacity: 0.2, width: 1 },
+      move: { direction: "none", enable: true, outModes: { default: "bounce" }, speed: 1 },
+      number: { density: { enable: true }, value: 35 },
+      opacity: { value: 0.4 },
+      shape: { type: "circle" },
+      size: { value: { min: 1, max: 2 } },
+    },
+    detectRetina: true,
+  }), []);
+
   const container = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
+    visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
   };
   const item = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 80, damping: 20 } },
   };
 
-  return (
-    <section className="relative min-h-screen w-full flex items-center bg-[#f8f9fa] overflow-hidden pt-[120px] lg:pt-[140px] pb-16">
-      
-      {/* Decorative Background Element to mimic Tally's clean corporate look */}
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-[#eef4ff] rounded-bl-[120px] -z-10 hidden lg:block" />
-      <div className="absolute top-20 right-10 w-96 h-96 bg-tally-teal/5 rounded-full blur-3xl -z-10" />
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"]});
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-12 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Content Area */}
-          <motion.div 
-            variants={container} 
-            initial="hidden" 
+  return (
+    <section ref={ref} className="relative min-h-[90vh] w-full flex items-center bg-[#fafafa] overflow-hidden pt-24 lg:pt-28 pb-12 snap-start">
+
+      {/* Backgrounds */}
+      <motion.div style={{ y: yBg }} className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-bl from-brand-red/5 to-transparent rounded-bl-[100px] -z-10 hidden lg:block" />
+      <div className="absolute top-0 right-1/4 w-72 h-72 bg-brand-red/5 rounded-full blur-[80px] -z-10" />
+      <div className="absolute bottom-10 left-10 w-52 h-52 bg-brand-gold/5 rounded-full blur-[60px] -z-10" />
+
+      {init && (
+         <Particles
+           id="tsparticles"
+           options={particlesOptions}
+           className="absolute inset-0 z-0 pointer-events-auto"
+         />
+      )}
+
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 w-full z-10 relative pointer-events-none mt-10 md:mt-16">
+        <motion.div style={{ opacity: opacityText }} className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+
+          {/* Left */}
+          <motion.div
+            variants={container}
+            initial="hidden"
             animate="visible"
-            className="flex flex-col items-start text-left max-w-2xl"
+            className="flex flex-col items-start text-left max-w-xl pointer-events-auto"
           >
+
+            {/* Official 5-Star Tally Partner Badge */}
             <motion.div variants={item} className="mb-6">
-              <span className="inline-block py-1 px-3 rounded text-xs font-semibold tracking-wider text-tally-teal bg-tally-teal/10 uppercase">
-                India's Leading Business Management Software
-              </span>
+              <div className="bg-white p-1 rounded-lg border border-gray-100 shadow-sm inline-block">
+                <img 
+                  src="https://www.circuitworld.in/images/brandimages/tally-certified-partner-5-star-sales-and-solution.png" 
+                  alt="Official Tally Certified 5-Star Partner"
+                  className="h-10 sm:h-12 w-auto object-contain"
+                />
+              </div>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               variants={item}
-              className="text-[40px] md:text-[56px] lg:text-[64px] font-bold leading-[1.15] text-tally-blue tracking-tight mb-6 font-system"
+              className="text-[36px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-brand-black tracking-tight mb-5"
             >
-              Powering the Growth of <br/>
-              <span className="text-tally-yellow">SMBs Nationwide</span>
+              Your Trusted Partner for {' '}
+              <HighlightText>Tally Solutions</HighlightText>
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               variants={item}
-              className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10 max-w-xl font-system"
+              className="text-base text-gray-500 leading-relaxed mb-8 max-w-lg font-medium"
             >
-              ABS Technologies brings you the complete Tally ecosystem. From expert TallyPrime implementations and custom TDL development to AMC, Cloud hosting, and seamless Web App integrations.
+              We help businesses implement TallyPrime, build custom modules, manage AMC renewals, and deploy cloud solutions — all under one roof.
             </motion.p>
 
-            <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <a 
+            <motion.div variants={item} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+              <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-white bg-tally-blue hover:bg-[#1a4a75] transition-colors duration-300 shadow-md"
+                className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-white bg-brand-red hover:bg-brand-red-dark transition-colors shadow-md text-sm"
               >
-                Request a Demo
-                <ArrowRight size={18} />
+                Request a Demo <ArrowRight size={16} />
               </a>
-              <a 
+              <a
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-semibold text-tally-blue bg-white border border-tally-blue hover:bg-gray-50 transition-colors duration-300 shadow-sm"
+                className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-brand-black bg-white border border-gray-200 hover:border-brand-red hover:text-brand-red transition-all text-sm"
               >
-                <PlayCircle size={18} className="text-tally-teal" />
-                Explore Services
+                Our Services
               </a>
             </motion.div>
 
-            {/* Quick Links */}
-            <motion.div variants={item} className="mt-12 flex items-center gap-6 text-sm text-gray-500 font-medium font-system">
-              <span className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-tally-teal"></div>
-                Custom TDLs
-              </span>
-              <span className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-tally-teal"></div>
-                Tally on Cloud
-              </span>
-              <span className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-tally-teal"></div>
-                AMC Support
-              </span>
+            <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-6 text-sm text-gray-500 font-medium">
+              <div className="flex items-center gap-2">
+                 <Star size={14} className="text-brand-gold fill-brand-gold" />
+                 150+ Clients
+              </div>
+              <div className="flex items-center gap-2">
+                 <Zap size={14} className="text-brand-red" />
+                 500+ Custom TDLs
+              </div>
             </motion.div>
-
           </motion.div>
 
-          {/* Right Image Area */}
-          <motion.div 
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3, type: 'spring' }}
-            className="relative lg:h-[550px] flex items-center justify-center mt-10 lg:mt-0"
+          {/* Right: Dashboard Image Cropped */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative flex items-center justify-center lg:justify-end mt-8 lg:mt-0 pointer-events-auto"
           >
-            <div className="relative w-full max-w-[550px] max-h-[60vh] lg:max-h-[550px] rounded-2xl overflow-hidden shadow-2xl border border-gray-100 bg-white flex items-center justify-center">
-               {/* Tally UI inspired graphic */}
-               <img 
-                 src="https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/login-popup-prime.jpg" 
-                 alt="Tally Dashboard"
-                 className="w-auto h-auto max-h-[60vh] lg:max-h-[550px] object-contain"
+            <div className="relative w-full max-w-[360px] lg:max-w-[420px] aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-gray-200">
+               <img
+                 src="https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/login-popup-prime.jpg"
+                 alt="TallyPrime Dashboard"
+                 className="absolute inset-0 w-full h-full object-cover object-left"
                />
-               <div className="absolute inset-0 bg-gradient-to-tr from-tally-blue/10 to-transparent pointer-events-none"></div>
             </div>
-
-            {/* Floating Element */}
-            <motion.div 
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-gray-100 flex items-center gap-4"
-            >
-              <div className="w-12 h-12 rounded-full bg-tally-teal/10 flex items-center justify-center">
-                 <img src="https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/tally-logo-black.svg" className="w-8 opacity-70" />
-              </div>
-              <div>
-                <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">Certified Partner</p>
-                <p className="text-sm font-semibold text-tally-blue">5-Star Tally Partner</p>
-              </div>
-            </motion.div>
           </motion.div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );
