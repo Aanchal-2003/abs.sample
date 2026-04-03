@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { services } from '../data/services';
 import { serviceSections } from '../data/serviceSections';
+import { slugify } from '../data/subServiceDetails';
 import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'motion/react';
 import { CheckCircle, ArrowRight, PhoneCall, ChevronRight } from 'lucide-react';
@@ -26,21 +27,11 @@ const FocusGrid = ({ children, cols = "lg:grid-cols-3" }) => {
   );
 };
 
-/* ---- CONFIG ---- */
-const serviceConfig = {
-  "tally-solutions": { heroImg: "https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/login-popup-prime.jpg", badge: "Core Tally", emoji: "🏦", keyFeatures: ["TallyPrime Licensing","GST Setup & Compliance","Multi-user Installation","Data Migration","Invoice Customization","Remote Access Setup"] },
-  "tally-integration": { heroImg: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80", badge: "API Integration", emoji: "🔗", keyFeatures: ["Bi-directional Tally Sync","eCommerce Integration","Real-Time Data Extraction","ERP to Tally Migration","Custom Webhooks","Payment Gateway"] },
-  "tdl-development": { heroImg: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80", badge: "TDL Custom", emoji: "⚙️", keyFeatures: ["Custom Reports & Dashboards","Invoice Format Control","User-Level Security","Automated Workflows","E-Way Bill Modules","Advanced Business Logic"] },
-  "annual-maintenance": { heroImg: "https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=600&q=80", badge: "AMC & TSS", emoji: "🛠️", keyFeatures: ["TSS Renewal","Data Corruption Repair","24/7 Remote Support","Version Upgrades","Access Audits","Performance Tuning"] },
-  "cloud-services": { heroImg: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80", badge: "Tally Cloud", emoji: "☁️", keyFeatures: ["TVU Setup","AWS/Azure Hosting","Daily Remote Backup","Cross-Platform Access","TallyServer Deployment","99.9% Uptime SLA"] },
-  "tally-mobile": { heroImg: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80", badge: "Mobile & Web", emoji: "📱", keyFeatures: ["Sales Force Automation","Offline + Online Sync","Live Stock Reports","B2B Order Portal","Director Dashboard","GPS Tracking"] }
-};
 
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = services.find(s => s.slug === slug);
   const sections = serviceSections[slug] || [];
-  const config = serviceConfig[slug] || serviceConfig["tally-solutions"];
 
   if (!service) return (
     <div className="min-h-screen flex items-center justify-center font-system">
@@ -51,6 +42,9 @@ const ServiceDetail = () => {
       </div>
     </div>
   );
+
+  const keyFeatures = service.keyFeatures || [];
+  const heroImage = service.heroImage || service.image;
 
   return (
     <div className="min-h-screen bg-[#fafafa] font-system relative overflow-hidden">
@@ -71,6 +65,7 @@ const ServiceDetail = () => {
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
+
               <h1 className="text-3xl md:text-4xl font-bold text-brand-black leading-tight mb-4 tracking-tight">
                 <HighlightText>{service.title}</HighlightText>
               </h1>
@@ -93,8 +88,8 @@ const ServiceDetail = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md">
-                <img src={config.heroImg} alt={service.title} className="w-full h-auto object-cover max-h-72" />
+              <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-gray-50 flex items-center justify-center h-72">
+                <img src={heroImage} alt={service.title} className="w-full h-full object-contain" />
               </div>
             </motion.div>
           </div>
@@ -110,7 +105,7 @@ const ServiceDetail = () => {
           </div>
 
           <FocusGrid>
-            {config.keyFeatures.map((f, i) => (
+            {keyFeatures.map((f, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 15 }}
@@ -126,6 +121,75 @@ const ServiceDetail = () => {
           </FocusGrid>
         </div>
       </section>
+
+      {/* ── SUB-SERVICES ── */}
+      {service.subServices && service.subServices.length > 0 && (
+        <section className="py-16 relative z-10 snap-start" style={{ background: 'linear-gradient(to bottom, #ffffff 0%, #fff4f3 80px, #fff4f3 calc(100% - 80px), #ffffff 100%)' }}>
+          <div className="max-w-[1200px] mx-auto px-6">
+
+            {/* Header */}
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-10">
+              <div>
+
+                <h2 className="text-2xl md:text-3xl font-bold text-brand-black leading-tight">Explore Sub-Services</h2>
+              </div>
+              <p className="text-gray-400 text-xs max-w-[260px] leading-relaxed">
+                Click any card to view full details, features &amp; capabilities.
+              </p>
+            </div>
+
+            {/* Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {service.subServices.map((sub, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link
+                    to={`/services/${slug}/${slugify(sub.name)}`}
+                    className="group flex flex-col h-full rounded-xl border border-gray-100 bg-[#fafafa] hover:bg-white hover:shadow-md transition-all duration-300 p-5 relative overflow-hidden"
+                  >
+                    {/* Animated left red accent bar */}
+                    <div
+                      className="absolute left-0 top-0 bottom-0 w-[3px] bg-brand-red origin-top transition-transform duration-300"
+                      style={{ transform: 'scaleY(0)' }}
+                      onMouseEnter={e => e.currentTarget.style.transform = 'scaleY(1)'}
+                    />
+                    <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-brand-red origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300 rounded-r-sm" />
+
+
+
+                    {/* Title + arrow */}
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h3 className="text-sm font-bold text-brand-black group-hover:text-brand-red transition-colors leading-snug">
+                        {sub.name}
+                      </h3>
+                      <div className="w-6 h-6 rounded-full bg-brand-red/8 group-hover:bg-brand-red flex items-center justify-center flex-shrink-0 transition-all duration-300 mt-0.5">
+                        <ArrowRight size={10} className="text-brand-red group-hover:text-white transition-colors" />
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xs text-gray-400 leading-relaxed font-medium flex-grow">
+                      {sub.desc}
+                    </p>
+
+                    {/* Bottom reveal */}
+                    <div className="mt-4 pt-3 border-t border-gray-100">
+                      <span className="text-[10px] font-bold text-brand-red uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        View Details →
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── DETAILED SECTIONS (FOCUS GRID) ── */}
       {sections.length > 0 && (

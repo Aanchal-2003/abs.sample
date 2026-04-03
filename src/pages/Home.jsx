@@ -67,7 +67,7 @@ const Home = () => {
       role: "Director of Operations",
       company: "Sunrise Garments",
       quote: "TallyPrime implementation by ABS simplified our multi-branch accounting. We saved 20+ hours weekly.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul",
       impact: "70% Faster Audits"
     },
     {
@@ -75,7 +75,7 @@ const Home = () => {
       role: "CFO",
       company: "LogiTech Solutions",
       quote: "Custom TDL development for our inventory was flawless. Highly recommended for GST compliance.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Anshul",
       impact: "Zero Errors"
     },
     {
@@ -83,7 +83,7 @@ const Home = () => {
       role: "Founder",
       company: "Organics India",
       quote: "Tally on Cloud gave our remote team full access. 100% uptime since day one.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80",
+      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=Meera",
       impact: "100% Access"
     }
   ];

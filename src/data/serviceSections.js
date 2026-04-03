@@ -17,7 +17,7 @@ export const serviceSections = {
         {
             section: "Tally Customization (TDL)",
             icon: "⚙️",
-            image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+            image: "https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/real-time-personalised-reports-for-smarter-decisions.webp",
             items: [
                 "Invoice Customization",
                 "Voucher Formats Customizations",
@@ -29,7 +29,7 @@ export const serviceSections = {
         {
             section: "Tally Add-Ons / Modules",
             icon: "📦",
-            image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80",
+            image: "https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/tallyprime-4.0-digital-signature.webp",
             items: [
                 "Smart Backup++",
                 "Digitally Signed Invoice (DSC)",
@@ -47,7 +47,7 @@ export const serviceSections = {
         {
             section: "Bi-Directional Syncing",
             icon: "🖥️",
-            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80",
+            image: "/images/rebrand/integration_api_drawing.png",
             items: [
                 "End-to-End Tally API Sync",
                 "Real-Time Data Extraction",
@@ -58,7 +58,7 @@ export const serviceSections = {
         {
             section: "Data Migration",
             icon: "📊",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+            image: "/images/rebrand/integration_excel_drawing.png",
             items: [
                 "Legacy ERP to Tally Migration",
                 "Master Data Cleansing",
@@ -72,7 +72,7 @@ export const serviceSections = {
         {
             section: "Strategic TDL Scripts",
             icon: "⚙️",
-            image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+            image: "https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/inventory-management-software.webp",
             items: [
                 "Custom Report Filter Generation",
                 "Transport & E-Way Bill Modules",
@@ -87,7 +87,7 @@ export const serviceSections = {
         {
             section: "Tally Support Services",
             icon: "🛠️",
-            image: "https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=800&q=80",
+            image: "/images/rebrand/tally_maintenance_drawing.png",
             items: [
                 "TSS (Tally Software Services) Renewal",
                 "Data Corruption Repair & Splitting",
@@ -103,7 +103,7 @@ export const serviceSections = {
         {
             section: "Tally on Cloud",
             icon: "☁️",
-            image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80",
+            image: "/images/rebrand/tally_cloud_drawing.png",
             items: [
                 "Tally Virtual User (TVU) Setup",
                 "AWS/Azure Private Cloud Hosting",
@@ -118,7 +118,7 @@ export const serviceSections = {
         {
             section: "Mobile Field Sales (SFA)",
             icon: "📱",
-            image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
+            image: "https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/field-sales-management-software.webp",
             items: [
                 "Sales Order to Tally Sync Offline/Online",
                 "Live Receipt Collection & Entry",
@@ -130,7 +130,7 @@ export const serviceSections = {
         {
             section: "Reports on the Go",
             icon: "📈",
-            image: "https://images.unsplash.com/photo-1596526131083-e8c633564a6f?auto=format&fit=crop&w=800&q=80",
+            image: "https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/business-reports-on-the-go.webp",
             items: [
                 "Business Dashboard for Directors",
                 "Item/Ledger View via Web Browser",
