@@ -8,12 +8,10 @@ import Contact from './pages/Contact';
 import ServiceDetail from './pages/ServiceDetail';
 import SubServiceDetail from './pages/SubServiceDetail';
 import { Routes, Route } from 'react-router-dom';
-import CustomCursor from './components/CustomCursor';
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen">
-      <CustomCursor />
       <Navbar />
       <main className="flex-1">
         <Routes>

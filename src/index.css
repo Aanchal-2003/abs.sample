@@ -49,11 +49,6 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (pointer: fine) {
-  body, *, html *, [class], a, button, input, textarea, select {
-    cursor: none !important;
-  }
-}
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
