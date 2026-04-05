@@ -4,7 +4,7 @@ import HighlightText from '../components/HighlightText';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-[#fafafa] pt-24 pb-16 font-system relative overflow-hidden">
+    <div className="min-h-screen bg-transparent pt-24 pb-16 font-system relative overflow-hidden">
       
       {/* Decorative Blobs */}
       <div className="blob w-96 h-96 bg-brand-red/5 top-[-10%] right-[-5%]" />

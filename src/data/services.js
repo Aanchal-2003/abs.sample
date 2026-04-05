@@ -1,4 +1,10 @@
 import { CheckCircle, Link2, Code, Wrench, Server, Smartphone } from "lucide-react";
+import implementationImg from "../assets/illustrations/implementation.png";
+import integrationImg from "../assets/illustrations/integration.png";
+import customizationImg from "../assets/illustrations/customization.png";
+import cloudImg from "../assets/illustrations/cloud.png";
+import maintenanceImg from "../assets/illustrations/maintenance.png";
+import mobileImg from "../assets/illustrations/mobile.png";
 
 export const services = [
   {
@@ -10,8 +16,9 @@ export const services = [
     icon: CheckCircle,
     iconColor: "text-brand-red",
     iconBg: "bg-brand-red/5",
-    image: "/images/rebrand/core_prime_drawing.png",
-    heroImage: "/images/rebrand/core_server_drawing.png",
+    image: implementationImg,
+    heroImage: implementationImg,
+    scene: "handshake",
     badge: "Core Tally Services",
     emoji: "🏦",
     details: [
@@ -65,8 +72,9 @@ export const services = [
     icon: Link2,
     iconColor: "text-brand-red",
     iconBg: "bg-brand-red/5",
-    image: "/images/rebrand/integration_api_drawing.png",
-    heroImage: "/images/rebrand/integration_developer_drawing.png",
+    image: integrationImg,
+    heroImage: integrationImg,
+    scene: "api-bridge",
     badge: "API & Data Integration",
     emoji: "🔗",
     details: [
@@ -122,8 +130,9 @@ export const services = [
     icon: Code,
     iconColor: "text-brand-red",
     iconBg: "bg-brand-red/5",
-    image: "/images/rebrand/integration_developer_drawing.png",
-    heroImage: "/images/rebrand/core_auditors_drawing.png",
+    image: customizationImg,
+    heroImage: customizationImg,
+    scene: "developer",
     badge: "TDL & Add-On Development",
     emoji: "⚙️",
     details: [
@@ -194,8 +203,9 @@ export const services = [
     icon: Wrench,
     iconColor: "text-brand-red",
     iconBg: "bg-brand-red/5",
-    image: "/images/rebrand/tally_maintenance_drawing.png",
-    heroImage: "/images/rebrand/tally_maintenance_drawing.png",
+    image: maintenanceImg,
+    heroImage: maintenanceImg,
+    scene: "support-desk",
     badge: "AMC & TSS Support",
     emoji: "🛠️",
     details: [
@@ -249,8 +259,9 @@ export const services = [
     icon: Server,
     iconColor: "text-brand-red",
     iconBg: "bg-brand-red/5",
-    image: "/images/rebrand/tally_cloud_drawing.png",
-    heroImage: "/images/rebrand/tally_cloud_drawing.png",
+    image: cloudImg,
+    heroImage: cloudImg,
+    scene: "cloud-server",
     badge: "Tally on Cloud",
     emoji: "☁️",
     details: [
@@ -303,8 +314,9 @@ export const services = [
     icon: Smartphone,
     iconColor: "text-brand-red",
     iconBg: "bg-brand-red/5",
-    image: "/images/rebrand/core_virtual_drawing.png",
-    heroImage: "/images/rebrand/core_virtual_drawing.png",
+    image: mobileImg,
+    heroImage: mobileImg,
+    scene: "mobile-charts",
     badge: "Mobile & Web Apps",
     emoji: "📱",
     details: [

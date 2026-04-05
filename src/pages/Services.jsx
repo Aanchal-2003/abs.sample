@@ -33,7 +33,7 @@ const FocusGrid = ({ children, cols = "lg:grid-cols-3" }) => {
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-[#fafafa] font-system relative overflow-hidden">
+    <div className="min-h-screen bg-transparent font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
       <section className="pt-24 pb-10 px-6 relative z-10 snap-start">

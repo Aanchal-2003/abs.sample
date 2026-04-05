@@ -75,7 +75,7 @@ const JourneyTimeline = ({ milestones }) => {
     <section className="mb-16 snap-start">
       <div className="text-center mb-10">
         <h2 className="text-2xl font-bold text-brand-black tracking-tight">
-          Our <HighlightText color="#F7B516">Journey</HighlightText>
+          Our <HighlightText color="#BDD5EA">Journey</HighlightText>
         </h2>
         <p className="text-gray-400 text-sm mt-2">Scroll down to follow our story</p>
       </div>
@@ -104,7 +104,7 @@ const JourneyTimeline = ({ milestones }) => {
           {/* Animated fill */}
           <motion.path
             d={buildSPath()}
-            stroke="#F7B516"
+            stroke="#BDD5EA"
             strokeWidth="3"
             strokeLinecap="round"
             fill="none"
@@ -125,7 +125,7 @@ const JourneyTimeline = ({ milestones }) => {
                 cx={cx}
                 cy={midY}
                 r="8"
-                fill="#F7B516"
+                fill="#BDD5EA"
                 stroke="white"
                 strokeWidth="3"
                 initial={{ scale: 0 }}
@@ -172,7 +172,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fafafa] pt-20 pb-16 font-system relative overflow-hidden">
+    <div className="min-h-screen bg-transparent pt-20 pb-16 font-system relative overflow-hidden">
 
       <div className="max-w-[1200px] mx-auto px-6">
 

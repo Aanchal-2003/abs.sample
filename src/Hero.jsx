@@ -4,6 +4,7 @@ import { useRef, useEffect, useState, useMemo } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import HighlightText from './components/HighlightText';
+import heroIllustration from './assets/illustrations/hero.png';
 
 const Hero = () => {
   const [init, setInit] = useState(false);
@@ -25,8 +26,8 @@ const Hero = () => {
       modes: { repulse: { distance: 80, duration: 0.4 } },
     },
     particles: {
-      color: { value: "#E31C25" },
-      links: { color: "#F7B516", distance: 150, enable: true, opacity: 0.2, width: 1 },
+      color: { value: "#577399" },
+      links: { color: "#BDD5EA", distance: 150, enable: true, opacity: 0.2, width: 1 },
       move: { direction: "none", enable: true, outModes: { default: "bounce" }, speed: 1 },
       number: { density: { enable: true }, value: 35 },
       opacity: { value: 0.4 },
@@ -51,7 +52,7 @@ const Hero = () => {
   const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-[90vh] w-full flex items-center bg-[#fafafa] overflow-hidden pt-24 lg:pt-28 pb-12 snap-start">
+    <section ref={ref} className="relative min-h-[90vh] w-full flex items-center bg-transparent overflow-hidden pt-24 lg:pt-28 pb-12 snap-start">
 
       {/* Backgrounds */}
       <motion.div style={{ y: yBg }} className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-bl from-brand-red/5 to-transparent rounded-bl-[100px] -z-10 hidden lg:block" />
@@ -137,11 +138,11 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative flex items-center justify-center lg:justify-end mt-8 lg:mt-0 pointer-events-auto"
           >
-            <div className="relative w-full max-w-[360px] lg:max-w-[420px] aspect-[4/5] rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-gray-200">
+            <div className="relative w-full max-w-[420px] lg:max-w-[500px] aspect-square rounded-2xl overflow-hidden">
                <img
-                 src="https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/login-popup-prime.jpg"
-                 alt="TallyPrime Dashboard"
-                 className="absolute inset-0 w-full h-full object-cover object-left"
+                 src={heroIllustration}
+                 alt="Professional Tally Partner Illustration"
+                 className="absolute inset-0 w-full h-full object-contain"
                />
             </div>
           </motion.div>

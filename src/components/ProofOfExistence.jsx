@@ -9,7 +9,7 @@ const ProofOfExistence = () => {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-white to-[#fafafa] overflow-hidden flex flex-col items-center justify-center relative min-h-[450px] md:min-h-[600px] snap-start">
+    <section className="py-16 md:py-20 bg-transparent overflow-hidden flex flex-col items-center justify-center relative min-h-[450px] md:min-h-[600px] snap-start">
       
       {/* 
         PURE CSS ANIMATIONS
@@ -59,7 +59,7 @@ const ProofOfExistence = () => {
                 }}
               >
                 {/* ── CONNECTION LINE ── */}
-                <div className="h-[2px] bg-brand-red w-[110px] sm:w-[150px] md:w-[200px] lg:w-[240px] shadow-[0_0_6px_rgba(227,28,37,0.3)] relative">
+                <div className="h-[2px] bg-brand-red w-[110px] sm:w-[150px] md:w-[200px] lg:w-[240px] shadow-[0_0_6px_rgba(87,115,153,0.3)] relative">
                   
                   {/* ── THE CARD/BOX ── */}
                   <div 
@@ -115,7 +115,7 @@ const ProofOfExistence = () => {
              <span className="text-brand-black font-black text-lg md:text-xl leading-tight uppercase tracking-widest">
                Proof of<br />Existence
              </span>
-             <div className="mt-3 md:mt-4 w-8 md:w-10 h-1 bg-brand-red rounded-full shadow-[0_0_8px_rgba(227,28,37,0.4)]" />
+             <div className="mt-3 md:mt-4 w-8 md:w-10 h-1 bg-brand-red rounded-full shadow-[0_0_8px_rgba(87,115,153,0.4)]" />
              <p className="mt-3 md:mt-4 text-[8px] md:text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em]">ABS Technologies</p>
           </div>
         </div>

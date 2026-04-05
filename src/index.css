@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-tally-blue: #111111; /* remap generic blue references to black */
-  --color-tally-teal: #E31C25; /* remap teal to red */
-  --color-tally-yellow: #F7B516; /* matching gold */
+  --color-tally-blue: #111111;
+  --color-tally-teal: #577399; /* Steel Blue */
+  --color-tally-yellow: #BDD5EA; /* Light Blue */
   --color-tally-dark: #000000;
-  --color-brand-red: #E31C25;
-  --color-brand-red-dark: #b8151c;
-  --color-brand-red-light: #ffebec;
-  --color-brand-black: #111111;
-  --color-brand-black-light: #222222;
-  --color-brand-gold: #F7B516;
-  --color-brand-gold-light: #fef5e0;
-  --color-brand-white: #ffffff;
+  --color-brand-red: #577399;
+  --color-brand-red-dark: #3E536F;
+  --color-brand-red-light: #F0F9FF;
+  --color-brand-black: #2d3436;
+  --color-brand-black-light: #4a4a4a;
+  --color-brand-gold: #BDD5EA;
+  --color-brand-gold-light: #F0F4F8;
+  --color-brand-white: #F0F9FF;
   --font-system: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --animate-float: float 6s ease-in-out infinite;
 }
@@ -37,16 +37,35 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
   .text-glow {
-    text-shadow: 0 0 20px rgba(247, 181, 22, 0.4);
+    text-shadow: 0 0 20px rgba(91, 142, 191, 0.4);
   }
   .box-glow {
-    box-shadow: 0 0 30px rgba(227, 28, 37, 0.2);
+    box-shadow: 0 0 30px rgba(87, 115, 153, 0.2);
   }
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling and global background */
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-brand-white);
+  color: var(--color-brand-black);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.04;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("https://www.transparenttextures.com/patterns/p6.png"); /* Fine grainy noise */
 }
 
 
@@ -67,15 +86,15 @@ html {
 
 /* Selection color */
 ::selection {
-  background: rgba(229, 50, 46, 0.15);
+  background: rgba(87, 115, 153, 0.15);
 }
 
 .bg-live-mesh {
-  background-color: #111111;
-  background-image: radial-gradient(at 0% 0%, hsla(353, 83%, 50%, 0.15) 0px, transparent 50%),
-                    radial-gradient(at 100% 0%, hsla(42, 94%, 53%, 0.15) 0px, transparent 50%),
-                    radial-gradient(at 100% 100%, hsla(353, 83%, 50%, 0.15) 0px, transparent 50%),
-                    radial-gradient(at 0% 100%, hsla(42, 94%, 53%, 0.15) 0px, transparent 50%);
+  background-color: #F0F9FF;
+  background-image: radial-gradient(at 0% 0%, hsla(213, 28%, 47%, 0.15) 0px, transparent 50%),
+                    radial-gradient(at 100% 0%, hsla(208, 50%, 84%, 0.15) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(213, 28%, 47%, 0.15) 0px, transparent 50%),
+                    radial-gradient(at 0% 100%, hsla(208, 50%, 84%, 0.15) 0px, transparent 50%);
 }
 
 .blob {

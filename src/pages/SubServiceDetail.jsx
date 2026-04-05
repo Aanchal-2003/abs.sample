@@ -4,6 +4,7 @@ import { subServiceDetails, slugify } from '../data/subServiceDetails';
 import { motion } from 'motion/react';
 import { ArrowRight, PhoneCall, ChevronRight, CheckCircle } from 'lucide-react';
 import HighlightText from '../components/HighlightText';
+import SketchIllustration from '../components/SketchIllustration';
 
 const SubServiceDetail = () => {
   const { slug, subSlug } = useParams();
@@ -34,10 +35,10 @@ const SubServiceDetail = () => {
   const details = subServiceDetails[slug]?.[subSlug] || {};
   const features = details.features || [];
   const highlights = details.highlights || [];
-  const image = details.image || service.heroImage;
+  const scene = details.scene || service.scene;
 
   return (
-    <div className="min-h-screen bg-[#fafafa] font-system relative overflow-hidden">
+    <div className="min-h-screen bg-transparent font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
       <section className="pt-24 pb-12 px-6 relative z-10 border-b border-gray-100">
@@ -73,10 +74,10 @@ const SubServiceDetail = () => {
               </div>
             </motion.div>
 
-            {/* Right Image */}
+            {/* Right Image/Icon */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-gray-50 flex items-center justify-center h-72">
-                <img src={image} alt={subService.name} className="w-full h-full object-contain" />
+              <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white/50 backdrop-blur-sm flex items-center justify-center p-2 min-h-72">
+                <SketchIllustration scene={scene} className="w-full h-full" />
               </div>
             </motion.div>
           </div>
@@ -85,7 +86,7 @@ const SubServiceDetail = () => {
 
       {/* ── HIGHLIGHTS ── */}
       {highlights.length > 0 && (
-        <section className="py-8 bg-white border-b border-gray-100">
+        <section className="py-8 bg-transparent border-b border-gray-100/50">
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="grid grid-cols-3 gap-6">
               {highlights.map((h, i) => (
@@ -108,7 +109,7 @@ const SubServiceDetail = () => {
 
       {/* ── KEY FEATURES ── */}
       {features.length > 0 && (
-        <section className="py-12 bg-white relative z-10">
+        <section className="py-12 bg-transparent relative z-10">
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-brand-black mb-2">Key Features</h2>
@@ -134,7 +135,7 @@ const SubServiceDetail = () => {
       )}
 
       {/* ── BACK TO PARENT + CTA ── */}
-      <section className="py-10 bg-[#fafafa] border-t border-gray-100 relative z-10">
+      <section className="py-10 bg-transparent border-t border-gray-100/50 relative z-10">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>

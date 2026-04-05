@@ -18,7 +18,7 @@ export const subServiceDetails = {
         "Seamless data migration from Tally ERP 9",
         "Customizable invoices, vouchers & ledger reports"
       ],
-      image: "/images/rebrand/core_prime_drawing.png",
+      scene: "software-setup",
       highlights: [
         { stat: "10M+", label: "Global Users" },
         { stat: "100%", label: "GST Compliant" },
@@ -34,7 +34,7 @@ export const subServiceDetails = {
         "Centralized data with distributed team access",
         "Flexible pay-per-user licensing model"
       ],
-      image: "/images/rebrand/core_virtual_drawing.png",
+      scene: "remote-connect",
       highlights: [
         { stat: "∞", label: "Remote Users" },
         { stat: "0", label: "Extra Hardware" },
@@ -50,7 +50,7 @@ export const subServiceDetails = {
         "Bug fixes and patch support for ERP 9",
         "Historical data validation and reconciliation"
       ],
-      image: "/images/rebrand/core_erp_support_drawing.png"
+      scene: "system-upgrade"
     },
     "tallyprime-server": {
       features: [
@@ -61,7 +61,7 @@ export const subServiceDetails = {
         "Built-in conflict resolution and data integrity checks",
         "Enterprise-grade security and user access controls"
       ],
-      image: "/images/rebrand/core_server_drawing.png",
+      scene: "server-multi",
       highlights: [
         { stat: "100+", label: "Concurrent Users" },
         { stat: "Zero", label: "Conflicts" },
@@ -77,7 +77,7 @@ export const subServiceDetails = {
         "Secure data extraction for audit and filing purposes",
         "All statutory reports accessible in view-only mode"
       ],
-      image: "/images/rebrand/core_auditors_drawing.png"
+      scene: "audit-view"
     },
     "tally-software-services-tss": {
       features: [
@@ -88,7 +88,7 @@ export const subServiceDetails = {
         "Priority Tally helpdesk and support access",
         "License renewal management and tracking"
       ],
-      image: "/images/rebrand/core_tss_drawing.png",
+      scene: "subscription-renewal",
       highlights: [
         { stat: "12+", label: "Updates/Year" },
         { stat: "100%", label: "Compliance" },
@@ -107,7 +107,7 @@ export const subServiceDetails = {
         "Custom data mapping and transformation pipelines",
         "API monitoring dashboard with uptime and failure alerts"
       ],
-      image: "/images/rebrand/integration_api_drawing.png",
+      scene: "api-connector",
       highlights: [
         { stat: "50ms", label: "Avg. Latency" },
         { stat: "99.9%", label: "Sync Uptime" },
@@ -123,7 +123,7 @@ export const subServiceDetails = {
         "Supports QuickBooks Online and Desktop editions",
         "Conflict detection and resolution dashboard"
       ],
-      image: "/images/rebrand/integration_quickbooks_drawing.png"
+      scene: "quickbooks-sync"
     },
     "excel-to-tally-import": {
       features: [
@@ -134,7 +134,7 @@ export const subServiceDetails = {
         "Ledger, item, and group master bulk import support",
         "Scheduled auto-import for recurring data feeds"
       ],
-      image: "/images/rebrand/integration_excel_drawing.png",
+      scene: "excel-import",
       highlights: [
         { stat: "10K+", label: "Rows/Min" },
         { stat: "100%", label: "Accuracy" },
@@ -150,7 +150,7 @@ export const subServiceDetails = {
         "Multi-warehouse and GST-compliant order processing",
         "Return and refund sync with credit note auto-creation"
       ],
-      image: "/images/rebrand/integration_ecommerce_drawing.png"
+      scene: "ecommerce-store"
     },
     "integration-with-magento": {
       features: [
@@ -161,7 +161,7 @@ export const subServiceDetails = {
         "Multi-store and multi-currency support",
         "Custom product attribute and field mapping"
       ],
-      image: "/images/rebrand/integration_magento_drawing.png"
+      scene: "web-cms"
     },
     "php-java-aspnet-integration": {
       features: [
@@ -172,7 +172,7 @@ export const subServiceDetails = {
         "Secure authentication and data encryption in transit",
         "Full source code ownership with technical documentation"
       ],
-      image: "/images/rebrand/integration_developer_drawing.png"
+      scene: "code-bridge"
     },
     "payment-gateway-connectivity": {
       features: [
@@ -183,7 +183,7 @@ export const subServiceDetails = {
         "GST-compliant payment entries with TDS deduction",
         "Failed transaction alerts and automatic retry management"
       ],
-      image: "/images/rebrand/integration_payment_drawing.png"
+      scene: "payment-flow"
     },
     "crm-integration": {
       features: [
@@ -194,7 +194,7 @@ export const subServiceDetails = {
         "Credit limit and overdue alerts in CRM dashboards",
         "Bi-directional contact and company master sync"
       ],
-      image: "/images/rebrand/integration_crm_drawing.png"
+      scene: "crm-contacts"
     }
   },
 
@@ -208,7 +208,7 @@ export const subServiceDetails = {
         "Drill-down reports linked to source vouchers",
         "Auto-scheduled report generation and email dispatch"
       ],
-      image: "/images/rebrand/integration_api_drawing.png"
+      scene: "invoice-design"
     },
     "barcode-label-printing": {
       features: [
@@ -219,7 +219,7 @@ export const subServiceDetails = {
         "Scan barcodes at POS, inward, and inventory checkpoints",
         "Batch-wise and serial-wise label generation support"
       ],
-      image: "/images/rebrand/integration_api_drawing.png",
+      scene: "barcode-scan",
       highlights: [
         { stat: "10K+", label: "Labels/Hour" },
         { stat: "1D/2D/QR", label: "Barcode Types" },
@@ -235,7 +235,7 @@ export const subServiceDetails = {
         "Supplier lead time analytics and reorder triggers",
         "Complete supply chain audit trail within TallyPrime"
       ],
-      image: "/images/rebrand/integration_api_drawing.png"
+      scene: "supply-chain"
     },
     "item-name-creator": {
       features: [
@@ -246,7 +246,7 @@ export const subServiceDetails = {
         "Bulk rename and standardize existing item masters",
         "Customizable naming rules per product category"
       ],
-      image: "/images/rebrand/core_prime_drawing.png"
+      scene: "item-catalog"
     },
     "serial-number-management": {
       features: [
@@ -257,7 +257,7 @@ export const subServiceDetails = {
         "Scan-to-verify serial numbers at dispatch gate",
         "Defective and returned unit tracking by serial number"
       ],
-      image: "/images/rebrand/core_server_drawing.png"
+      scene: "serial-tracking"
     },
     "rack-bin-stock-management": {
       features: [
@@ -268,7 +268,7 @@ export const subServiceDetails = {
         "Inter-location transfer tracking within TallyPrime",
         "FIFO and LIFO picking rules configurable per location"
       ],
-      image: "/images/rebrand/core_server_drawing.png"
+      scene: "warehouse-rack"
     },
     "kit-items-bom": {
       features: [
@@ -279,7 +279,7 @@ export const subServiceDetails = {
         "Kit pricing with component cost roll-up calculation",
         "Stock availability check before kit assembly begins"
       ],
-      image: "/images/rebrand/core_prime_drawing.png"
+      scene: "bom-kit"
     },
     "quality-control-qc": {
       features: [
@@ -290,7 +290,7 @@ export const subServiceDetails = {
         "QC parameter definition per item or item category",
         "Inspection reports with photo and document attachment"
       ],
-      image: "/images/rebrand/core_auditors_drawing.png"
+      scene: "quality-check"
     },
     "sales-activity-management-sam": {
       features: [
@@ -301,7 +301,7 @@ export const subServiceDetails = {
         "Territory-wise and rep-wise sales comparison reports",
         "Integration with mobile SFA for field team sync"
       ],
-      image: "/images/rebrand/core_prime_drawing.png"
+      scene: "sales-activity"
     },
     "currency-forward-booking": {
       features: [
@@ -312,7 +312,7 @@ export const subServiceDetails = {
         "Hedge ratio and coverage analytics dashboard",
         "Integration with bank forex booking statements"
       ],
-      image: "/images/rebrand/integration_api_drawing.png"
+      scene: "forex-booking"
     },
     "smart-backup": {
       features: [
@@ -323,7 +323,7 @@ export const subServiceDetails = {
         "One-click restore from any saved backup point",
         "Email and SMS alerts for backup success or failure"
       ],
-      image: "/images/rebrand/tally_cloud_drawing.png",
+      scene: "data-backup",
       highlights: [
         { stat: "3x", label: "Redundant Copies" },
         { stat: "Auto", label: "Scheduled" },
@@ -339,7 +339,7 @@ export const subServiceDetails = {
         "Bulk signing capability for multiple invoices at once",
         "Signature verification and tamper-proof audit log"
       ],
-      image: "/images/rebrand/core_tss_drawing.png"
+      scene: "digital-signature"
     },
     "multi-file-attachment": {
       features: [
@@ -350,7 +350,7 @@ export const subServiceDetails = {
         "Categorize attachments by document type and date",
         "Eliminate physical filing — go fully paperless"
       ],
-      image: "/images/rebrand/core_tss_drawing.png"
+      scene: "file-attachment"
     },
     "sms-module": {
       features: [
@@ -361,7 +361,7 @@ export const subServiceDetails = {
         "Customizable SMS templates per transaction type",
         "Works with any SMS gateway (Textlocal, MSG91, etc.)"
       ],
-      image: "/images/rebrand/integration_api_drawing.png",
+      scene: "sms-alert",
       highlights: [
         { stat: "Auto", label: "Triggered" },
         { stat: "Any", label: "SMS Gateway" },
@@ -377,7 +377,7 @@ export const subServiceDetails = {
         "Tracks filed, pending, and overdue return statuses",
         "Multi-GSTIN support for group companies"
       ],
-      image: "/images/rebrand/core_prime_drawing.png"
+      scene: "gst-calendar"
     },
     "one-click-outstanding": {
       features: [
@@ -388,7 +388,7 @@ export const subServiceDetails = {
         "Export to Excel for collection team follow-up",
         "Drill-down to individual invoice level from summary view"
       ],
-      image: "/images/rebrand/integration_api_drawing.png"
+      scene: "outstanding-ledger"
     },
     "multiple-branch-management": {
       features: [
@@ -399,7 +399,7 @@ export const subServiceDetails = {
         "Branch-level user access control and restrictions",
         "Real-time sync across all branch Tally instances"
       ],
-      image: "/images/rebrand/core_server_drawing.png",
+      scene: "multi-branch",
       highlights: [
         { stat: "Unlimited", label: "Branches" },
         { stat: "Real-time", label: "Sync" },
@@ -415,7 +415,7 @@ export const subServiceDetails = {
         "Custom Excel templates mapped to Tally data fields",
         "Fully automated — no manual copy-paste required"
       ],
-      image: "/images/rebrand/integration_excel_drawing.png"
+      scene: "excel-magic"
     },
     "audit-trail-with-voucher-history": {
       features: [
@@ -426,7 +426,7 @@ export const subServiceDetails = {
         "Tamper-proof log that users cannot edit or delete",
         "Filter audit trail by user, date range, or voucher type"
       ],
-      image: "/images/rebrand/integration_developer_drawing.png"
+      scene: "audit-log"
     },
     "advance-transaction-level-security": {
       features: [
@@ -437,7 +437,7 @@ export const subServiceDetails = {
         "Alerts on unauthorized access attempts",
         "Compatible with multi-user and multi-branch environments"
       ],
-      image: "/images/rebrand/core_tss_drawing.png"
+      scene: "security-access"
     },
     "material-requirement-planning": {
       features: [
@@ -448,7 +448,7 @@ export const subServiceDetails = {
         "MRP run reports with shortage and surplus analysis",
         "Integration with production schedules and dispatch"
       ],
-      image: "/images/rebrand/core_prime_drawing.png"
+      scene: "production-plan"
     },
     "auto-manual-voucher-numbering": {
       features: [
@@ -459,7 +459,7 @@ export const subServiceDetails = {
         "Multi-series support for sales, purchase, and journals",
         "Gap detection and duplicate number prevention"
       ],
-      image: "/images/rebrand/integration_excel_drawing.png"
+      scene: "voucher-series"
     },
     "transaction-authorisation": {
       features: [
@@ -470,7 +470,7 @@ export const subServiceDetails = {
         "Pending approval queue with SLA tracking",
         "Complete audit trail of all approval decisions"
       ],
-      image: "/images/rebrand/integration_api_drawing.png",
+      scene: "approval-chain",
       highlights: [
         { stat: "Multi", label: "Level Approval" },
         { stat: "Any Device", label: "Accessible" },
@@ -489,7 +489,7 @@ export const subServiceDetails = {
         "Covers hardware, software, and network Tally issues",
         "Onsite coverage across Assam and Northeast India"
       ],
-      image: "/images/rebrand/tally_maintenance_drawing.png",
+      scene: "onsite-support",
       highlights: [
         { stat: "<2hr", label: "Response Time" },
         { stat: "Mon-Sat", label: "Support Hours" },
@@ -505,7 +505,7 @@ export const subServiceDetails = {
         "Data repair and recovery support when needed",
         "TSS renewal management handled by our team"
       ],
-      image: "/images/rebrand/tally_maintenance_drawing.png",
+      scene: "amc-contract",
       highlights: [
         { stat: "98%", label: "Client Retention" },
         { stat: "150+", label: "Active AMC Clients" },
@@ -521,7 +521,7 @@ export const subServiceDetails = {
         "Supports both LAN and internet-based sync modes",
         "Data integrity validation after every sync cycle"
       ],
-      image: "/images/rebrand/core_server_drawing.png"
+      scene: "branch-sync"
     },
     "training-programs": {
       features: [
@@ -532,7 +532,7 @@ export const subServiceDetails = {
         "Hands-on training at your office or via remote session",
         "Post-training reference materials and cheat sheets provided"
       ],
-      image: "/images/rebrand/core_prime_drawing.png"
+      scene: "training-class"
     },
     "invoice-customization-support": {
       features: [
@@ -543,7 +543,7 @@ export const subServiceDetails = {
         "Multi-language invoice format support available",
         "Format changes tested and deployed within 24 hours"
       ],
-      image: "/images/rebrand/integration_excel_drawing.png"
+      scene: "invoice-template"
     },
     "antra-cx-support": {
       features: [
@@ -554,7 +554,7 @@ export const subServiceDetails = {
         "Integration with connected banking features",
         "Ongoing support and updates for the Antra CX module"
       ],
-      image: "/images/rebrand/core_tss_drawing.png"
+      scene: "platform-connect"
     }
   },
 
@@ -568,7 +568,7 @@ export const subServiceDetails = {
         "Enterprise-grade firewalls and DDoS protection",
         "Dedicated resources — no shared hosting risks"
       ],
-      image: "/images/rebrand/tally_cloud_drawing.png",
+      scene: "cloud-access",
       highlights: [
         { stat: "99.9%", label: "Uptime SLA" },
         { stat: "256-bit", label: "Encryption" },
@@ -584,7 +584,7 @@ export const subServiceDetails = {
         "Multi-branch to cloud consolidation support",
         "Zero-data-loss guarantee with transaction-level sync"
       ],
-      image: "/images/rebrand/core_server_drawing.png"
+      scene: "cloud-sync"
     },
     "automated-backup-recovery": {
       features: [
@@ -595,12 +595,7 @@ export const subServiceDetails = {
         "One-click restore from any saved backup snapshot",
         "Backup integrity verification with alert on failure"
       ],
-      image: "/images/rebrand/tally_cloud_drawing.png",
-      highlights: [
-        { stat: "3x", label: "Redundant Backup" },
-        { stat: "Daily", label: "Frequency" },
-        { stat: "<1hr", label: "Recovery Time" }
-      ]
+      scene: "cloud-backup"
     },
     "security-compliance": {
       features: [
@@ -611,7 +606,7 @@ export const subServiceDetails = {
         "Compliance with IT Act and data protection regulations",
         "Regular vulnerability assessment and penetration testing"
       ],
-      image: "/images/rebrand/core_server_drawing.png"
+      scene: "shield-compliance"
     },
     "cross-platform-access": {
       features: [
@@ -622,7 +617,7 @@ export const subServiceDetails = {
         "Multi-monitor support for power users",
         "Session management with automatic timeout controls"
       ],
-      image: "/images/rebrand/core_virtual_drawing.png"
+      scene: "multi-device"
     }
   },
 
@@ -636,7 +631,7 @@ export const subServiceDetails = {
         "KPI widgets fully configurable per director preference",
         "Offline mode with last-synced data when disconnected"
       ],
-      image: "/images/rebrand/core_prime_drawing.png",
+      scene: "biz-dashboard",
       highlights: [
         { stat: "Real-time", label: "Tally Sync" },
         { stat: "Offline", label: "Mode Available" },
@@ -652,7 +647,7 @@ export const subServiceDetails = {
         "New customer registration with photo and GPS location",
         "Sync customer notes and feedback back to TallyPrime"
       ],
-      image: "/images/rebrand/core_virtual_drawing.png"
+      scene: "customer-profile"
     },
     "transaction-approval-app": {
       features: [
@@ -663,12 +658,7 @@ export const subServiceDetails = {
         "Reject with reason — auto-notifies the originator",
         "Approval audit log with timestamps and device info"
       ],
-      image: "/images/rebrand/core_prime_drawing.png",
-      highlights: [
-        { stat: "Multi", label: "Level Approval" },
-        { stat: "Push", label: "Notifications" },
-        { stat: "<1min", label: "Approval Time" }
-      ]
+      scene: "mobile-approval"
     },
     "sales-order-booking-app": {
       features: [
@@ -679,12 +669,7 @@ export const subServiceDetails = {
         "Order history and delivery status tracking per customer",
         "Auto-sync approved orders to TallyPrime as sales vouchers"
       ],
-      image: "/images/rebrand/core_prime_drawing.png",
-      highlights: [
-        { stat: "Offline", label: "Order Booking" },
-        { stat: "Real-time", label: "Stock Check" },
-        { stat: "Auto", label: "Tally Sync" }
-      ]
+      scene: "order-booking"
     },
     "business-audit-app": {
       features: [
@@ -695,7 +680,7 @@ export const subServiceDetails = {
         "GPS-tagged audit entries for location verification",
         "Audit reports auto-generated and emailed to management"
       ],
-      image: "/images/rebrand/core_auditors_drawing.png"
+      scene: "field-audit"
     },
     "beat-routing-gps-tracking": {
       features: [
@@ -706,12 +691,7 @@ export const subServiceDetails = {
         "Route deviation alerts sent to managers in real-time",
         "Daily beat summary reports with distance and visit count"
       ],
-      image: "/images/rebrand/core_prime_drawing.png",
-      highlights: [
-        { stat: "GPS", label: "Live Tracking" },
-        { stat: "Optimized", label: "Beat Routes" },
-        { stat: "Auto", label: "Visit Reports" }
-      ]
+      scene: "gps-route"
     }
   }
 };

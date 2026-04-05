@@ -1,11 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 import { services } from '../data/services';
 import { serviceSections } from '../data/serviceSections';
-import { slugify } from '../data/subServiceDetails';
+import { subServiceDetails, slugify } from '../data/subServiceDetails';
 import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'motion/react';
 import { CheckCircle, ArrowRight, PhoneCall, ChevronRight } from 'lucide-react';
 import HighlightText from '../components/HighlightText';
+import SketchIllustration from '../components/SketchIllustration';
 
 /* ---- FOCUS GRID ---- */
 const FocusGrid = ({ children, cols = "lg:grid-cols-3" }) => {
@@ -44,13 +45,12 @@ const ServiceDetail = () => {
   );
 
   const keyFeatures = service.keyFeatures || [];
-  const heroImage = service.heroImage || service.image;
 
   return (
-    <div className="min-h-screen bg-[#fafafa] font-system relative overflow-hidden">
+    <div className="min-h-screen bg-transparent font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="pt-24 pb-12 px-6 relative z-10 border-b border-gray-100 snap-start">
+      <section className="pt-24 pb-12 px-6 relative z-10 border-b border-gray-100/50 snap-start">
         <div className="max-w-[1200px] mx-auto">
 
           {/* Breadcrumb */}
@@ -88,8 +88,8 @@ const ServiceDetail = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-gray-50 flex items-center justify-center h-72">
-                <img src={heroImage} alt={service.title} className="w-full h-full object-contain" />
+              <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white/50 backdrop-blur-sm flex items-center justify-center p-2 min-h-72">
+                <SketchIllustration scene={service.scene} className="w-full h-full" />
               </div>
             </motion.div>
           </div>
@@ -97,7 +97,7 @@ const ServiceDetail = () => {
       </section>
 
       {/* ── KEY FEATURES (FOCUS GRID) ── */}
-      <section className="py-12 bg-white relative z-10 snap-start">
+      <section className="py-12 bg-transparent relative z-10 snap-start">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-brand-black mb-2">What's Included</h2>
@@ -124,7 +124,7 @@ const ServiceDetail = () => {
 
       {/* ── SUB-SERVICES ── */}
       {service.subServices && service.subServices.length > 0 && (
-        <section className="py-16 relative z-10 snap-start" style={{ background: 'linear-gradient(to bottom, #ffffff 0%, #fff4f3 80px, #fff4f3 calc(100% - 80px), #ffffff 100%)' }}>
+        <section className="py-16 relative z-10 bg-transparent snap-start">
           <div className="max-w-[1200px] mx-auto px-6">
 
             {/* Header */}
@@ -152,15 +152,7 @@ const ServiceDetail = () => {
                     to={`/services/${slug}/${slugify(sub.name)}`}
                     className="group flex flex-col h-full rounded-xl border border-gray-100 bg-[#fafafa] hover:bg-white hover:shadow-md transition-all duration-300 p-5 relative overflow-hidden"
                   >
-                    {/* Animated left red accent bar */}
-                    <div
-                      className="absolute left-0 top-0 bottom-0 w-[3px] bg-brand-red origin-top transition-transform duration-300"
-                      style={{ transform: 'scaleY(0)' }}
-                      onMouseEnter={e => e.currentTarget.style.transform = 'scaleY(1)'}
-                    />
                     <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-brand-red origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300 rounded-r-sm" />
-
-
 
                     {/* Title + arrow */}
                     <div className="flex items-start justify-between gap-2 mb-2">
@@ -193,7 +185,7 @@ const ServiceDetail = () => {
 
       {/* ── DETAILED SECTIONS (FOCUS GRID) ── */}
       {sections.length > 0 && (
-        <section className="py-12 bg-[#fafafa] relative z-10 border-t border-gray-100 snap-start">
+        <section className="py-12 bg-transparent relative z-10 border-t border-gray-100/30 snap-start">
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-brand-black mb-2">Detailed Scope</h2>
@@ -232,7 +224,7 @@ const ServiceDetail = () => {
 
 
       {/* ── CTA ── */}
-      <section className="py-12 bg-white relative z-10 snap-start">
+      <section className="py-12 bg-transparent relative z-10 snap-start">
         <div className="max-w-[600px] mx-auto px-6 text-center">
           <h2 className="text-2xl font-bold text-brand-black mb-3 tracking-tight">
             Ready to deploy {service.title}?

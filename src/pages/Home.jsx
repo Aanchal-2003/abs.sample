@@ -98,11 +98,11 @@ const Home = () => {
   const opacityTrust = useTransform(trustScroll, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
   return (
-    <div className="font-system bg-white flex flex-col">
+    <div className="font-system bg-brand-white flex flex-col">
       <Hero />
 
       {/* ── SERVICES ── */}
-      <section className="py-16 relative overflow-hidden bg-gradient-to-b from-[#fafafa] to-white snap-start">
+      <section className="py-16 relative overflow-hidden bg-transparent snap-start">
         <div className="max-w-[1200px] mx-auto px-6 relative z-10">
 
           <div className="text-center mb-10 max-w-2xl mx-auto">
@@ -148,11 +148,11 @@ const Home = () => {
       <ProofOfExistence />
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-16 bg-[#fafafa] overflow-hidden relative snap-start">
+      <section className="py-16 bg-transparent overflow-hidden relative snap-start">
         <div className="max-w-[1200px] mx-auto px-6 relative z-10">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-brand-black tracking-tight mb-2">
-              Trusted by <HighlightText color="#F7B516">150+</HighlightText> Businesses
+              Trusted by <HighlightText color="#BDD5EA">150+</HighlightText> Businesses
             </h2>
             <p className="text-gray-500 text-sm font-medium">
               Hear from leaders who streamlined operations with us.
@@ -193,7 +193,7 @@ const Home = () => {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-gradient-to-b from-[#fafafa] to-brand-red/5 text-center relative overflow-hidden snap-start">
+      <section className="py-20 bg-transparent text-center relative overflow-hidden snap-start">
         {/* Subtle Decorative Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/10 rounded-full blur-[100px] -z-10" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-gold/10 rounded-full blur-[100px] -z-10" />
