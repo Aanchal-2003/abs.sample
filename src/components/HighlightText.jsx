@@ -1,7 +1,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
-const HighlightText = ({ children, color = "#577399", delay = 0 }) => {
+const HighlightText = ({ children, color = "#f5b400", delay = 0 }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false, margin: "-40px" });
 

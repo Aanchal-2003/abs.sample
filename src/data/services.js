@@ -5,6 +5,10 @@ import customizationImg from "../assets/illustrations/customization.png";
 import cloudImg from "../assets/illustrations/cloud.png";
 import maintenanceImg from "../assets/illustrations/maintenance.png";
 import mobileImg from "../assets/illustrations/mobile.png";
+import tdlV2Img from "../assets/illustrations/tdl_v2.png";
+import cloudV2Img from "../assets/illustrations/cloud_v2.png";
+import mobileV2Img from "../assets/illustrations/mobile_v2.png";
+import integrationV2Img from "../assets/illustrations/integration_v2.png";
 
 export const services = [
   {
@@ -18,6 +22,7 @@ export const services = [
     iconBg: "bg-brand-red/5",
     image: implementationImg,
     heroImage: implementationImg,
+    subServiceImage: implementationImg,
     scene: "handshake",
     badge: "Core Tally Services",
     emoji: "🏦",
@@ -74,6 +79,7 @@ export const services = [
     iconBg: "bg-brand-red/5",
     image: integrationImg,
     heroImage: integrationImg,
+    subServiceImage: integrationV2Img,
     scene: "api-bridge",
     badge: "API & Data Integration",
     emoji: "🔗",
@@ -131,7 +137,8 @@ export const services = [
     iconColor: "text-brand-red",
     iconBg: "bg-brand-red/5",
     image: customizationImg,
-    heroImage: customizationImg,
+    heroImage: tdlV2Img,
+    subServiceImage: customizationImg,
     scene: "developer",
     badge: "TDL & Add-On Development",
     emoji: "⚙️",
@@ -260,7 +267,8 @@ export const services = [
     iconColor: "text-brand-red",
     iconBg: "bg-brand-red/5",
     image: cloudImg,
-    heroImage: cloudImg,
+    heroImage: cloudV2Img,
+    subServiceImage: cloudImg,
     scene: "cloud-server",
     badge: "Tally on Cloud",
     emoji: "☁️",
@@ -315,7 +323,8 @@ export const services = [
     iconColor: "text-brand-red",
     iconBg: "bg-brand-red/5",
     image: mobileImg,
-    heroImage: mobileImg,
+    heroImage: mobileV2Img,
+    subServiceImage: mobileImg,
     scene: "mobile-charts",
     badge: "Mobile & Web Apps",
     emoji: "📱",

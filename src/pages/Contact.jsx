@@ -4,7 +4,7 @@ import HighlightText from '../components/HighlightText';
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-transparent pt-24 pb-16 font-system relative overflow-hidden">
+    <div className="min-h-screen bg-transparent pt-32 pb-8 font-system relative overflow-hidden">
       
       {/* Decorative Blobs */}
       <div className="blob w-96 h-96 bg-brand-red/5 top-[-10%] right-[-5%]" />
@@ -13,7 +13,7 @@ const Contact = () => {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 snap-start">
+        <div className="text-center max-w-2xl mx-auto mb-4 snap-start">
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-brand-black tracking-tight">
             Let's <HighlightText>get started</HighlightText> together
           </h1>
@@ -52,48 +52,51 @@ const Contact = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="glass-panel-dark p-6 rounded-2xl text-white shadow-xl flex-1 flex flex-col justify-center"
+              className="bg-white p-6 rounded-2xl text-brand-black shadow-sm border border-gray-100 flex-1 flex flex-col justify-center relative overflow-hidden"
             >
-              <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
+              {/* Subtle branded accent */}
+              <div className="absolute top-0 right-0 w-24 h-24 bg-brand-red/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+              
+              <h3 className="text-lg font-black mb-6 flex items-center gap-2 text-brand-black tracking-tight">
                 Get in Touch
               </h3>
               
-              <div className="space-y-5 flex-1 flex flex-col justify-center">
-                <div className="flex gap-3 items-center">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 border border-white/5">
-                    <Mail className="text-brand-gold w-5 h-5" />
+              <div className="space-y-6 flex-1 flex flex-col justify-center">
+                <div className="flex gap-4 items-center group">
+                  <div className="w-11 h-11 rounded-xl bg-brand-red/5 flex items-center justify-center shrink-0 border border-brand-red/10 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300">
+                    <Mail className="text-brand-red group-hover:text-white w-5 h-5 transition-colors" />
                   </div>
                   <div>
-                    <p className="text-[9px] uppercase tracking-widest font-bold text-white/40 mb-0.5">Email Official</p>
-                    <a href="mailto:support@abstechnologies.co.in" className="text-sm font-bold hover:text-brand-gold transition-colors">
+                    <p className="text-[10px] uppercase tracking-widest font-black text-gray-400 mb-0.5">Email Official</p>
+                    <a href="mailto:support@abstechnologies.co.in" className="text-sm font-bold text-brand-black hover:text-brand-red transition-colors">
                       support@abstechnologies.co.in
                     </a>
                   </div>
                 </div>
 
-                <div className="flex gap-3 items-center">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 border border-white/5">
-                    <Phone className="text-brand-gold w-5 h-5" />
+                <div className="flex gap-4 items-center group">
+                  <div className="w-11 h-11 rounded-xl bg-brand-gold/10 flex items-center justify-center shrink-0 border border-brand-gold/20 group-hover:bg-brand-gold group-hover:scale-110 transition-all duration-300">
+                    <Phone className="text-brand-gold group-hover:text-white w-5 h-5 transition-colors" />
                   </div>
                   <div>
-                    <p className="text-[9px] uppercase tracking-widest font-bold text-white/40 mb-0.5">Phone Line</p>
-                    <p className="text-sm font-bold">+91 7578000559</p>
+                    <p className="text-[10px] uppercase tracking-widest font-black text-gray-400 mb-0.5">Phone Line</p>
+                    <p className="text-sm font-bold text-brand-black">+91 7578000559</p>
                   </div>
                 </div>
 
-                <div className="flex gap-3 items-center">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 border border-white/5">
-                    <MapPin className="text-brand-gold w-5 h-5" />
+                <div className="flex gap-4 items-center group">
+                  <div className="w-11 h-11 rounded-xl bg-brand-red/5 flex items-center justify-center shrink-0 border border-brand-red/10 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300">
+                    <MapPin className="text-brand-red group-hover:text-white w-5 h-5 transition-colors" />
                   </div>
                   <div>
-                    <p className="text-[9px] uppercase tracking-widest font-bold text-white/40 mb-0.5">Office Location</p>
-                    <p className="text-sm font-bold text-white/80">Guwahati, Assam 781008</p>
+                    <p className="text-[10px] uppercase tracking-widest font-black text-gray-400 mb-0.5">Office Location</p>
+                    <p className="text-sm font-bold text-gray-600">Guwahati, Assam 781008</p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6 pt-6 border-t border-white/10 text-center">
-                <p className="text-[9px] text-white/20 uppercase tracking-[0.2em] font-black">
+              <div className="mt-8 pt-6 border-t border-gray-50 text-center">
+                <p className="text-[10px] text-gray-300 uppercase tracking-[0.25em] font-black">
                   Certified Tally 5-Star Partner
                 </p>
               </div>
@@ -104,7 +107,7 @@ const Contact = () => {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full"
+            className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full"
           >
             <h3 className="text-2xl font-bold text-brand-black mb-6 tracking-tight">Request a Demo</h3>
             

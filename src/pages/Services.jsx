@@ -36,7 +36,7 @@ const Services = () => {
     <div className="min-h-screen bg-transparent font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="pt-24 pb-10 px-6 relative z-10 snap-start">
+      <section className="pt-32 pb-4 px-6 relative z-10 snap-start">
         <div className="max-w-[1200px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -61,9 +61,9 @@ const Services = () => {
 
 
       {/* ── SERVICES GRID (FOCUS EFFECT) ── */}
-      <section className="py-12 relative z-10 snap-start">
+      <section className="py-6 relative z-10 snap-start">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center mb-8">
+          <div className="text-center mb-4">
             <h2 className="text-2xl font-bold text-brand-black mb-2 tracking-tight">Our Core Services</h2>
             <p className="text-gray-400 text-sm">Hover any card to focus. Click to explore details.</p>
           </div>
@@ -101,7 +101,7 @@ const Services = () => {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-12 relative z-10 border-t border-gray-100 snap-start">
+      <section className="py-6 relative z-10 border-t border-gray-100 snap-start">
         <div className="max-w-[600px] mx-auto px-6 text-center">
           <h2 className="text-2xl font-bold text-brand-black mb-3 tracking-tight">Not sure which service fits?</h2>
           <p className="text-gray-500 text-sm mb-6">

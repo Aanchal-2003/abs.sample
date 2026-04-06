@@ -6,7 +6,6 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'motion/react';
 import { CheckCircle, ArrowRight, PhoneCall, ChevronRight } from 'lucide-react';
 import HighlightText from '../components/HighlightText';
-import SketchIllustration from '../components/SketchIllustration';
 
 /* ---- FOCUS GRID ---- */
 const FocusGrid = ({ children, cols = "lg:grid-cols-3" }) => {
@@ -50,7 +49,7 @@ const ServiceDetail = () => {
     <div className="min-h-screen bg-transparent font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="pt-24 pb-12 px-6 relative z-10 border-b border-gray-100/50 snap-start">
+      <section className="pt-32 pb-12 px-6 relative z-10 border-b border-gray-100/50 snap-start">
         <div className="max-w-[1200px] mx-auto">
 
           {/* Breadcrumb */}
@@ -88,8 +87,12 @@ const ServiceDetail = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white/50 backdrop-blur-sm flex items-center justify-center p-2 min-h-72">
-                <SketchIllustration scene={service.scene} className="w-full h-full" />
+              <div className="rounded-2xl border border-gray-100 shadow-sm bg-white/50 flex items-center justify-center p-4">
+                <img
+                  src={service.heroImage}
+                  alt={service.title}
+                  className="w-full max-h-80 object-contain"
+                />
               </div>
             </motion.div>
           </div>

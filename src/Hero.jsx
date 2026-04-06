@@ -4,7 +4,7 @@ import { useRef, useEffect, useState, useMemo } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import HighlightText from './components/HighlightText';
-import heroIllustration from './assets/illustrations/hero.png';
+
 
 const Hero = () => {
   const [init, setInit] = useState(false);
@@ -26,8 +26,8 @@ const Hero = () => {
       modes: { repulse: { distance: 80, duration: 0.4 } },
     },
     particles: {
-      color: { value: "#577399" },
-      links: { color: "#BDD5EA", distance: 150, enable: true, opacity: 0.2, width: 1 },
+      color: { value: "#0f2b6b" },
+      links: { color: "#f5b400", distance: 150, enable: true, opacity: 0.2, width: 1 },
       move: { direction: "none", enable: true, outModes: { default: "bounce" }, speed: 1 },
       number: { density: { enable: true }, value: 35 },
       opacity: { value: 0.4 },
@@ -52,7 +52,7 @@ const Hero = () => {
   const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-[90vh] w-full flex items-center bg-transparent overflow-hidden pt-24 lg:pt-28 pb-12 snap-start">
+    <section ref={ref} className="relative min-h-[80vh] w-full flex items-center bg-transparent overflow-hidden pt-24 pb-4 snap-start">
 
       {/* Backgrounds */}
       <motion.div style={{ y: yBg }} className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-bl from-brand-red/5 to-transparent rounded-bl-[100px] -z-10 hidden lg:block" />
@@ -67,7 +67,7 @@ const Hero = () => {
          />
       )}
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 w-full z-10 relative pointer-events-none mt-10 md:mt-16">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 w-full z-10 relative pointer-events-none mt-2">
         <motion.div style={{ opacity: opacityText }} className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
 
           {/* Left */}
@@ -138,10 +138,10 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative flex items-center justify-center lg:justify-end mt-8 lg:mt-0 pointer-events-auto"
           >
-            <div className="relative w-full max-w-[420px] lg:max-w-[500px] aspect-square rounded-2xl overflow-hidden">
+            <div className="relative w-full max-w-[420px] lg:max-w-[500px] aspect-square">
                <img
-                 src={heroIllustration}
-                 alt="Professional Tally Partner Illustration"
+                 src="https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/login-popup-prime.jpg"
+                 alt="ABS Technologies — Trusted Tally Partner"
                  className="absolute inset-0 w-full h-full object-contain"
                />
             </div>

@@ -41,8 +41,8 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 80, damping: 18 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-[#d4e9f5] backdrop-blur-lg border-b border-brand-gold/40 shadow-md py-2"
-          : "bg-[#dff0f9] py-4"
+          ? "bg-[#dde4f0] backdrop-blur-lg border-b border-brand-gold/40 shadow-md py-2"
+          : "bg-[#eaeff8] py-4"
           }`}
       >
         <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
@@ -115,7 +115,7 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-[#dff0f9] pt-20 px-6 md:hidden backdrop-blur-md"
+            className="fixed inset-0 z-40 bg-[#eaeff8] pt-20 px-6 md:hidden backdrop-blur-md"
           >
             <div className="flex flex-col gap-1">
               {links.map((link) => {

@@ -4,7 +4,6 @@ import { subServiceDetails, slugify } from '../data/subServiceDetails';
 import { motion } from 'motion/react';
 import { ArrowRight, PhoneCall, ChevronRight, CheckCircle } from 'lucide-react';
 import HighlightText from '../components/HighlightText';
-import SketchIllustration from '../components/SketchIllustration';
 
 const SubServiceDetail = () => {
   const { slug, subSlug } = useParams();
@@ -35,13 +34,12 @@ const SubServiceDetail = () => {
   const details = subServiceDetails[slug]?.[subSlug] || {};
   const features = details.features || [];
   const highlights = details.highlights || [];
-  const scene = details.scene || service.scene;
 
   return (
     <div className="min-h-screen bg-transparent font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="pt-24 pb-12 px-6 relative z-10 border-b border-gray-100">
+      <section className="pt-32 pb-12 px-6 relative z-10 border-b border-gray-100">
         <div className="max-w-[1200px] mx-auto">
 
           {/* Breadcrumb */}
@@ -76,8 +74,12 @@ const SubServiceDetail = () => {
 
             {/* Right Image/Icon */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white/50 backdrop-blur-sm flex items-center justify-center p-2 min-h-72">
-                <SketchIllustration scene={scene} className="w-full h-full" />
+              <div className="rounded-2xl border border-gray-100 shadow-sm bg-white/50 flex items-center justify-center p-4">
+                <img
+                  src={service.subServiceImage || service.heroImage}
+                  alt={subService.name}
+                  className="w-full max-h-80 object-contain"
+                />
               </div>
             </motion.div>
           </div>

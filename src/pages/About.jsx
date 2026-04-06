@@ -72,10 +72,10 @@ const JourneyTimeline = ({ milestones }) => {
   };
 
   return (
-    <section className="mb-16 snap-start">
+    <section className="mb-6 snap-start">
       <div className="text-center mb-10">
         <h2 className="text-2xl font-bold text-brand-black tracking-tight">
-          Our <HighlightText color="#BDD5EA">Journey</HighlightText>
+          Our <HighlightText color="#f5b400">Journey</HighlightText>
         </h2>
         <p className="text-gray-400 text-sm mt-2">Scroll down to follow our story</p>
       </div>
@@ -104,7 +104,7 @@ const JourneyTimeline = ({ milestones }) => {
           {/* Animated fill */}
           <motion.path
             d={buildSPath()}
-            stroke="#BDD5EA"
+            stroke="#f5b400"
             strokeWidth="3"
             strokeLinecap="round"
             fill="none"
@@ -125,7 +125,7 @@ const JourneyTimeline = ({ milestones }) => {
                 cx={cx}
                 cy={midY}
                 r="8"
-                fill="#BDD5EA"
+                fill="#f5b400"
                 stroke="white"
                 strokeWidth="3"
                 initial={{ scale: 0 }}
@@ -172,7 +172,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent pt-20 pb-16 font-system relative overflow-hidden">
+    <div className="min-h-screen bg-transparent pt-32 pb-8 font-system relative overflow-hidden">
 
       <div className="max-w-[1200px] mx-auto px-6">
 
@@ -181,7 +181,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-12 snap-start"
+          className="text-center max-w-3xl mx-auto mb-6 snap-start"
         >
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-brand-black tracking-tight">
             Building Smarter Businesses with{' '}
@@ -194,7 +194,7 @@ const About = () => {
         </motion.div>
 
         {/* ── STATS ── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 snap-start">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 snap-start">
           {companyStats.map(({ num, label, icon: Icon }, i) => (
             <motion.div
               key={label}
@@ -214,7 +214,7 @@ const About = () => {
         </div>
 
         {/* ── MISSION / VISION ── */}
-        <div className="grid md:grid-cols-2 gap-5 mb-12 snap-start">
+        <div className="grid md:grid-cols-2 gap-5 mb-6 snap-start">
           <div className="p-7 rounded-2xl bg-white shadow-sm border border-gray-100">
             <div className="w-11 h-11 rounded-xl bg-brand-black flex items-center justify-center mb-4">
               <Target className="text-brand-gold w-5 h-5" />
@@ -240,7 +240,7 @@ const About = () => {
         <JourneyTimeline milestones={milestones} />
 
         {/* ── VALUES ── */}
-        <div className="mb-12 snap-start">
+        <div className="mb-6 snap-start">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-brand-black tracking-tight">Core Values</h2>
           </div>
@@ -273,7 +273,7 @@ const About = () => {
         </div>
 
         {/* ── INDUSTRIES (Dark Strip) ── */}
-        <div className="bg-brand-black rounded-2xl p-8 md:p-10 text-center text-white mb-12 snap-start">
+        <div className="bg-brand-black rounded-2xl p-6 md:p-8 text-center text-white mb-6 snap-start">
           <h2 className="text-2xl font-bold mb-3 tracking-tight">Industries We Serve</h2>
           <p className="text-white/60 text-sm mb-6 max-w-xl mx-auto">
             From manufacturing to FMCG — we build the technology bridges that keep enterprises moving.

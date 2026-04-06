@@ -102,10 +102,10 @@ const Home = () => {
       <Hero />
 
       {/* ── SERVICES ── */}
-      <section className="py-16 relative overflow-hidden bg-transparent snap-start">
+      <section className="py-8 relative overflow-hidden bg-transparent snap-start">
         <div className="max-w-[1200px] mx-auto px-6 relative z-10">
 
-          <div className="text-center mb-10 max-w-2xl mx-auto">
+          <div className="text-center mb-6 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-brand-black tracking-tight mb-3">
               Complete <HighlightText>Tally Services</HighlightText>
             </h2>
@@ -121,13 +121,31 @@ const Home = () => {
                 <Link
                   key={service.slug}
                   to={`/services/${service.slug}`}
-                  className="group bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-brand-red/20 transition-all duration-300 flex flex-col h-full"
+                  className="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-brand-red/20 transition-all duration-300 flex flex-col overflow-hidden"
                 >
-                  <div className="w-12 h-12 bg-brand-red/5 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="text-brand-red" size={22} />
+                  {/* Text content — fixed height so all cards stay equal */}
+                  <div className="p-6 flex flex-col h-52">
+                    <div className="w-12 h-12 bg-brand-red/5 rounded-xl flex items-center justify-center mb-4 shrink-0">
+                      <Icon className="text-brand-red" size={22} />
+                    </div>
+                    <h3 className="text-lg font-bold text-brand-black mb-2 shrink-0">{service.title}</h3>
+                    <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 flex-grow">{service.desc}</p>
+
+                    {/* Explore link */}
+                    <div className="flex items-center gap-1.5 mt-auto pt-3 text-brand-red font-bold text-sm group-hover:gap-2.5 transition-all shrink-0">
+                      Explore {service.title}
+                      <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-brand-black mb-2">{service.title}</h3>
-                  <p className="text-gray-500 text-sm mb-4 flex-grow leading-relaxed">{service.desc}</p>
+
+                  {/* Illustration — fixed height so all image areas are equal */}
+                  <div className="h-52 bg-[#f8f9fc] border-t border-gray-100 flex items-center justify-center p-5">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
                 </Link>
               );
             })}
@@ -148,11 +166,11 @@ const Home = () => {
       <ProofOfExistence />
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-16 bg-transparent overflow-hidden relative snap-start">
+      <section className="py-8 bg-transparent overflow-hidden relative snap-start">
         <div className="max-w-[1200px] mx-auto px-6 relative z-10">
-          <div className="text-center mb-10">
+          <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-brand-black tracking-tight mb-2">
-              Trusted by <HighlightText color="#BDD5EA">150+</HighlightText> Businesses
+              Trusted by <HighlightText color="#f5b400">150+</HighlightText> Businesses
             </h2>
             <p className="text-gray-500 text-sm font-medium">
               Hear from leaders who streamlined operations with us.
@@ -193,7 +211,7 @@ const Home = () => {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-transparent text-center relative overflow-hidden snap-start">
+      <section className="py-12 bg-transparent text-center relative overflow-hidden snap-start">
         {/* Subtle Decorative Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/10 rounded-full blur-[100px] -z-10" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-gold/10 rounded-full blur-[100px] -z-10" />

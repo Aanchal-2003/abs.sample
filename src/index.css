@@ -2,17 +2,17 @@
 
 @theme {
   --color-tally-blue: #111111;
-  --color-tally-teal: #577399; /* Steel Blue */
-  --color-tally-yellow: #BDD5EA; /* Light Blue */
+  --color-tally-teal: #0f2b6b; /* Deep Navy */
+  --color-tally-yellow: #f5b400; /* Gold */
   --color-tally-dark: #000000;
-  --color-brand-red: #577399;
-  --color-brand-red-dark: #3E536F;
-  --color-brand-red-light: #F0F9FF;
-  --color-brand-black: #2d3436;
-  --color-brand-black-light: #4a4a4a;
-  --color-brand-gold: #BDD5EA;
-  --color-brand-gold-light: #F0F4F8;
-  --color-brand-white: #F0F9FF;
+  --color-brand-red: #0f2b6b;
+  --color-brand-red-dark: #12306a;
+  --color-brand-red-light: #eef1f8;
+  --color-brand-black: #152433;
+  --color-brand-black-light: #2d3a4a;
+  --color-brand-gold: #f5b400;
+  --color-brand-gold-light: #fff8e1;
+  --color-brand-white: #f3f6f9;
   --font-system: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --animate-float: float 6s ease-in-out infinite;
 }
@@ -37,10 +37,10 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   }
   .text-glow {
-    text-shadow: 0 0 20px rgba(91, 142, 191, 0.4);
+    text-shadow: 0 0 20px rgba(15, 43, 107, 0.4);
   }
   .box-glow {
-    box-shadow: 0 0 30px rgba(87, 115, 153, 0.2);
+    box-shadow: 0 0 30px rgba(15, 43, 107, 0.2);
   }
 }
 
@@ -50,7 +50,7 @@ html {
 }
 
 body {
-  background-color: var(--color-brand-white);
+  background-color: #f3f6f9;
   color: var(--color-brand-black);
   position: relative;
 }
@@ -86,15 +86,15 @@ body::before {
 
 /* Selection color */
 ::selection {
-  background: rgba(87, 115, 153, 0.15);
+  background: rgba(15, 43, 107, 0.15);
 }
 
 .bg-live-mesh {
-  background-color: #F0F9FF;
-  background-image: radial-gradient(at 0% 0%, hsla(213, 28%, 47%, 0.15) 0px, transparent 50%),
-                    radial-gradient(at 100% 0%, hsla(208, 50%, 84%, 0.15) 0px, transparent 50%),
-                    radial-gradient(at 100% 100%, hsla(213, 28%, 47%, 0.15) 0px, transparent 50%),
-                    radial-gradient(at 0% 100%, hsla(208, 50%, 84%, 0.15) 0px, transparent 50%);
+  background-color: #f3f6f9;
+  background-image: radial-gradient(at 0% 0%, hsla(222, 75%, 24%, 0.10) 0px, transparent 50%),
+                    radial-gradient(at 100% 0%, hsla(45, 100%, 48%, 0.08) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, hsla(222, 75%, 24%, 0.10) 0px, transparent 50%),
+                    radial-gradient(at 0% 100%, hsla(45, 100%, 48%, 0.08) 0px, transparent 50%);
 }
 
 .blob {
