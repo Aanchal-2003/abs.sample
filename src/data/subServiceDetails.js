@@ -41,7 +41,7 @@ export const subServiceDetails = {
         { stat: "99.9%", label: "Uptime" }
       ]
     },
-    "tally-erp-9-support": {
+    "tally-software-service": {
       features: [
         "Data repair and rewriting for corrupted Tally ERP 9 files",
         "Guided step-by-step upgrade path to TallyPrime",

@@ -56,7 +56,7 @@ export const services = [
     subServices: [
       { name: "TallyPrime", desc: "Latest-generation business management software with connected services, smart reports, and modern UX." },
       { name: "Tally Virtual User (TVU)", desc: "Remote multi-user access license enabling teams to work from anywhere on a single Tally instance." },
-      { name: "Tally ERP 9 Support", desc: "Legacy support, data repair, and guided migration path from Tally ERP 9 to TallyPrime." },
+      { name: "Tally Software Service", desc: "Legacy support, data repair, and guided migration path from Tally ERP 9 to TallyPrime." },
       { name: "TallyPrime Server", desc: "Multi-site, multi-user server deployment for enterprises needing concurrent access across branches." },
       { name: "TallyPrime Auditors Edition", desc: "Read-only Tally access designed for CA firms and external auditors — zero risk of accidental data changes." },
       { name: "Tally Software Services (TSS)", desc: "Annual subscription for product updates, statutory compliance patches, and connected banking features." }

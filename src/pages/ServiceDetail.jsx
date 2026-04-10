@@ -49,10 +49,10 @@ const ServiceDetail = () => {
     <div className="min-h-screen bg-white font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="pt-[72px] pb-2 px-6 relative z-10 snap-start">
-        <div className="max-w-[1200px] mx-auto">
+      <section className="h-screen flex flex-col justify-center px-8 lg:px-24 relative z-10 snap-start">
+        <div className="max-w-[1400px] mx-auto w-full">
           {/* Breadcrumb Section */}
-          <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-2 font-bold tracking-wider uppercase">
+          <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-4 font-bold tracking-wider uppercase">
             <Link to="/" className="hover:text-brand-black transition">Home</Link>
             <ChevronRight size={10} />
             <Link to="/services" className="hover:text-brand-black transition">Services</Link>
@@ -60,23 +60,23 @@ const ServiceDetail = () => {
             <span className="text-brand-red">{service.title}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-[1fr_0.9fr] gap-6 items-center">
+          <div className="grid lg:grid-cols-[1fr_1fr] gap-10 items-center">
             {/* Left Content */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-              <span className="inline-block px-4 py-1.5 bg-brand-red/5 text-brand-red text-[10px] font-bold uppercase tracking-widest rounded-full mb-3">
+              <span className="inline-block px-4 py-1.5 bg-brand-red/5 text-brand-red text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">
                 {service.badge || "Service Detail"}
               </span>
-              <h1 className="text-3xl md:text-5xl font-extrabold text-brand-black leading-tight mb-3 tracking-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-black leading-tight mb-4 tracking-tight">
                 <HighlightText>{service.title}</HighlightText>
               </h1>
-              <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4 font-medium">
+              <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-6 font-medium">
                 {service.desc}
               </p>
-              <div className="flex flex-wrap gap-3">
-                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-all shadow-lg shadow-brand-red/20 text-sm">
+              <div className="flex flex-wrap gap-4">
+                <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-all shadow-lg shadow-brand-red/20 text-sm">
                   Request Demo <ArrowRight size={15} />
                 </Link>
-                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold bg-white text-brand-black border border-gray-200 hover:border-brand-gold hover:shadow-md transition-all text-sm">
+                <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-bold bg-white text-brand-black border border-gray-200 hover:border-brand-gold hover:shadow-md transition-all text-sm">
                   <PhoneCall size={15} className="text-brand-gold" /> Talk to Expert
                 </Link>
               </div>
@@ -92,7 +92,7 @@ const ServiceDetail = () => {
               <img
                 src={service.heroImage}
                 alt={service.title}
-                className="w-full h-auto max-h-[260px] object-contain brightness-[1.08] contrast-[1.1]"
+                className="w-full h-auto max-h-[450px] object-contain brightness-[1.08] contrast-[1.1]"
               />
             </motion.div>
           </div>

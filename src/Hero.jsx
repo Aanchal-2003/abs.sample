@@ -83,7 +83,8 @@ const Hero = () => {
 
             <motion.h1
               variants={item}
-              className="text-[36px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#C4962A] tracking-tight mb-6"
+              className="text-[36px] md:text-[44px] lg:text-[52px] font-bold italic leading-[1.15] text-[#C4962A] tracking-tight mb-6"
+              style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Behind Bold <br />
               <span className="text-brand-black">Businesses</span>
