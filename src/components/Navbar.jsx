@@ -38,9 +38,9 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 80, damping: 18 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-white/80 backdrop-blur-lg border-b border-brand-gold/20 shadow-sm py-2"
-          : "bg-white py-4"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2 ${scrolled
+          ? "bg-white/80 backdrop-blur-lg border-b border-brand-gold/20 shadow-sm"
+          : "bg-white"
           }`}
       >
         <div className="max-w-[1240px] mx-auto px-6 flex items-center justify-between">
@@ -49,7 +49,7 @@ const Navbar = () => {
             <img
               src={absLogo}
               alt="ABS Technologies"
-              className={`transition-all duration-500 ${scrolled ? "h-12" : "h-14"}`}
+              className="h-12"
             />
           </Link>
 
