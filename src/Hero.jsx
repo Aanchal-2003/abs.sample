@@ -49,7 +49,7 @@ const Hero = () => {
   const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-screen w-full flex items-center bg-[#FFFDE6] overflow-hidden pt-16 pb-4 snap-start">
+    <section ref={ref} className="relative h-screen w-full flex items-center bg-[#FFFDE6] overflow-hidden pt-16 pb-4 snap-start font-system">
 
       {init && (
          <Particles
@@ -89,14 +89,14 @@ const Hero = () => {
               <span className="text-brand-black">Businesses</span>
             </motion.h1>
 
-            <motion.div variants={item} className="space-y-1.5 mb-8 max-w-xl text-justify">
-              <p className="text-base text-[#A07828] leading-normal font-medium">
+            <motion.div variants={item} className="space-y-1.5 mb-8 max-w-xl">
+              <p className="text-sm text-[#A07828] leading-relaxed">
                 From the pitch to business, every game is shaped by the decisions you make.
               </p>
-              <p className="text-base text-[#A07828] leading-normal font-medium">
+              <p className="text-sm text-[#A07828] leading-relaxed">
                 To get them right, you need clarity, control, and confidence.
               </p>
-              <p className="text-base text-[#8B6914] leading-normal font-semibold">
+              <p className="text-sm text-[#8B6914] leading-relaxed font-semibold">
                 That's where we come in, quietly keeping your business in control, so your decisions stay bold.
               </p>
             </motion.div>
@@ -118,7 +118,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative flex items-center justify-center lg:justify-end mt-8 lg:mt-10 pointer-events-auto"
           >
-            <div className="relative w-full max-w-[420px] lg:max-w-[520px]">
+            <div className="relative w-full max-w-[360px] lg:max-w-[440px]">
               <img
                 src="https://resources.tallysolutions.com/wp-content/uploads/2026/behind-bold-businesses/cricket-players.png"
                 alt="TallyPrime — Official Partner of Royal Challengers Bengaluru"
