@@ -26,7 +26,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-8 items-stretch snap-start">
           
           {/* LEFT COLUMN: Map & Contact Info */}
-          <div className="space-y-6 flex flex-col h-full">
+          <div className="space-y-6 flex flex-col h-full order-2 lg:order-1">
             
             {/* Google Map Section */}
             <motion.div 
@@ -104,10 +104,10 @@ const Contact = () => {
           </div>
 
           {/* RIGHT COLUMN: Form */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full"
+            className="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm flex flex-col h-full order-1 lg:order-2"
           >
             <h3 className="text-2xl font-bold text-brand-black mb-6 tracking-tight">Request a Demo</h3>
             
