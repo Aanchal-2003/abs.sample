@@ -72,11 +72,13 @@ const Hero = () => {
 
             {/* Tally Prime x RCB Logo */}
             <motion.div variants={item} className="mb-6">
-              <img
-                src="https://resources.tallysolutions.com/wp-content/uploads/2026/behind-bold-businesses/tally-prime-rcb-logo.svg"
-                alt="TallyPrime x RCB — Official Business Management Platform"
-                className="h-14 w-auto object-contain"
-              />
+              <div className="bg-[#1a2b6b] rounded-xl px-4 py-2 inline-block">
+                <img
+                  src="https://resources.tallysolutions.com/wp-content/uploads/2026/behind-bold-businesses/tally-prime-rcb-logo.svg"
+                  alt="TallyPrime x RCB — Official Business Management Platform"
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
             </motion.div>
 
             <motion.h1
