@@ -92,7 +92,7 @@ const Navbar = () => {
               to="/contact"
               className="flex items-center gap-2 bg-brand-red text-white px-4 py-2 rounded-full shadow-md hover:bg-brand-red-dark transition font-bold text-xs lg:text-sm"
             >
-              Get Demo <ArrowRight size={15} />
+              Login <ArrowRight size={15} />
             </Link>
           </div>
 
