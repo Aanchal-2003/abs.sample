@@ -220,7 +220,7 @@ const Home = () => {
         <div className="max-w-[1200px] mx-auto px-6 relative z-10">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-brand-black tracking-tight mb-2">
-              Trusted by <HighlightText color="#f5b400">150+</HighlightText> Businesses
+              Trusted by <HighlightText color="#f5b400">6000+</HighlightText> Businesses
             </h2>
             <p className="text-gray-500 text-sm font-medium">
               Hear from leaders who streamlined operations with us.
