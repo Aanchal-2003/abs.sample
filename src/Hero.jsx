@@ -1,10 +1,8 @@
 import { motion, useScroll, useTransform } from 'motion/react';
-import { ArrowRight, Zap, Star } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { useRef, useEffect, useState, useMemo } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import HighlightText from './components/HighlightText';
-
 
 const Hero = () => {
   const [init, setInit] = useState(false);
@@ -72,45 +70,42 @@ const Hero = () => {
             className="flex flex-col items-start text-left max-w-xl pointer-events-auto justify-center pt-8 lg:pt-12"
           >
 
-            <motion.h1
-              variants={item}
-              className="text-[36px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#C4962A] tracking-tight mb-5"
-            >
-              Your Trusted Partner for {' '}
-              <HighlightText>Tally Solutions</HighlightText>
-            </motion.h1>
-
-            <motion.p
-              variants={item}
-              className="text-base text-[#A07828] leading-relaxed mb-8 max-w-lg font-medium"
-            >
-              We help businesses implement TallyPrime, build custom modules, manage AMC renewals, and deploy cloud solutions — all under one roof.
-            </motion.p>
-
-            <motion.div variants={item} className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-              <a
-                href="/contact"
-                className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-white bg-brand-red hover:bg-brand-red-dark transition-colors shadow-md text-sm"
-              >
-                Request a Demo <ArrowRight size={16} />
-              </a>
-              <a
-                href="/services"
-                className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-bold text-brand-black bg-white border border-gray-200 hover:border-brand-red hover:text-brand-red transition-all text-sm"
-              >
-                Our Services
-              </a>
+            {/* Tally Prime x RCB Logo */}
+            <motion.div variants={item} className="mb-6">
+              <img
+                src="https://resources.tallysolutions.com/wp-content/uploads/2026/behind-bold-businesses/tally-prime-rcb-logo.svg"
+                alt="TallyPrime x RCB — Official Business Management Platform"
+                className="h-14 w-auto object-contain"
+              />
             </motion.div>
 
-            <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-6 text-sm text-gray-500 font-medium">
-              <div className="flex items-center gap-2">
-                 <Star size={14} className="text-brand-gold fill-brand-gold" />
-                 150+ Clients
-              </div>
-              <div className="flex items-center gap-2">
-                 <Zap size={14} className="text-brand-red" />
-                 500+ Custom TDLs
-              </div>
+            <motion.h1
+              variants={item}
+              className="text-[36px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#C4962A] tracking-tight mb-6"
+            >
+              Behind Bold <br />
+              <span className="text-brand-black">Businesses</span>
+            </motion.h1>
+
+            <motion.div variants={item} className="space-y-3 mb-8 max-w-lg">
+              <p className="text-base text-[#A07828] leading-relaxed font-medium">
+                From the pitch to business, every game is shaped by the decisions you make.
+              </p>
+              <p className="text-base text-[#A07828] leading-relaxed font-medium">
+                To get them right, you need clarity, control, and confidence.
+              </p>
+              <p className="text-base text-[#8B6914] leading-relaxed font-semibold">
+                That's where we come in, quietly keeping your business in control, so your decisions stay bold.
+              </p>
+            </motion.div>
+
+            <motion.div variants={item}>
+              <a
+                href="/services"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-brand-black bg-brand-gold hover:bg-[#e0a800] transition-colors shadow-md text-sm"
+              >
+                Know more <ArrowUpRight size={16} />
+              </a>
             </motion.div>
           </motion.div>
 
