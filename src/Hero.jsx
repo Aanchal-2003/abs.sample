@@ -49,7 +49,7 @@ const Hero = () => {
   const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-screen w-full flex items-center bg-[#FFFDE6] overflow-hidden pt-16 pb-4 snap-start font-system">
+    <section ref={ref} className="relative h-screen w-full flex items-start lg:items-center bg-[#FFFDE6] overflow-hidden pt-[90px] lg:pt-20 pb-4 snap-start font-system">
 
       {init && (
          <Particles
@@ -59,19 +59,19 @@ const Hero = () => {
          />
       )}
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 w-full z-10 relative pointer-events-none mt-2">
-        <motion.div style={{ opacity: opacityText }} className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-stretch">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-10 w-full z-10 relative pointer-events-none">
+        <motion.div style={{ opacity: opacityText }} className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-14 items-center">
 
           {/* Left */}
           <motion.div
             variants={container}
             initial="hidden"
             animate="visible"
-            className="flex flex-col items-start text-left max-w-xl pointer-events-auto justify-center pt-4 lg:pt-0"
+            className="flex flex-col items-start text-left max-w-xl pointer-events-auto justify-center"
           >
 
-            {/* Tally Prime x RCB Logo */}
-            <motion.div variants={item} className="mb-6">
+            {/* Tally Prime x RCB Logo — desktop only above heading */}
+            <motion.div variants={item} className="hidden lg:block mb-6">
               <div className="bg-[#1a2b6b] rounded-xl px-4 py-2 inline-block">
                 <img
                   src="https://resources.tallysolutions.com/wp-content/uploads/2026/behind-bold-businesses/tally-prime-rcb-logo.svg"
@@ -81,16 +81,34 @@ const Hero = () => {
               </div>
             </motion.div>
 
-            <motion.h1
-              variants={item}
-              className="text-[36px] md:text-[44px] lg:text-[52px] font-bold italic leading-[1.15] text-[#C4962A] tracking-tight mb-6"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Behind Bold <br />
-              <span className="text-brand-black">Businesses</span>
-            </motion.h1>
+            {/* Heading + Tally logo on right (mobile) */}
+            <div className="flex items-center gap-4 mb-4 lg:mb-6 w-full">
+              <motion.h1
+                variants={item}
+                className="text-[32px] md:text-[44px] lg:text-[52px] font-bold italic leading-[1.15] text-[#C4962A] tracking-tight"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Behind Bold <br />
+                <span className="text-brand-black">Businesses</span>
+              </motion.h1>
+              {/* Mobile-only: Tally logo on right of heading */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="lg:hidden shrink-0"
+              >
+                <div className="bg-[#1a2b6b] rounded-xl px-3 py-2">
+                  <img
+                    src="https://resources.tallysolutions.com/wp-content/uploads/2026/behind-bold-businesses/tally-prime-rcb-logo.svg"
+                    alt="TallyPrime x RCB"
+                    className="h-16 w-auto object-contain"
+                  />
+                </div>
+              </motion.div>
+            </div>
 
-            <motion.div variants={item} className="space-y-1.5 mb-8 max-w-xl">
+            <motion.div variants={item} className="space-y-1.5 mb-6 lg:mb-8 max-w-xl">
               <p className="text-sm text-[#A07828] leading-relaxed">
                 From the pitch to business, every game is shaped by the decisions you make.
               </p>
@@ -110,16 +128,28 @@ const Hero = () => {
                 Know more <ArrowUpRight size={16} />
               </a>
             </motion.div>
+
+            {/* Mobile-only: RCB Banner below button */}
+            <motion.div
+              variants={item}
+              className="lg:hidden mt-6 flex justify-center w-full"
+            >
+              <img
+                src="https://resources.tallysolutions.com/wp-content/uploads/2026/behind-bold-businesses/cricket-players.png"
+                alt="TallyPrime — Official Partner of Royal Challengers Bengaluru"
+                className="h-52 w-auto object-contain drop-shadow-lg"
+              />
+            </motion.div>
           </motion.div>
 
-          {/* Right: Tally x RCB Banner */}
+          {/* Right: Tally x RCB Banner — desktop only */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex items-center justify-center lg:justify-end mt-8 lg:mt-10 pointer-events-auto"
+            className="hidden lg:flex relative items-center justify-end mt-10 pointer-events-auto"
           >
-            <div className="relative w-full max-w-[360px] lg:max-w-[440px]">
+            <div className="relative w-full max-w-[440px]">
               <img
                 src="https://resources.tallysolutions.com/wp-content/uploads/2026/behind-bold-businesses/cricket-players.png"
                 alt="TallyPrime — Official Partner of Royal Challengers Bengaluru"
