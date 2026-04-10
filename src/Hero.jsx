@@ -69,7 +69,7 @@ const Hero = () => {
             variants={container}
             initial="hidden"
             animate="visible"
-            className="flex flex-col items-start text-left max-w-xl pointer-events-auto"
+            className="flex flex-col items-start text-left max-w-xl pointer-events-auto justify-center pt-8 lg:pt-12"
           >
 
             <motion.h1
