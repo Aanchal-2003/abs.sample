@@ -49,7 +49,7 @@ const Hero = () => {
   const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-[80vh] w-full flex items-center bg-[#FFFDE6] overflow-hidden pt-24 pb-4 snap-start">
+    <section ref={ref} className="relative h-screen w-full flex items-center bg-[#FFFDE6] overflow-hidden pt-16 pb-4 snap-start">
 
       {init && (
          <Particles
@@ -67,7 +67,7 @@ const Hero = () => {
             variants={container}
             initial="hidden"
             animate="visible"
-            className="flex flex-col items-start text-left max-w-xl pointer-events-auto justify-center pt-8 lg:pt-12"
+            className="flex flex-col items-start text-left max-w-xl pointer-events-auto justify-center pt-4 lg:pt-0"
           >
 
             {/* Tally Prime x RCB Logo */}
@@ -116,7 +116,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex items-center justify-center lg:justify-end mt-8 lg:mt-0 pointer-events-auto"
+            className="relative flex items-center justify-center lg:justify-end mt-8 lg:mt-10 pointer-events-auto"
           >
             <div className="relative w-full max-w-[420px] lg:max-w-[520px]">
               <img
