@@ -36,7 +36,7 @@ const Services = () => {
     <div className="min-h-screen bg-white font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="pt-[72px] pb-2 px-6 relative z-10 snap-start">
+      <section className="pt-[90px] lg:pt-[72px] pb-2 px-6 relative z-10 snap-start">
         <div className="max-w-[1200px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
