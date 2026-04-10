@@ -43,6 +43,12 @@ jobs:
           aws s3 cp dist/index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html \
             --cache-control "no-cache, no-store, must-revalidate"
 
+      - name: Configure S3 for SPA routing
+        run: |
+          aws s3 website s3://${{ secrets.S3_BUCKET_NAME }} \
+            --index-document index.html \
+            --error-document index.html
+
       - name: Invalidate CloudFront cache
         if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}
         run: |
