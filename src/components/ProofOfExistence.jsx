@@ -2,9 +2,9 @@ import { motion } from 'motion/react';
 import { Users, Code, Clock, Star } from 'lucide-react';
 
 const stats = [
-  { icon: Users, value: '150+', label: 'Businesses Served'   },
-  { icon: Code,  value: '500+', label: 'Custom TDLs Built'   },
-  { icon: Star,  value: '12+',  label: 'Years of Experience' },
+  { icon: Users, value: '6000+', label: 'Businesses Served'   },
+  { icon: Code,  value: '500+',  label: 'Custom TDLs Built'   },
+  { icon: Star,  value: '16+',   label: 'Years of Experience' },
   { icon: Clock, value: '24/7', label: 'Support Available'   },
 ];
 
