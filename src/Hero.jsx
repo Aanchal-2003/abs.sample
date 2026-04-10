@@ -86,7 +86,7 @@ const Hero = () => {
 
             <motion.h1
               variants={item}
-              className="text-[36px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-brand-black tracking-tight mb-5"
+              className="text-[36px] md:text-[44px] lg:text-[52px] font-bold leading-[1.15] text-[#C4962A] tracking-tight mb-5"
             >
               Your Trusted Partner for {' '}
               <HighlightText>Tally Solutions</HighlightText>
@@ -94,7 +94,7 @@ const Hero = () => {
 
             <motion.p
               variants={item}
-              className="text-base text-gray-500 leading-relaxed mb-8 max-w-lg font-medium"
+              className="text-base text-[#A07828] leading-relaxed mb-8 max-w-lg font-medium"
             >
               We help businesses implement TallyPrime, build custom modules, manage AMC renewals, and deploy cloud solutions — all under one roof.
             </motion.p>
@@ -126,19 +126,19 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right: Dashboard Image Cropped */}
+          {/* Right: Tally x RCB Banner */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative flex items-center justify-center lg:justify-end mt-8 lg:mt-0 pointer-events-auto"
           >
-            <div className="relative w-full max-w-[420px] lg:max-w-[500px] aspect-square">
-               <img
-                 src="https://resources.tallysolutions.com/wp-content/themes/tally/assets/images/login-popup-prime.jpg"
-                 alt="ABS Technologies — Trusted Tally Partner"
-                 className="absolute inset-0 w-full h-full object-contain"
-               />
+            <div className="relative w-full max-w-[420px] lg:max-w-[520px]">
+              <img
+                src="https://resources.tallysolutions.com/wp-content/uploads/2026/behind-bold-businesses/cricket-players.png"
+                alt="TallyPrime — Official Partner of Royal Challengers Bengaluru"
+                className="w-full h-auto object-contain drop-shadow-xl"
+              />
             </div>
           </motion.div>
 
