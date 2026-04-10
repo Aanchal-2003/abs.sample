@@ -36,14 +36,15 @@ const SubServiceDetail = () => {
   const highlights = details.highlights || [];
 
   return (
-    <div className="min-h-screen bg-transparent font-system relative overflow-hidden">
+    <div className="min-h-screen bg-white font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="pt-32 pb-12 px-6 relative z-10 border-b border-gray-100">
-        <div className="max-w-[1200px] mx-auto">
-
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-6 font-bold tracking-wider uppercase flex-wrap">
+      <section className="pt-32 pb-12 px-6 relative z-10 snap-start">
+        <div className="max-w-[1240px] mx-auto">
+          {/* Content sits directly on page background */}
+          
+          {/* Breadcrumb Section */}
+          <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-8 font-bold tracking-wider uppercase flex-wrap">
             <Link to="/" className="hover:text-brand-black transition">Home</Link>
             <ChevronRight size={10} />
             <Link to="/services" className="hover:text-brand-black transition">Services</Link>
@@ -54,33 +55,39 @@ const SubServiceDetail = () => {
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-10 items-center">
-            {/* Left */}
+            {/* Left Content */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-              <h1 className="text-3xl md:text-4xl font-bold text-brand-black leading-tight mb-4 tracking-tight">
+              <span className="inline-block px-4 py-1.5 bg-brand-red/5 text-brand-red text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">
+                {service.title} Sub-Service
+              </span>
+              <h1 className="text-4xl md:text-6xl font-extrabold text-brand-black leading-tight mb-6 tracking-tight">
                 <HighlightText>{subService.name}</HighlightText>
               </h1>
-              <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-lg">
+              <p className="text-gray-500 text-sm md:text-lg leading-relaxed mb-8 max-w-xl font-medium">
                 {subService.desc}
               </p>
-              <div className="flex flex-wrap gap-3">
-                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-colors text-sm">
+              <div className="flex flex-wrap gap-4">
+                <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-all shadow-lg shadow-brand-red/20 text-sm">
                   Request Demo <ArrowRight size={15} />
                 </Link>
-                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold bg-white text-brand-black border border-gray-200 hover:border-brand-gold transition-colors text-sm">
+                <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold bg-white text-brand-black border border-gray-200 hover:border-brand-gold hover:shadow-md transition-all text-sm">
                   <PhoneCall size={15} className="text-brand-gold" /> Talk to Expert
                 </Link>
               </div>
             </motion.div>
 
-            {/* Right Image/Icon */}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <div className="rounded-2xl border border-gray-100 shadow-sm bg-white/50 flex items-center justify-center p-4">
-                <img
-                  src={service.subServiceImage || service.heroImage}
-                  alt={subService.name}
-                  className="w-full max-h-80 object-contain"
-                />
-              </div>
+            {/* Right Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex justify-center lg:justify-end"
+            >
+              <img
+                src={service.subServiceImage || service.heroImage}
+                alt={subService.name}
+                className="w-full h-auto max-h-[480px] object-contain brightness-[1.08] contrast-[1.1]"
+              />
             </motion.div>
           </div>
         </div>

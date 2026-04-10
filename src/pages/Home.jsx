@@ -98,65 +98,115 @@ const Home = () => {
   const opacityTrust = useTransform(trustScroll, [0, 0.3, 0.7, 1], [0, 1, 1, 0]);
 
   return (
-    <div className="font-system bg-brand-white flex flex-col">
+    <div className="font-system bg-white flex flex-col">
       <Hero />
 
       {/* ── SERVICES ── */}
-      <section className="py-8 relative overflow-hidden bg-transparent snap-start">
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+      <section className="py-20 relative overflow-hidden bg-transparent snap-start">
+        <div className="max-w-[1240px] mx-auto px-6 relative z-10">
 
-          <div className="text-center mb-6 max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-black tracking-tight mb-3">
-              Complete <HighlightText>Tally Services</HighlightText>
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold text-brand-black tracking-tight mb-4">
+              Our <HighlightText>Core Expertise</HighlightText>
             </h2>
-            <p className="text-gray-500 text-sm font-medium">
-              Implementation, customization, support & cloud — everything under one roof.
+            <p className="text-gray-500 text-base font-medium">
+              We provide end-to-end Tally solutions, from licensing and customization to cloud hosting and integration.
             </p>
           </div>
 
-          <FocusGrid>
-            {previewServices.map((service, i) => {
-              const Icon = service.icon;
-              return (
-                <Link
-                  key={service.slug}
-                  to={`/services/${service.slug}`}
-                  className="group bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-brand-red/20 transition-all duration-300 flex flex-col overflow-hidden"
-                >
-                  {/* Text content — fixed height so all cards stay equal */}
-                  <div className="p-6 flex flex-col h-52">
-                    <div className="w-12 h-12 bg-brand-red/5 rounded-xl flex items-center justify-center mb-4 shrink-0">
-                      <Icon className="text-brand-red" size={22} />
+          <div className="flex flex-col gap-16 md:gap-24">
+            {services
+              .filter(s => ['tally-solutions', 'tdl-development', 'cloud-services', 'tally-mobile'].includes(s.slug))
+              .map((service, i) => {
+                const Icon = service.icon;
+                const isEven = i % 2 === 0;
+
+                return (
+                  <motion.div
+                    key={service.slug}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    className="w-full"
+                  >
+                    <div className={`bg-[#ffffff] rounded-[2.5rem] shadow-sm border border-gray-100/80 hover:shadow-xl transition-all duration-500 group relative overflow-hidden flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-stretch`}>
+                      
+                      {/* Content Block */}
+                      <div className="flex-1 p-8 md:p-10 lg:p-14 flex flex-col relative z-20">
+                        <div className="flex items-center gap-4 mb-6">
+                          <div className={`w-14 h-14 ${service.iconBg || 'bg-brand-red/5'} rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
+                            <Icon className={service.iconColor || 'text-brand-red'} size={28} />
+                          </div>
+                          <div>
+                            <span className="text-[10px] font-bold text-brand-red uppercase tracking-widest bg-brand-red/5 px-2.5 py-1 rounded-full mb-1 inline-block">
+                              {service.badge || "Tally Expert"}
+                            </span>
+                            <h3 className="text-2xl md:text-4xl font-extrabold text-brand-black tracking-tight group-hover:text-brand-red transition-colors">
+                              {service.title === "Tally Mobile Solutions" ? "Web & Mobile" : 
+                               service.title === "Tally Solutions" ? "Tally Prime" : 
+                               service.slug === "tdl-development" ? "Customization" : 
+                               service.title === "Cloud Services" ? "Tally Cloud" : service.title}
+                            </h3>
+                          </div>
+                        </div>
+
+                        <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-8 font-medium">
+                          {service.desc}
+                        </p>
+
+                        {/* Sub-services list */}
+                        <div className="mb-8 p-6 bg-white/50 rounded-2xl border border-gray-100/50">
+                          <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center gap-2">
+                            <Zap size={12} className="text-brand-gold" /> Key Sub-Services
+                          </h4>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6">
+                            {(service.subServices || []).slice(0, 4).map((sub, idx) => (
+                              <div key={idx} className="flex items-center gap-2 text-sm text-gray-600 font-semibold group/sub hover:text-brand-red transition-colors">
+                                <BadgeCheck size={14} className="text-brand-red/40 group-hover/sub:text-brand-red transition-colors shrink-0" />
+                                <span className="line-clamp-1">{sub.name}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+
+                        <Link
+                          to={`/services/${service.slug}`}
+                          className="inline-flex items-center gap-2.5 text-brand-red font-bold text-base group-hover:gap-4 transition-all mt-auto"
+                        >
+                          Explore Detailed Features
+                          <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
+                      </div>
+
+                      {/* Image Block */}
+                      <div className="flex-1 flex items-center justify-center bg-transparent relative overflow-hidden">
+                        <motion.div 
+                          whileHover={{ scale: 1.02 }}
+                          transition={{ duration: 0.5 }}
+                          className="relative w-full h-full flex items-center justify-center p-6 md:p-10"
+                        >
+                          <img
+                            src={service.image}
+                            alt={service.title}
+                            className="w-full h-auto max-h-[420px] object-contain group-hover:scale-105 transition-transform duration-700 brightness-[1.08] contrast-[1.1]"
+                          />
+                        </motion.div>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-bold text-brand-black mb-2 shrink-0">{service.title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 flex-grow">{service.desc}</p>
 
-                    {/* Explore link */}
-                    <div className="flex items-center gap-1.5 mt-auto pt-3 text-brand-red font-bold text-sm group-hover:gap-2.5 transition-all shrink-0">
-                      Explore {service.title}
-                      <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-                    </div>
-                  </div>
+                  </motion.div>
 
-                  {/* Illustration — fixed height so all image areas are equal */}
-                  <div className="h-52 bg-[#f8f9fc] border-t border-gray-100 flex items-center justify-center p-5">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                </Link>
-              );
-            })}
-          </FocusGrid>
+                );
+              })}
+          </div>
 
-          <div className="text-center mt-8">
+          <div className="text-center mt-24">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm bg-brand-black text-white hover:bg-brand-red transition-colors"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-base bg-brand-black text-white hover:bg-brand-red hover:shadow-xl hover:shadow-brand-red/20 transition-all transform hover:-translate-y-1"
             >
-              View All Services <ArrowUpRight size={16} />
+              View All Services <ArrowUpRight size={20} />
             </Link>
           </div>
         </div>

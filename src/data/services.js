@@ -128,7 +128,7 @@ export const services = [
     ]
   },
   {
-    title: "TDL Development",
+    title: "Customization",
     slug: "tdl-development",
     category: "development",
     tagline: "Custom scripts, solution boosters & add-on modules for TallyPrime",
@@ -140,7 +140,7 @@ export const services = [
     heroImage: tdlV2Img,
     subServiceImage: customizationImg,
     scene: "developer",
-    badge: "TDL & Add-On Development",
+    badge: "Tally Customization",
     emoji: "⚙️",
     details: [
       "Custom Report & Invoice Design",

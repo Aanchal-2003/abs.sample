@@ -52,12 +52,7 @@ const Hero = () => {
   const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-[80vh] w-full flex items-center bg-transparent overflow-hidden pt-24 pb-4 snap-start">
-
-      {/* Backgrounds */}
-      <motion.div style={{ y: yBg }} className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-bl from-brand-red/5 to-transparent rounded-bl-[100px] -z-10 hidden lg:block" />
-      <div className="absolute top-0 right-1/4 w-72 h-72 bg-brand-red/5 rounded-full blur-[80px] -z-10" />
-      <div className="absolute bottom-10 left-10 w-52 h-52 bg-brand-gold/5 rounded-full blur-[60px] -z-10" />
+    <section ref={ref} className="relative min-h-[80vh] w-full flex items-center bg-[#FFFDE6] overflow-hidden pt-24 pb-4 snap-start">
 
       {init && (
          <Particles

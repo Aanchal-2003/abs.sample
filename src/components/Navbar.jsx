@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowRight, Home, Layers, Info, Mail } from "lucide-react";
+import { Menu, X, ArrowRight, Home, Layers, Info, Mail, Code, Server, Smartphone } from "lucide-react";
 import { services } from "../data/services";
 import absLogo from "../assets/logo.png";
 
@@ -24,15 +24,13 @@ const Navbar = () => {
 
   const links = [
     { name: "Home", path: "/", icon: Home },
-    { name: "Services", path: "/services", icon: Layers },
+    { name: "Tally", path: "/services/tally-solutions", icon: Layers },
+    { name: "Customization", path: "/services/tdl-development", icon: Code },
+    { name: "Cloud", path: "/services/cloud-services", icon: Server },
+    { name: "Web", path: "/services/tally-mobile", icon: Smartphone },
     { name: "About", path: "/about", icon: Info },
     { name: "Contact", path: "/contact", icon: Mail },
   ];
-
-  const servicesDropdown = services.map(service => ({
-    name: service.title,
-    path: `/services/${service.slug}`,
-  }));
 
   return (
     <>
@@ -41,11 +39,11 @@ const Navbar = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 80, damping: 18 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-[#dde4f0] backdrop-blur-lg border-b border-brand-gold/40 shadow-md py-2"
-          : "bg-[#eaeff8] py-4"
+          ? "bg-white/80 backdrop-blur-lg border-b border-brand-gold/20 shadow-sm py-2"
+          : "bg-white py-4"
           }`}
       >
-        <div className="max-w-[1200px] mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-[1240px] mx-auto px-6 flex items-center justify-between">
           {/* LOGO */}
           <Link to="/" className="flex items-center gap-2">
             <img
@@ -56,7 +54,7 @@ const Navbar = () => {
           </Link>
 
           {/* DESKTOP NAV */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {links.map((link) => {
               const isActive = location.pathname === link.path;
               const Icon = link.icon;
@@ -65,7 +63,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`relative flex items-center gap-2 text-[15px] font-semibold transition-all duration-200 px-1 py-1 ${
+                  className={`relative flex items-center gap-2 text-[14px] lg:text-[15px] font-semibold transition-all duration-200 px-1 py-1 ${
                     isActive
                       ? "text-brand-red"
                       : "text-gray-600 hover:text-brand-red"
@@ -74,7 +72,7 @@ const Navbar = () => {
                   <span className={`flex items-center justify-center w-6 h-6 rounded-md transition-all duration-200 ${
                     isActive ? "bg-brand-red text-white" : "text-gray-400 group-hover:text-brand-red"
                   }`}>
-                    <Icon size={14} />
+                    <Icon size={13} />
                   </span>
                   {link.name}
                   {isActive && (
@@ -92,7 +90,7 @@ const Navbar = () => {
           <div className="hidden md:block">
             <Link
               to="/contact"
-              className="flex items-center gap-2 bg-brand-red text-white px-5 py-2.5 rounded-full shadow-md hover:bg-brand-red-dark transition font-bold text-sm"
+              className="flex items-center gap-2 bg-brand-red text-white px-4 py-2 rounded-full shadow-md hover:bg-brand-red-dark transition font-bold text-xs lg:text-sm"
             >
               Get Demo <ArrowRight size={15} />
             </Link>
