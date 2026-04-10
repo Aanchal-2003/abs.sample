@@ -102,10 +102,10 @@ const Home = () => {
       <Hero />
 
       {/* ── SERVICES ── */}
-      <section className="py-20 relative overflow-hidden bg-transparent snap-start">
+      <section className="py-12 relative overflow-hidden bg-transparent snap-start">
         <div className="max-w-[1240px] mx-auto px-6 relative z-10">
 
-          <div className="text-center mb-16 max-w-2xl mx-auto">
+          <div className="text-center mb-10 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-black tracking-tight mb-4">
               Our <HighlightText>Core Expertise</HighlightText>
             </h2>
@@ -114,7 +114,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-16 md:gap-24">
+          <div className="flex flex-col gap-10 md:gap-14">
             {services
               .filter(s => ['tally-solutions', 'tdl-development', 'cloud-services', 'tally-mobile'].includes(s.slug))
               .map((service, i) => {
@@ -201,7 +201,7 @@ const Home = () => {
               })}
           </div>
 
-          <div className="text-center mt-24">
+          <div className="text-center mt-10">
             <Link
               to="/services"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-base bg-brand-black text-white hover:bg-brand-red hover:shadow-xl hover:shadow-brand-red/20 transition-all transform hover:-translate-y-1"

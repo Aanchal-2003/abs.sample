@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'motion/react';
-import { ArrowRight, ShieldCheck, Zap, Star } from 'lucide-react';
+import { ArrowRight, Zap, Star } from 'lucide-react';
 import { useRef, useEffect, useState, useMemo } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -48,7 +48,6 @@ const Hero = () => {
 
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"]});
-  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacityText = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
@@ -72,17 +71,6 @@ const Hero = () => {
             animate="visible"
             className="flex flex-col items-start text-left max-w-xl pointer-events-auto"
           >
-
-            {/* Official 5-Star Tally Partner Badge */}
-            <motion.div variants={item} className="mb-6">
-              <div className="bg-white p-1 rounded-lg border border-gray-100 shadow-sm inline-block">
-                <img 
-                  src="https://www.circuitworld.in/images/brandimages/tally-certified-partner-5-star-sales-and-solution.png" 
-                  alt="Official Tally Certified 5-Star Partner"
-                  className="h-10 sm:h-12 w-auto object-contain"
-                />
-              </div>
-            </motion.div>
 
             <motion.h1
               variants={item}
