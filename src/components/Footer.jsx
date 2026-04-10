@@ -22,7 +22,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-brand-black text-white/80 font-system">
+    <footer className="bg-[#0f2b6b] text-white/90 font-system">
       <div className="max-w-[1200px] mx-auto px-6 pt-10 pb-6">
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-6">
@@ -33,20 +33,20 @@ const Footer = () => {
               <img src={absLogo} className="h-10 w-auto" alt="ABS Technologies" />
             </div>
 
-            <p className="text-xs text-white/40 leading-relaxed max-w-sm mb-5">
+            <p className="text-xs text-white/70 leading-relaxed max-w-sm mb-5">
               ABS Technologies — your certified 5-Star Tally Partner for implementation, customization, AMC, and cloud solutions.
             </p>
 
             <div className="space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-white/50">
+              <div className="flex items-center gap-2 text-white/80">
                 <Mail className="w-3.5 h-3.5 text-brand-gold" />
                 support@abstechnologies.co.in
               </div>
-              <div className="flex items-center gap-2 text-white/50">
+              <div className="flex items-center gap-2 text-white/80">
                 <Phone className="w-3.5 h-3.5 text-brand-gold" />
                 +91 7578000559
               </div>
-              <div className="flex items-center gap-2 text-white/50">
+              <div className="flex items-center gap-2 text-white/80">
                 <MapPin className="w-3.5 h-3.5 text-brand-gold" />
                 Guwahati, Assam 781008
               </div>
@@ -56,7 +56,7 @@ const Footer = () => {
           {/* LINKS */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-white font-semibold text-xs mb-3 uppercase tracking-wider">
+              <h4 className="text-white font-bold text-xs mb-3 uppercase tracking-wider">
                 {title}
               </h4>
               <ul className="space-y-1.5">
@@ -64,7 +64,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="text-xs text-white/40 hover:text-brand-gold transition"
+                      className="text-xs text-white/70 hover:text-brand-gold transition"
                     >
                       {link.name}
                     </Link>
@@ -75,13 +75,13 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="border-t border-white/10 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px]">
-          <p className="text-white/25">
+        <div className="border-t border-white/20 pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px]">
+          <p className="text-white/60">
             © {currentYear} ABS Technologies. All rights reserved.
           </p>
           <div className="flex gap-4">
             {['Privacy Policy', 'Terms of Service'].map((item) => (
-              <a key={item} href="#" className="text-white/25 hover:text-white/50 transition">
+              <a key={item} href="#" className="text-white/60 hover:text-white transition">
                 {item}
               </a>
             ))}
