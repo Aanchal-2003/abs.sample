@@ -68,13 +68,13 @@ const StatsGraphics = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fafafa] pt-24 sm:pt-28 pb-16 sm:pb-20 font-geist" ref={containerRef}>
+    <div className="min-h-screen bg-[#fafafa] pt-16 sm:pt-20 pb-12 sm:pb-16 font-geist" ref={containerRef}>
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
-          className="text-center mb-10 sm:mb-16"
+          className="text-center mb-8 sm:mb-10"
         >
           <span className="inline-block px-3 py-1 rounded-full bg-brand-red/5 border border-brand-red/10 text-brand-red text-xs font-medium mb-4">IMPACT METRICS</span>
           <motion.img
@@ -93,7 +93,7 @@ const StatsGraphics = () => {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-12 sm:mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-8 sm:mb-12">
           {stats.map((stat, i) => (
             <AnimatedCounter key={i} {...stat} />
           ))}
@@ -104,7 +104,7 @@ const StatsGraphics = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 sm:mb-20"
+          className="mb-8 sm:mb-12"
         >
           <div className="text-center mb-8 sm:mb-10">
             <span className="inline-block px-3 py-1 rounded-full bg-brand-orange/5 border border-brand-orange/10 text-brand-orange text-xs font-medium mb-3">PLATFORM DATA</span>

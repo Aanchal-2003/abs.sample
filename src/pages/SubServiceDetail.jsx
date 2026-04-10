@@ -39,12 +39,10 @@ const SubServiceDetail = () => {
     <div className="min-h-screen bg-white font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="pt-32 pb-12 px-6 relative z-10 snap-start">
-        <div className="max-w-[1240px] mx-auto">
-          {/* Content sits directly on page background */}
-          
+      <section className="pt-[72px] pb-2 px-6 relative z-10 snap-start">
+        <div className="max-w-[1200px] mx-auto">
           {/* Breadcrumb Section */}
-          <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-8 font-bold tracking-wider uppercase flex-wrap">
+          <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-2 font-bold tracking-wider uppercase flex-wrap">
             <Link to="/" className="hover:text-brand-black transition">Home</Link>
             <ChevronRight size={10} />
             <Link to="/services" className="hover:text-brand-black transition">Services</Link>
@@ -54,23 +52,23 @@ const SubServiceDetail = () => {
             <span className="text-brand-red">{subService.name}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid lg:grid-cols-[1fr_0.9fr] gap-6 items-center">
             {/* Left Content */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-              <span className="inline-block px-4 py-1.5 bg-brand-red/5 text-brand-red text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 bg-brand-red/5 text-brand-red text-[10px] font-bold uppercase tracking-widest rounded-full mb-3">
                 {service.title} Sub-Service
               </span>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-brand-black leading-tight mb-6 tracking-tight">
+              <h1 className="text-3xl md:text-5xl font-extrabold text-brand-black leading-tight mb-3 tracking-tight">
                 <HighlightText>{subService.name}</HighlightText>
               </h1>
-              <p className="text-gray-500 text-sm md:text-lg leading-relaxed mb-8 max-w-xl font-medium">
+              <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4 font-medium">
                 {subService.desc}
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-all shadow-lg shadow-brand-red/20 text-sm">
+              <div className="flex flex-wrap gap-3">
+                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-all shadow-lg shadow-brand-red/20 text-sm">
                   Request Demo <ArrowRight size={15} />
                 </Link>
-                <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold bg-white text-brand-black border border-gray-200 hover:border-brand-gold hover:shadow-md transition-all text-sm">
+                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold bg-white text-brand-black border border-gray-200 hover:border-brand-gold hover:shadow-md transition-all text-sm">
                   <PhoneCall size={15} className="text-brand-gold" /> Talk to Expert
                 </Link>
               </div>
@@ -86,7 +84,7 @@ const SubServiceDetail = () => {
               <img
                 src={service.subServiceImage || service.heroImage}
                 alt={subService.name}
-                className="w-full h-auto max-h-[480px] object-contain brightness-[1.08] contrast-[1.1]"
+                className="w-full h-auto max-h-[260px] object-contain brightness-[1.08] contrast-[1.1]"
               />
             </motion.div>
           </div>
@@ -95,7 +93,7 @@ const SubServiceDetail = () => {
 
       {/* ── HIGHLIGHTS ── */}
       {highlights.length > 0 && (
-        <section className="py-8 bg-transparent border-b border-gray-100/50">
+        <section className="py-3 bg-transparent border-b border-gray-100/50">
           <div className="max-w-[1200px] mx-auto px-6">
             <div className="grid grid-cols-3 gap-6">
               {highlights.map((h, i) => (
@@ -118,10 +116,10 @@ const SubServiceDetail = () => {
 
       {/* ── KEY FEATURES ── */}
       {features.length > 0 && (
-        <section className="py-12 bg-transparent relative z-10">
+        <section className="py-5 bg-transparent relative z-10">
           <div className="max-w-[1200px] mx-auto px-6">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-brand-black mb-2">Key Features</h2>
+            <div className="text-center mb-4">
+              <h2 className="text-2xl font-bold text-brand-black mb-1">Key Features</h2>
               <p className="text-gray-400 text-sm">What this module delivers for your business</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -144,7 +142,7 @@ const SubServiceDetail = () => {
       )}
 
       {/* ── BACK TO PARENT + CTA ── */}
-      <section className="py-10 bg-transparent border-t border-gray-100/50 relative z-10">
+      <section className="py-4 bg-transparent border-t border-gray-100/50 relative z-10">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>

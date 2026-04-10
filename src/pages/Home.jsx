@@ -102,10 +102,10 @@ const Home = () => {
       <Hero />
 
       {/* ── SERVICES ── */}
-      <section className="py-12 relative overflow-hidden bg-transparent snap-start">
-        <div className="max-w-[1240px] mx-auto px-6 relative z-10">
+      <section className="py-8 relative overflow-hidden bg-transparent snap-start">
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
 
-          <div className="text-center mb-10 max-w-2xl mx-auto">
+          <div className="text-center mb-6 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-black tracking-tight mb-4">
               Our <HighlightText>Core Expertise</HighlightText>
             </h2>
@@ -114,7 +114,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-10 md:gap-14">
+          <div className="flex flex-col gap-8 md:gap-10">
             {services
               .filter(s => ['tally-solutions', 'tdl-development', 'cloud-services', 'tally-mobile'].includes(s.slug))
               .map((service, i) => {
@@ -201,7 +201,7 @@ const Home = () => {
               })}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-6">
             <Link
               to="/services"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-base bg-brand-black text-white hover:bg-brand-red hover:shadow-xl hover:shadow-brand-red/20 transition-all transform hover:-translate-y-1"
@@ -261,7 +261,7 @@ const Home = () => {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-12 bg-transparent text-center relative overflow-hidden snap-start">
+      <section className="py-8 bg-transparent text-center relative overflow-hidden snap-start">
         {/* Subtle Decorative Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/10 rounded-full blur-[100px] -z-10" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-gold/10 rounded-full blur-[100px] -z-10" />
@@ -270,7 +270,7 @@ const Home = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-brand-black tracking-tight mb-4">
             Keep your Tally updated & compliant
           </h2>
-          <p className="text-gray-600 text-sm mb-8 max-w-xl mx-auto font-medium leading-relaxed">
+          <p className="text-gray-600 text-sm mb-5 max-w-xl mx-auto font-medium leading-relaxed">
             Our AMC & TSS coverage ensures uninterrupted operations, priority support, and regular version upgrades.
           </p>
           <Link

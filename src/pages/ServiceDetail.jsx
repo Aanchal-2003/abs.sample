@@ -49,12 +49,10 @@ const ServiceDetail = () => {
     <div className="min-h-screen bg-white font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="pt-32 pb-12 px-6 relative z-10 snap-start">
-        <div className="max-w-[1240px] mx-auto">
-          {/* Content sits directly on page background now */}
-          
+      <section className="pt-[72px] pb-2 px-6 relative z-10 snap-start">
+        <div className="max-w-[1200px] mx-auto">
           {/* Breadcrumb Section */}
-          <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-8 font-bold tracking-wider uppercase">
+          <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-2 font-bold tracking-wider uppercase">
             <Link to="/" className="hover:text-brand-black transition">Home</Link>
             <ChevronRight size={10} />
             <Link to="/services" className="hover:text-brand-black transition">Services</Link>
@@ -62,23 +60,23 @@ const ServiceDetail = () => {
             <span className="text-brand-red">{service.title}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="grid lg:grid-cols-[1fr_0.9fr] gap-6 items-center">
             {/* Left Content */}
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-              <span className="inline-block px-4 py-1.5 bg-brand-red/5 text-brand-red text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 bg-brand-red/5 text-brand-red text-[10px] font-bold uppercase tracking-widest rounded-full mb-3">
                 {service.badge || "Service Detail"}
               </span>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-brand-black leading-tight mb-6 tracking-tight">
+              <h1 className="text-3xl md:text-5xl font-extrabold text-brand-black leading-tight mb-3 tracking-tight">
                 <HighlightText>{service.title}</HighlightText>
               </h1>
-              <p className="text-gray-500 text-sm md:text-lg leading-relaxed mb-8 max-w-xl font-medium">
+              <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-4 font-medium">
                 {service.desc}
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-all shadow-lg shadow-brand-red/20 text-sm">
+              <div className="flex flex-wrap gap-3">
+                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-all shadow-lg shadow-brand-red/20 text-sm">
                   Request Demo <ArrowRight size={15} />
                 </Link>
-                <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold bg-white text-brand-black border border-gray-200 hover:border-brand-gold hover:shadow-md transition-all text-sm">
+                <Link to="/contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-bold bg-white text-brand-black border border-gray-200 hover:border-brand-gold hover:shadow-md transition-all text-sm">
                   <PhoneCall size={15} className="text-brand-gold" /> Talk to Expert
                 </Link>
               </div>
@@ -94,7 +92,7 @@ const ServiceDetail = () => {
               <img
                 src={service.heroImage}
                 alt={service.title}
-                className="w-full h-auto max-h-[480px] object-contain brightness-[1.08] contrast-[1.1]"
+                className="w-full h-auto max-h-[260px] object-contain brightness-[1.08] contrast-[1.1]"
               />
             </motion.div>
           </div>
@@ -102,10 +100,10 @@ const ServiceDetail = () => {
       </section>
 
       {/* ── KEY FEATURES (FOCUS GRID) ── */}
-      <section className="py-12 bg-transparent relative z-10 snap-start">
+      <section className="py-5 bg-transparent relative z-10 snap-start">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-brand-black mb-2">What's Included</h2>
+          <div className="text-center mb-4">
+            <h2 className="text-2xl font-bold text-brand-black mb-1">What's Included</h2>
             <p className="text-gray-400 text-sm">Core capabilities in our {service.title} module</p>
           </div>
 
@@ -129,11 +127,11 @@ const ServiceDetail = () => {
 
       {/* ── SUB-SERVICES ── */}
       {service.subServices && service.subServices.length > 0 && (
-        <section className="py-16 relative z-10 bg-transparent snap-start">
+        <section className="py-5 relative z-10 bg-transparent snap-start">
           <div className="max-w-[1200px] mx-auto px-6">
 
             {/* Header */}
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-10">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
               <div>
 
                 <h2 className="text-2xl md:text-3xl font-bold text-brand-black leading-tight">Explore Sub-Services</h2>
@@ -190,10 +188,10 @@ const ServiceDetail = () => {
 
       {/* ── DETAILED SECTIONS (FOCUS GRID) ── */}
       {sections.length > 0 && (
-        <section className="py-12 bg-transparent relative z-10 border-t border-gray-100/30 snap-start">
+        <section className="py-5 bg-transparent relative z-10 border-t border-gray-100/30 snap-start">
           <div className="max-w-[1200px] mx-auto px-6">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-brand-black mb-2">Detailed Scope</h2>
+            <div className="text-center mb-4">
+              <h2 className="text-2xl font-bold text-brand-black mb-1">Detailed Scope</h2>
               <p className="text-gray-400 text-sm">Full breakdown of deliverables</p>
             </div>
 
@@ -229,15 +227,15 @@ const ServiceDetail = () => {
 
 
       {/* ── CTA ── */}
-      <section className="py-12 bg-transparent relative z-10 snap-start">
+      <section className="py-5 bg-transparent relative z-10 snap-start">
         <div className="max-w-[600px] mx-auto px-6 text-center">
-          <h2 className="text-2xl font-bold text-brand-black mb-3 tracking-tight">
+          <h2 className="text-2xl font-bold text-brand-black mb-2 tracking-tight">
             Ready to deploy {service.title}?
           </h2>
-          <p className="text-gray-500 text-sm mb-6">
+          <p className="text-gray-500 text-sm mb-4">
             Our experts will audit your workflow and customize the right solution.
           </p>
-          <Link to="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-colors text-sm mb-10">
+          <Link to="/contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold bg-brand-red text-white hover:bg-brand-red-dark transition-colors text-sm mb-2">
             Get Free Consultation <ArrowRight size={16} />
           </Link>
         </div>

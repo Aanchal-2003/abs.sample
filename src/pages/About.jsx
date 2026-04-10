@@ -172,7 +172,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32 pb-8 font-system relative overflow-hidden">
+    <div className="min-h-screen bg-white pt-[72px] pb-6 font-system relative overflow-hidden">
 
       <div className="max-w-[1200px] mx-auto px-6">
 

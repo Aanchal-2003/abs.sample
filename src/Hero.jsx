@@ -89,14 +89,14 @@ const Hero = () => {
               <span className="text-brand-black">Businesses</span>
             </motion.h1>
 
-            <motion.div variants={item} className="space-y-3 mb-8 max-w-lg">
-              <p className="text-base text-[#A07828] leading-relaxed font-medium">
+            <motion.div variants={item} className="space-y-1.5 mb-8 max-w-xl text-justify">
+              <p className="text-base text-[#A07828] leading-normal font-medium">
                 From the pitch to business, every game is shaped by the decisions you make.
               </p>
-              <p className="text-base text-[#A07828] leading-relaxed font-medium">
+              <p className="text-base text-[#A07828] leading-normal font-medium">
                 To get them right, you need clarity, control, and confidence.
               </p>
-              <p className="text-base text-[#8B6914] leading-relaxed font-semibold">
+              <p className="text-base text-[#8B6914] leading-normal font-semibold">
                 That's where we come in, quietly keeping your business in control, so your decisions stay bold.
               </p>
             </motion.div>
