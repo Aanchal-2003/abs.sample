@@ -84,13 +84,18 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="flex gap-4 items-center group">
-                  <div className="w-11 h-11 rounded-xl bg-brand-red/5 flex items-center justify-center shrink-0 border border-brand-red/10 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300">
+                <div className="flex gap-4 items-start group">
+                  <div className="w-11 h-11 rounded-xl bg-brand-red/5 flex items-center justify-center shrink-0 border border-brand-red/10 group-hover:bg-brand-red group-hover:scale-110 transition-all duration-300 mt-0.5">
                     <MapPin className="text-brand-red group-hover:text-white w-5 h-5 transition-colors" />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest font-black text-gray-400 mb-0.5">Office Location</p>
-                    <p className="text-sm font-bold text-gray-600">Guwahati, Assam 781008</p>
+                    <p className="text-[10px] uppercase tracking-widest font-black text-gray-400 mb-1">Office Locations</p>
+                    <p className="text-sm font-bold text-gray-600 mb-2">Guwahati, Assam 781008</p>
+                    <p className="text-sm font-bold text-gray-600 leading-relaxed">
+                      Shop No. 210, Gopalpura Bypass,<br />
+                      New Atish Market, Mansarovar,<br />
+                      Jaipur, Rajasthan – 302020
+                    </p>
                   </div>
                 </div>
               </div>
