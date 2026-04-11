@@ -2,13 +2,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowRight, Home, Layers, Info, Mail, Code, Server, Smartphone } from "lucide-react";
+import { Menu, X, ArrowRight, Home, Layers, Info, Mail, Code, Server, Smartphone, Wrench } from "lucide-react";
 import { services } from "../data/services";
 import absLogo from "../assets/logo.png";
+import ServicePopup from "./ServicePopup";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicePopupOpen, setServicePopupOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -43,7 +45,7 @@ const Navbar = () => {
           : "bg-white"
           }`}
       >
-        <div className="max-w-[1240px] mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
           {/* LOGO */}
           <Link to="/" className="flex items-center gap-2">
             <img
@@ -87,13 +89,22 @@ const Navbar = () => {
           </div>
 
           {/* CTA */}
-          <div className="hidden md:block">
-            <Link
-              to="/contact"
+          <div className="hidden md:flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setServicePopupOpen(true)}
               className="flex items-center gap-2 bg-brand-red text-white px-4 py-2 rounded-full shadow-md hover:bg-brand-red-dark transition font-bold text-xs lg:text-sm"
             >
-              Login <ArrowRight size={15} />
-            </Link>
+              <Wrench size={14} /> Service
+            </button>
+            <a
+              href="https://cloud.abstechnologies.co.in/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-white text-brand-red border-2 border-brand-red px-4 py-[7px] rounded-full shadow-sm hover:bg-brand-red hover:text-white transition font-bold text-xs lg:text-sm"
+            >
+              Login <ArrowRight size={14} />
+            </a>
           </div>
 
           {/* MOBILE BUTTON */}
@@ -131,17 +142,36 @@ const Navbar = () => {
                 );
               })}
 
-              <Link
-                to="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="mt-4 bg-brand-red text-white py-3 rounded-full font-bold text-center shadow-md text-sm"
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileOpen(false);
+                  setServicePopupOpen(true);
+                }}
+                className="mt-4 bg-brand-red text-white py-3 rounded-full font-bold text-center shadow-md text-sm flex items-center justify-center gap-2"
               >
-                Request Demo
-              </Link>
+                <Wrench size={15} /> Request a Service
+              </button>
+
+              <a
+                href="https://cloud.abstechnologies.co.in/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="mt-2 bg-white text-brand-red border-2 border-brand-red py-3 rounded-full font-bold text-center shadow-sm text-sm flex items-center justify-center gap-2"
+              >
+                Login <ArrowRight size={15} />
+              </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Service Popup Form */}
+      <ServicePopup
+        isOpen={servicePopupOpen}
+        onClose={() => setServicePopupOpen(false)}
+      />
     </>
   );
 };

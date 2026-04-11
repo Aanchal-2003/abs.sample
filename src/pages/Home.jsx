@@ -103,7 +103,7 @@ const Home = () => {
 
       {/* ── SERVICES ── */}
       <section className="py-8 relative overflow-hidden bg-transparent snap-start">
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
 
           <div className="text-center mb-6 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-brand-black tracking-tight mb-4">
@@ -217,7 +217,7 @@ const Home = () => {
 
       {/* ── TESTIMONIALS ── */}
       <section className="py-8 bg-transparent overflow-hidden relative snap-start">
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
           <div className="text-center mb-6">
             <h2 className="text-3xl font-bold text-brand-black tracking-tight mb-2">
               Trusted by <HighlightText color="#f5b400">6000+</HighlightText> Businesses

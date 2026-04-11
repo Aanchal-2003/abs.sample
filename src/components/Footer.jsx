@@ -23,7 +23,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-brand-red text-white/90 font-system">
-      <div className="max-w-[1200px] mx-auto px-6 pt-10 pb-6">
+      <div className="max-w-[1400px] mx-auto px-6 pt-10 pb-6">
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-6">
 
@@ -48,11 +48,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start gap-2 text-white/80">
                 <MapPin className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
-                <span>Guwahati, Assam 781008</span>
-              </div>
-              <div className="flex items-start gap-2 text-white/80">
-                <MapPin className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
-                <span>Shop No. 210, Gopalpura Bypass, New Atish Market, Mansarovar, Jaipur, Rajasthan – 302020</span>
+                <span>101, Ram Kumar Plaza, Chatribari, A.T. Road, Guwahati – 781001</span>
               </div>
             </div>
           </div>

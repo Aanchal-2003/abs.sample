@@ -1,40 +1,16 @@
-import { useRef, useEffect } from 'react';
-import { motion, useMotionValue, useTransform, useInView, animate } from 'motion/react';
+import { motion } from 'motion/react';
 import { Users, Code, Clock, Star } from 'lucide-react';
 
 const stats = [
-  { icon: Users, to: 6000, suffix: '+', label: 'Businesses Served' },
-  { icon: Code,  to: 500,  suffix: '+', label: 'Custom TDLs Built' },
-  { icon: Star,  to: 16,   suffix: '+', label: 'Years of Experience' },
-  { icon: Clock, to: null, display: '24/7', label: 'Support Available' },
+  { icon: Users, display: '6000+', label: 'Businesses Served' },
+  { icon: Code,  display: '500+',  label: 'Custom TDLs Built' },
+  { icon: Star,  display: '16+',   label: 'Years of Experience' },
+  { icon: Clock, display: '24/7',  label: 'Support Available' },
 ];
-
-const Counter = ({ to, suffix }) => {
-  const ref = useRef(null);
-  const motionVal = useMotionValue(0);
-  const rounded = useTransform(motionVal, v => `${Math.round(v)}${suffix}`);
-  const inView = useInView(ref, { once: true, margin: '-50px' });
-
-  useEffect(() => {
-    if (inView) {
-      const controls = animate(motionVal, to, { duration: 2, ease: 'easeOut' });
-      return controls.stop;
-    }
-  }, [inView, motionVal, to]);
-
-  useEffect(() => {
-    const unsub = rounded.on('change', v => {
-      if (ref.current) ref.current.textContent = v;
-    });
-    return unsub;
-  }, [rounded]);
-
-  return <span ref={ref}>{`0${suffix}`}</span>;
-};
 
 const ProofOfExistence = () => (
   <section className="py-6 bg-brand-black snap-start">
-    <div className="max-w-[1200px] mx-auto px-6">
+    <div className="max-w-[1400px] mx-auto px-6">
 
       <div className="text-center mb-6">
         <p className="text-[10px] uppercase tracking-[0.25em] text-white/30 font-bold mb-2">
@@ -46,7 +22,7 @@ const ProofOfExistence = () => (
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {stats.map(({ icon: Icon, to, suffix, display, label }, i) => (
+        {stats.map(({ icon: Icon, display, label }, i) => (
           <motion.div
             key={label}
             initial={{ opacity: 0, y: 20 }}
@@ -60,7 +36,7 @@ const ProofOfExistence = () => (
             </div>
 
             <p className="text-3xl md:text-4xl font-black mb-1 leading-none text-white">
-              {display ? display : <Counter to={to} suffix={suffix} />}
+              {display}
             </p>
 
             <p className="text-[11px] uppercase tracking-widest font-bold text-white/40">

@@ -1,0 +1,145 @@
+{
+  "info": {
+    "name": "ABS Technologies — Website APIs",
+    "description": "API endpoints used by the ABS Technologies website for Contact form leads and Service requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "abs-technologies-website-apis"
+  },
+  "item": [
+    {
+      "name": "Create Online Lead (Contact Form)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"company_name\": \"Acme Corp\",\n  \"name\": \"Rahul Sharma\",\n  \"email\": \"rahul@acme.com\",\n  \"phone\": \"+91 9876543210\",\n  \"service\": \"TallyPrime Solutions\",\n  \"team_size\": \"9-24\",\n  \"requirements\": \"We need help migrating from Tally ERP 9 to TallyPrime and setting up GST compliance for our 3 branches.\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://cloud.abstechnologies.co.in/api/online-lead-create",
+          "protocol": "https",
+          "host": [
+            "cloud",
+            "abstechnologies",
+            "co",
+            "in"
+          ],
+          "path": [
+            "api",
+            "online-lead-create"
+          ]
+        },
+        "description": "Submits a new customer lead from the Contact form on the ABS Technologies website.\n\n## Required fields\n- `company_name` (string)\n- `name` (string)\n- `email` (string)\n- `phone` (string)\n- `service` (string)\n\n## Optional fields\n- `team_size` (string)\n- `requirements` (string)\n\n## Allowed values for `service`\n- TallyPrime Solutions\n- Tally Customization (TDL)\n- AMC / TSS Support\n- Tally on Cloud\n- Web & App Development\n\n## Allowed values for `team_size`\n- 1-8\n- 9-24\n- 25-100\n- 100+"
+      },
+      "response": [
+        {
+          "name": "Example — Minimal payload (required fields only)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"company_name\": \"Sunrise Traders\",\n  \"name\": \"Anita Desai\",\n  \"email\": \"anita@sunrise.in\",\n  \"phone\": \"+91 9123456780\",\n  \"service\": \"AMC / TSS Support\"\n}"
+            },
+            "url": {
+              "raw": "https://cloud.abstechnologies.co.in/api/online-lead-create"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [],
+          "cookie": [],
+          "body": "{\n  \"success\": true,\n  \"message\": \"Lead created successfully\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create Online Service Request (Navbar Popup)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"service_type\": \"AMC / TSS Support\",\n  \"contact_number\": \"+91 9876543210\",\n  \"remark\": \"Tally is showing license error on 2 machines. Need urgent support.\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://cloud.abstechnologies.co.in/api/online-service-create/",
+          "protocol": "https",
+          "host": [
+            "cloud",
+            "abstechnologies",
+            "co",
+            "in"
+          ],
+          "path": [
+            "api",
+            "online-service-create",
+            ""
+          ]
+        },
+        "description": "Submits a quick service request from the Navbar 'Service' popup button. Used for existing customers needing support.\n\n## Required fields\n- `service_type` (string)\n- `contact_number` (string)\n\n## Optional fields\n- `remark` (string)\n\n## Allowed values for `service_type`\n- TallyPrime Solutions\n- Tally Customization (TDL)\n- AMC / TSS Support\n- Tally on Cloud\n- Tally Integration\n- Web & App Development"
+      },
+      "response": [
+        {
+          "name": "Example — Minimal payload",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"service_type\": \"Tally on Cloud\",\n  \"contact_number\": \"+91 9988776655\"\n}"
+            },
+            "url": {
+              "raw": "https://cloud.abstechnologies.co.in/api/online-service-create/"
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [],
+          "cookie": [],
+          "body": "{\n  \"success\": true,\n  \"message\": \"Service request created successfully\"\n}"
+        }
+      ]
+    }
+  ]
+}

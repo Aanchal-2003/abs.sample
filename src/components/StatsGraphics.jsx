@@ -69,7 +69,7 @@ const StatsGraphics = () => {
 
   return (
     <div className="min-h-screen bg-[#fafafa] pt-16 sm:pt-20 pb-12 sm:pb-16 font-geist" ref={containerRef}>
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}

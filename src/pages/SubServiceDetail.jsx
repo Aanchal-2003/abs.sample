@@ -39,7 +39,7 @@ const SubServiceDetail = () => {
     <div className="min-h-screen bg-white font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="lg:h-screen flex flex-col justify-start pt-[90px] pb-6 lg:justify-center lg:pt-0 lg:pb-0 px-6 lg:px-24 relative z-10 snap-start overflow-hidden">
+      <section className="lg:h-screen flex flex-col justify-start pt-[90px] pb-6 lg:justify-center lg:pt-0 lg:pb-0 px-6 lg:px-12 relative z-10 snap-start overflow-hidden">
         <div className="max-w-[1400px] mx-auto w-full">
           {/* Breadcrumb Section */}
           <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-4 font-bold tracking-wider uppercase flex-wrap">
@@ -94,7 +94,7 @@ const SubServiceDetail = () => {
       {/* ── HIGHLIGHTS ── */}
       {highlights.length > 0 && (
         <section className="py-3 bg-transparent border-b border-gray-100/50">
-          <div className="max-w-[1200px] mx-auto px-6">
+          <div className="max-w-[1400px] mx-auto px-6">
             <div className="grid grid-cols-3 gap-6">
               {highlights.map((h, i) => (
                 <motion.div
@@ -117,7 +117,7 @@ const SubServiceDetail = () => {
       {/* ── KEY FEATURES ── */}
       {features.length > 0 && (
         <section className="py-5 bg-transparent relative z-10">
-          <div className="max-w-[1200px] mx-auto px-6">
+          <div className="max-w-[1400px] mx-auto px-6">
             <div className="text-center mb-4">
               <h2 className="text-2xl font-bold text-brand-black mb-1">Key Features</h2>
               <p className="text-gray-400 text-sm">What this module delivers for your business</p>
@@ -143,7 +143,7 @@ const SubServiceDetail = () => {
 
       {/* ── BACK TO PARENT + CTA ── */}
       <section className="py-4 bg-transparent border-t border-gray-100/50 relative z-10">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-[1400px] mx-auto px-6">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
 

@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useInView } from 'motion/react';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, Target, Eye, Zap, Users, Shield,
@@ -10,11 +10,11 @@ import HighlightText from '../components/HighlightText';
 /* ──────────────────────────────────────────────
    JOURNEY TIMELINE — S-Curve with scroll-draw
    ────────────────────────────────────────────── */
-const JourneyCard = ({ milestone, index, isLeft, scrollYProgress, total }) => {
+const JourneyCard = ({ milestone, index, isLeft, scrollYProgress, total, itemSpacing }) => {
   // Sync each card with its part of the scroll progress
   const startAt = index / total;
   const endAt = (index + 1) / total;
-  
+
   // Use scroll progress for opacity and scale
   const opacity = useTransform(scrollYProgress, [startAt - 0.1, startAt + 0.05, endAt + 0.1, endAt + 0.25], [0, 1, 1, 0]);
   const scale = useTransform(scrollYProgress, [startAt - 0.1, startAt + 0.05, endAt + 0.1, endAt + 0.25], [0.8, 1, 1, 0.8]);
@@ -22,11 +22,11 @@ const JourneyCard = ({ milestone, index, isLeft, scrollYProgress, total }) => {
 
   return (
     <motion.div
-      style={{ 
-        opacity, 
-        scale, 
+      style={{
+        opacity,
+        scale,
         x: xOffset,
-        top: `${index * 160 + 30}px` 
+        top: `${index * itemSpacing + 30}px`
       }}
       className={`absolute w-[42%] ${isLeft ? 'left-0' : 'right-0'}`}
     >
@@ -49,7 +49,18 @@ const JourneyTimeline = ({ milestones }) => {
   });
 
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const totalHeight = milestones.length * 160 + 80;
+  const [itemSpacing, setItemSpacing] = useState(160);
+
+  useEffect(() => {
+    const updateSpacing = () => {
+      setItemSpacing(window.innerWidth < 768 ? 260 : 160);
+    };
+    updateSpacing();
+    window.addEventListener('resize', updateSpacing);
+    return () => window.removeEventListener('resize', updateSpacing);
+  }, []);
+
+  const totalHeight = milestones.length * itemSpacing + 80;
 
   // Build S-curve path
   const buildSPath = () => {
@@ -58,8 +69,8 @@ const JourneyTimeline = ({ milestones }) => {
     let d = `M ${midX},0`;
 
     milestones.forEach((_, i) => {
-      const yStart = i * 160;
-      const yEnd = (i + 1) * 160;
+      const yStart = i * itemSpacing;
+      const yEnd = (i + 1) * itemSpacing;
       const yMid = (yStart + yEnd) / 2;
       const isLeft = i % 2 === 0;
       const xTarget = isLeft ? midX - amplitude : midX + amplitude;
@@ -113,7 +124,7 @@ const JourneyTimeline = ({ milestones }) => {
 
           {/* Year dots on the curve */}
           {milestones.map((m, i) => {
-            const midY = i * 160 + 80;
+            const midY = i * itemSpacing + itemSpacing / 2;
             const isLeft = i % 2 === 0;
             const amplitude = 140;
             const midX = 250;
@@ -146,6 +157,7 @@ const JourneyTimeline = ({ milestones }) => {
             isLeft={i % 2 !== 0}
             scrollYProgress={scrollYProgress}
             total={milestones.length}
+            itemSpacing={itemSpacing}
           />
         ))}
       </div>
@@ -174,7 +186,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white pt-[90px] lg:pt-[72px] pb-6 font-system relative overflow-hidden">
 
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6">
 
         {/* ── HERO ── */}
         <motion.div

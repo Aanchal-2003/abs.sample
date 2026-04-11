@@ -37,7 +37,7 @@ const Services = () => {
 
       {/* ── HERO ── */}
       <section className="pt-[90px] lg:pt-[72px] pb-2 px-6 relative z-10 snap-start">
-        <div className="max-w-[1200px] mx-auto text-center">
+        <div className="max-w-[1400px] mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ const Services = () => {
 
       {/* ── SERVICES GRID (FOCUS EFFECT) ── */}
       <section className="py-6 relative z-10 snap-start">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center mb-4">
             <h2 className="text-2xl font-bold text-brand-black mb-2 tracking-tight">Our Core Services</h2>
             <p className="text-gray-400 text-sm">Hover any card to focus. Click to explore details.</p>

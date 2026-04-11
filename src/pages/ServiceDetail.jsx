@@ -49,7 +49,7 @@ const ServiceDetail = () => {
     <div className="min-h-screen bg-white font-system relative overflow-hidden">
 
       {/* ── HERO ── */}
-      <section className="lg:h-screen flex flex-col justify-start pt-[90px] pb-6 lg:justify-center lg:pt-0 lg:pb-0 px-6 lg:px-24 relative z-10 snap-start overflow-hidden">
+      <section className="lg:h-screen flex flex-col justify-start pt-[90px] pb-6 lg:justify-center lg:pt-0 lg:pb-0 px-6 lg:px-12 relative z-10 snap-start overflow-hidden">
         <div className="max-w-[1400px] mx-auto w-full">
           {/* Breadcrumb Section */}
           <nav className="flex items-center gap-1.5 text-gray-400 text-[11px] mb-4 font-bold tracking-wider uppercase">
@@ -101,7 +101,7 @@ const ServiceDetail = () => {
 
       {/* ── KEY FEATURES (FOCUS GRID) ── */}
       <section className="py-5 bg-transparent relative z-10 snap-start">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center mb-4">
             <h2 className="text-2xl font-bold text-brand-black mb-1">What's Included</h2>
             <p className="text-gray-400 text-sm">Core capabilities in our {service.title} module</p>
@@ -128,7 +128,7 @@ const ServiceDetail = () => {
       {/* ── SUB-SERVICES ── */}
       {service.subServices && service.subServices.length > 0 && (
         <section className="py-5 relative z-10 bg-transparent snap-start">
-          <div className="max-w-[1200px] mx-auto px-6">
+          <div className="max-w-[1400px] mx-auto px-6">
 
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-6">
@@ -189,7 +189,7 @@ const ServiceDetail = () => {
       {/* ── DETAILED SECTIONS (FOCUS GRID) ── */}
       {sections.length > 0 && (
         <section className="py-5 bg-transparent relative z-10 border-t border-gray-100/30 snap-start">
-          <div className="max-w-[1200px] mx-auto px-6">
+          <div className="max-w-[1400px] mx-auto px-6">
             <div className="text-center mb-4">
               <h2 className="text-2xl font-bold text-brand-black mb-1">Detailed Scope</h2>
               <p className="text-gray-400 text-sm">Full breakdown of deliverables</p>
