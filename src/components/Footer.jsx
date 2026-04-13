@@ -30,7 +30,7 @@ const Footer = () => {
           {/* BRAND */}
           <div className="lg:col-span-2">
             <div className="mb-4">
-              <img src={absLogo} alt="ABS" className="h-10" />
+              <img src={absLogo} alt="ABS" className="h-10 brightness-0 invert" />
             </div>
 
             <p className="text-sm text-white/70 leading-relaxed max-w-sm mb-5">

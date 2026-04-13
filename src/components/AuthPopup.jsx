@@ -83,7 +83,7 @@ const AuthPopup = ({ isOpen, onClose }) => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/[0.02] rounded-full" />
 
                 <div className="relative z-10">
-                  <img src={absLogo} alt="ABS" className="h-10 mb-2" />
+                  <img src={absLogo} alt="ABS" className="h-10 brightness-0 invert mb-2" />
                   <p className="text-white/50 text-xs font-semibold uppercase tracking-widest">Cloud Portal</p>
                 </div>
 
