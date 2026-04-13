@@ -127,10 +127,9 @@ const Contact = () => {
                 <div className="flex-1">
                   <p className="text-[10px] uppercase tracking-widest font-black text-brand-gold mb-1">Branch Office — Jaipur</p>
                   <p className="text-base font-bold text-brand-black leading-relaxed">
-                    210, Gopalpura Bypass Rd,<br />
-                    Nakshtra Villa, Rail Nagar,<br />
-                    Shiv Shakti Nagar, Mansarovar,<br />
-                    Jaipur, Rajasthan – 302019
+                    N210, New Atish Market,<br />
+                    Gopalpura Bypass,<br />
+                    Jaipur, Rajasthan – 302020
                   </p>
                   <p className="text-[11px] text-gray-400 mt-1 group-hover:text-brand-gold transition-colors">Click to open in Google Maps →</p>
                 </div>
@@ -165,7 +164,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-[10px] uppercase tracking-widest font-black text-gray-400 mb-0.5">Phone</p>
-                    <a href="tel:+917578000559" className="text-sm font-bold text-brand-black hover:text-brand-gold transition-colors">+91 7578000559</a>
+                    <a href="tel:+919706050760" className="text-sm font-bold text-brand-black hover:text-brand-gold transition-colors">+91 9706050760</a>
                   </div>
                 </div>
               </div>

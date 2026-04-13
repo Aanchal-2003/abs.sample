@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import absLogo from '../assets/logo.png';
+import absLogo from '../assets/abs-logo-clean.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,8 +29,8 @@ const Footer = () => {
 
           {/* BRAND */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-1.5 rounded-lg inline-block mb-4">
-              <img src={absLogo} className="h-10 w-auto" alt="ABS Technologies" />
+            <div className="mb-4">
+              <img src={absLogo} alt="ABS" className="h-10" />
             </div>
 
             <p className="text-sm text-white/70 leading-relaxed max-w-sm mb-5">
@@ -44,7 +44,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-white/80">
                 <Phone className="w-4 h-4 text-brand-gold shrink-0" />
-                +91 7578000559
+                +91 9706050760
               </div>
               <div className="flex items-start gap-2 text-white/80">
                 <MapPin className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />

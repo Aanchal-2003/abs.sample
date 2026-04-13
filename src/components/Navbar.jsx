@@ -2,15 +2,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ArrowRight, Home, Layers, Info, Mail, Code, Server, Smartphone, Wrench } from "lucide-react";
+import { Menu, X, ArrowRight, Home, Layers, Info, Mail, Code, Server, Smartphone, Wrench, LogIn } from "lucide-react";
 import { services } from "../data/services";
-import absLogo from "../assets/logo.png";
+import absLogo from "../assets/abs-logo-clean.png";
 import ServicePopup from "./ServicePopup";
+import AuthPopup from "./AuthPopup";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicePopupOpen, setServicePopupOpen] = useState(false);
+  const [authPopupOpen, setAuthPopupOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -47,12 +49,8 @@ const Navbar = () => {
       >
         <div className="max-w-[1400px] mx-auto px-6 flex items-center justify-between">
           {/* LOGO */}
-          <Link to="/" className="flex items-center gap-2">
-            <img
-              src={absLogo}
-              alt="ABS Technologies"
-              className="h-12"
-            />
+          <Link to="/" className="flex items-center">
+            <img src={absLogo} alt="ABS" className="h-10" />
           </Link>
 
           {/* DESKTOP NAV */}
@@ -97,14 +95,13 @@ const Navbar = () => {
             >
               <Wrench size={14} /> Service
             </button>
-            <a
-              href="https://cloud.abstechnologies.co.in/login"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => setAuthPopupOpen(true)}
               className="flex items-center gap-2 bg-white text-brand-red border-2 border-brand-red px-4 py-[7px] rounded-full shadow-sm hover:bg-brand-red hover:text-white transition font-bold text-xs lg:text-sm"
             >
-              Login <ArrowRight size={14} />
-            </a>
+              <LogIn size={14} /> Login
+            </button>
           </div>
 
           {/* MOBILE BUTTON */}
@@ -153,15 +150,16 @@ const Navbar = () => {
                 <Wrench size={15} /> Request a Service
               </button>
 
-              <a
-                href="https://cloud.abstechnologies.co.in/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileOpen(false)}
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileOpen(false);
+                  setAuthPopupOpen(true);
+                }}
                 className="mt-2 bg-white text-brand-red border-2 border-brand-red py-3 rounded-full font-bold text-center shadow-sm text-sm flex items-center justify-center gap-2"
               >
-                Login <ArrowRight size={15} />
-              </a>
+                <LogIn size={15} /> Login
+              </button>
             </div>
           </motion.div>
         )}
@@ -171,6 +169,12 @@ const Navbar = () => {
       <ServicePopup
         isOpen={servicePopupOpen}
         onClose={() => setServicePopupOpen(false)}
+      />
+
+      {/* Auth Popup (Login / Signup) */}
+      <AuthPopup
+        isOpen={authPopupOpen}
+        onClose={() => setAuthPopupOpen(false)}
       />
     </>
   );
